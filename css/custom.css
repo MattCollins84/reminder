@@ -1,0 +1,108 @@
+.hidden {
+  display: none!important;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px!important;
+}
+
+.mb60 {
+  margin-bottom: 60px!important;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.ml20 {
+  margin-left: 20px!important;
+}
+
+.ml0 {
+  margin-left: 0px!important;
+}
+
+.pad0 {
+  padding: 0!important;
+}
+
+.br0 {
+  border-radius: 0px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.jt-small {
+  padding-bottom: 24px;
+}
+
+.headline {
+  font-size: 50px;
+  color: #5A5A5A;
+}
+
+.headline span {
+  color: #999;
+}
+
+.feature {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 40px;
+  margin-top: 40px;
+}
+
+.list-group .header {
+  background: #428bca;
+  color: #FFF;
+}
+
+.list-group .header a {
+  background: #428bca;
+  color: #FFF;
+}
+
+ul.rules-list {
+  font-weight: bold;
+}
+
+ul.rules-list li {
+  margin-left: 20px!important;
+}
+
+table#scores-table th {
+  height: 81px;
+}
+
+img[id^=joker] {
+  cursor: pointer;
+}
+
+.stats span {
+  font-size: 25px;
+}
+
+.footer {
+  background: #46477d;
+}

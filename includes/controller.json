@@ -1,0 +1,70 @@
+{
+  "controllers": [
+    {
+        "regex": "^/$",
+        "controllerClass": "MainController",
+        "method": "renderHomepage",
+        "authentication": false 
+    },
+    {
+        "regex": "^/rules$",
+        "controllerClass": "MainController",
+        "method": "renderRules",
+        "authentication": false 
+    },
+    {
+        "regex": "^/guide$",
+        "controllerClass": "MainController",
+        "method": "renderGuide",
+        "authentication": false 
+    },
+    {
+        "regex": "^/binball/play/?$",
+        "controllerClass": "BinBallController",
+        "method": "playBinball",
+        "authentication": false 
+    },
+    {
+        "regex": "^/binball/game/[a-z0-9]+$",
+        "controllerClass": "BinBallController",
+        "method": "renderScorecard",
+        "authentication": false 
+    },
+    {
+        "regex": "^/auth/facebook$",
+        "controllerClass": "SocialAuthenticationController",
+        "method": "authFacebook",
+        "authentication": false 
+    },
+    {
+        "regex": "^/sign-out$",
+        "controllerClass": "MainController",
+        "method": "signout",
+        "authentication": false 
+    },
+    {
+        "regex": "^/create/player$",
+        "controllerClass": "BinBallController",
+        "method": "createPlayer",
+        "authentication": false 
+    },
+    {
+        "regex": "^/add/score$",
+        "controllerClass": "BinBallController",
+        "method": "addScore",
+        "authentication": false 
+    },
+    {
+        "regex": "^/miss/joker$",
+        "controllerClass": "BinBallController",
+        "method": "missJoker",
+        "authentication": false 
+    },
+    {
+        "regex": "^/stats$",
+        "controllerClass": "StatsController",
+        "method": "getStats",
+        "authentication": false 
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "config": [
+    {
+      "hostnames": ["reminder.mattcollins.com"],
+      "in_production": false,
+      "cloudant": {
+      	"host": "https://username.cloudant.com/",
+      	"username": "username",
+      	"password": "password"      	
+      }
+    }
+  ]
+}
