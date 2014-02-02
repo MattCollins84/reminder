@@ -14,6 +14,10 @@
   margin-bottom: 60px!important;
 }
 
+.mt80 {
+  margin-top: 80px;
+}
+
 .mt20 {
   margin-top: 20px;
 }
@@ -24,6 +28,10 @@
 
 .mt0 {
   margin-top: 0;
+}
+
+.mr20 {
+  margin-right: 20px!important;
 }
 
 .ml20 {
@@ -54,55 +62,29 @@
   font-size: 8em;
 }
 
-.jt-small {
-  padding-bottom: 24px;
+.icon-green {
+  color: #8ac28f;
 }
 
-.headline {
-  font-size: 50px;
-  color: #5A5A5A;
+.icon-red {
+  color: #cc5454;
 }
 
-.headline span {
-  color: #999;
+.icon-blue {
+  color: #5875cc;
 }
 
-.feature {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 40px;
-  margin-top: 40px;
+.carousel-inner {
+  min-height: 200px;
 }
 
-.list-group .header {
-  background: #428bca;
-  color: #FFF;
+.carousel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
-.list-group .header a {
-  background: #428bca;
-  color: #FFF;
-}
-
-ul.rules-list {
-  font-weight: bold;
-}
-
-ul.rules-list li {
-  margin-left: 20px!important;
-}
-
-table#scores-table th {
-  height: 81px;
-}
-
-img[id^=joker] {
-  cursor: pointer;
-}
-
-.stats span {
-  font-size: 25px;
-}
-
-.footer {
-  background: #46477d;
+.carousel-indicators {
+  bottom: -40px;
 }

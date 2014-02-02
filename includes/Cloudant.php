@@ -1,10 +1,13 @@
 <?
+  require_once("includes/config.php");
   
   Class Cloudant {
 
-    const CLOUDANT_URL = 'https://binball.cloudant.com/';
-
     static public function doCurl($method, $collection, $data, $params = array()) {
+
+      global $config;
+
+      $CLOUDANT_URL = $config['cloudant']['host'];
 
       $ch = curl_init();
 
@@ -12,7 +15,7 @@
         $payload = json_encode($data);
       }
 
-      $url = Cloudant::CLOUDANT_URL.$collection;
+      $url = $CLOUDANT_URL.$collection;
 
       if($method == "GET" && is_array($params) && count($params) > 0) {
         $url.="?".http_build_query($params);
@@ -30,7 +33,7 @@
           'Content-type: application/json',
           'Accept: */*'
       ));
-      curl_setopt($ch, CURLOPT_USERPWD, 'binball:binballwizard');
+      curl_setopt($ch, CURLOPT_USERPWD, $config['cloudant']['username'].':'.$config['cloudant']['password']);
       $response = curl_exec($ch);
       curl_close($ch);
 

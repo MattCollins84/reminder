@@ -1,84 +1,276 @@
-<div class='jumbotron jt-small mb60'>
-  <div class="container mb20">
-    <div class="row">
-      
-      <div class="col-md-4">
-        <img src="/images/logo-350.png" />
-      </div>
+<section id="home" name="home"></section>
+  <div id="headerwrap">
+      <div class="container">
+        <div class="row centered">
+          <div class="col-lg-12">
+          <h1>Welcome To <b>&lt;Name&gt;</b></h1>
+          <h3>Turn customer knowledge into high quality business leads.</h3>
+          <br>
+          </div>
+          
+          <div class="col-lg-2">
+            <h5>Amazing Results</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png">
+          </div>
+          <div class="col-lg-8">
+            <img class="img-responsive" src="/img/app-bg.png" alt="">
+          </div>
+          <div class="col-lg-2">
+            <br>
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png">
+            <h5>Awesome Design</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+      </div> <!--/ .container -->
+  </div><!--/ #headerwrap -->
 
-      <div class="col-md-8">
-        <h1 class="mt0 headline">Welcome to BinBall.<br /><span>Breaktime will never be the same...</span></h1>
-        <p><i class="fa fa-quote-left"></i></p>
-        <p>BinBall changed my life, I don't know how I got through my working day before I discovered BinBall...</p>
-        <p>- Dave Fender</i></p>
-        <p><i class="fa fa-quote-right pull-right"> </i></p>
-      </div>
-      
-    </div>
-  </div>
-</div>
 
-<div class="container mb20">
+  <section id="how" name="how"></section>
+  <!-- INTRO WRAP -->
+  <div id="intro">
+    <div class="container">
+      <div class="row centered">
+        <h1>How it works</h1>
+        <br>
+        <br>
+        <div class="col-lg-4">
+          <i class="fa fa-8x fa-comment icon-blue"></i>
+          <h3>Business Intelligence</h3>
+          <p>We believe that no-one knows your customers better than you.&nbsp;&nbsp;We want to help you turn this relationship into <strong>high quality leads</strong> that will benefit both you &amp; your clients.</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="fa fa-8x fa-calendar icon-red"></i>
+          <h3>Targetted Messaging</h3>
+          <p>We will send SMS messages direct to your customers on key dates identified by you. Whether this is an appointment confirmation, call to action, or promotional messages - we will get your message there.</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="fa fa-8x fa-check-circle icon-green"></i>
+          <h3>Getting Results</h3>
+          <p>Targetting customers with relevant services at identified key times is proven to drive repeat business &amp; customer loyalty; while appointment reminders help you to maximise your productivity.</p>
+        </div>
+      </div>
+    </div> <!--/ .container -->
+  </div><!--/ #introwrap -->
   
-  <div class="row feature">
-    <div class="col-md-7">
-      <h1 class="headline">What is BinBall? <span>And how can I play?</span></h1>
-      <p>BinBall is a (mostly) office-based recreational activity designed to break the boredom of your typical workplace. It was conceived on December 23rd 2013 by some bored, and forward-thinking individuals looking to kill some time before the holidays.</p>
-      <p>To play BinBall, you will need the following:</p>
-      <ul>
-        <li>At least one friend, or willing work colleague</li>
-        <li>A suitable bin, we suggest a waste paper bin about 1' in both height and diameter</li>
-        <li>A suitable ball, we suggest something tennis ball sized, ideally soft (e.g. a stress ball)</li>
-      </ul>
+  <section id="usecase" name="usecase"></section>
+  <div id="showcase">
+    <div class="container">
+      <div class="row">
+        <h1 class="centered">How Others Use &lt;Name&gt;</h1>
+        <br>
+        <div class="col-lg-8 col-lg-offset-2">
+          <div id="carousel-example-generic" class="carousel slide">
+          
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <h1>Mechanics</h1>
+                <ul class="carousel-list">
+                  <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting yearly services</li>
+                  <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting M.O.T</li>
+                  <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting identified future work</li>
+                  <li><i class="fa fa-calendar-o mr20"></i> Appointment reminders to prevent un-expected downtime</li>
+                  <li><i class="fa fa-bullhorn mr20"></i> Special offers and promotions</li>
+                </ul>
+              </div>
+              <div class="item">
+                <h1>Florists</h1>
+                <ul class="carousel-list">
+                  <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting yearly events such as Valentines day</li>
+                  <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting personal events (Anniversaries, Birthdays, etc...)</li>
+                  <li><i class="fa fa-bullhorn mr20"></i> Special offers and promotions</li>
+                </ul>
+              </div>
+              <div class="item">
+                <h1>Salons</h1>
+                <ul class="carousel-list">
+                  <li><i class="fa fa-calendar-o mr20"></i> Appointment reminders to minimise empty seats</li>
+                  <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting yearly events such as New Year</li>
+                  <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting personal events (Anniversaries, Birthdays, etc...)</li>
+                  <li><i class="fa fa-bullhorn mr20"></i> Special offers and promotions</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>  
+    </div><!-- /container -->
+  </div>
+
+  <section id="pricing" name="pricing"></section>
+  <!-- PRICING WRAP -->
+  <div id="pricing">
+    <div class="container">
+      <div class="row">
+        <h1 class="centered">Pricing</h1>
+
+        <div class="col-lg-12">
+          
+          <p>&lt;Name&gt; provides you with two ways to contact your customers, designed to offer you the flexibility you &amp; your business require.</p>
+          <p>Each message costs a certain amount of &lt;Name&gt; tokens to send, with tokens being purchased via your personalised dashboard - don't worry, we will give you some free tokens to get the hang of it!</p>
+        </div>
+
+        <div class="row flat">
+          <div class="col-lg-3 col-md-3 col-xs-6">
+            <ul class="plan plan1">
+              <li class="plan-name">
+                  Economy
+              </li>
+              <li class="plan-price">
+                  <strong>&pound;5</strong>
+              </li>
+              <li>
+                  <strong>500</strong> Tokens
+              </li>
+              <li>
+                  Up to <strong>5</strong> custom messages
+              </li>
+              <li>
+                  Up to <strong>25</strong> fixed messages
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-xs-6">
+            <ul class="plan plan2">
+              <li class="plan-name">
+                  Standard
+              </li>
+              <li class="plan-price">
+                  <strong>&pound;10</strong>
+              </li>
+              <li>
+                  <strong>1000</strong> Tokens
+              </li>
+              <li>
+                  Up to <strong>10</strong> custom messages
+              </li>
+              <li>
+                  Up to <strong>50</strong> fixed messages
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-xs-6">
+            <ul class="plan plan3 featured">
+              <li class="plan-name">
+                  Premium
+              </li>
+              <li class="plan-price">
+                  <strong>&pound;20</strong>
+              </li>
+              <li>
+                  <strong>2500</strong> Tokens
+              </li>
+              <li>
+                  Up to <strong>25</strong> custom messages
+              </li>
+              <li>
+                  Up to <strong>75</strong> fixed messages
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-xs-6">
+            <ul class="plan plan4">
+              <li class="plan-name">
+                  Bumper
+              </li>
+              <li class="plan-price">
+                  <strong>&pound;50</strong>
+              </li>
+              <li>
+                  <strong>8000</strong> Tokens
+              </li>
+              <li>
+                  Up to <strong>40</strong> custom messages
+              </li>
+              <li>
+                  Up to <strong>200</strong> fixed messages
+              </li>
+            </ul>
+          </div>
+
+           
+        </div>
+
+        <div class="col-lg-12">
+          
+          <h3>Fixed messages</h3>
+          <p>Fixed messages are non-customisable messages designed to be sent on a regular basis to customers. We currently offer fixed messages in the form of <strong>appointment reminders</strong>, and they include the company name, appointment date and a contact number.</p>
+          <p>A fixed message is priced at 20 &lt;Name&gt; tokens.</p>
+
+          <div class="alert alert-info">
+            <p>This is a reminder of your appointment with Katys Hair Salon on 21/05/2014 @ 14:00. Call us now on 03069 990667.</p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-12">
+          
+          <h3>Custom messages</h3>
+          <p>Custom messages can take any form you wish up to the length of 160 characters, and are often used to offer services that are specific to this customer at this time of year.</p>
+          <p>A custom message is priced at 80 &lt;Name&gt; tokens.</p>
+
+          <div class="alert alert-info">
+            <p>It has been almost a year since you last serviced your Ford Focus, arrange a service with SB Motors now on 0773130955 for a 10% discount.</p>
+          </div>
+
+          <div class="alert alert-info">
+            <p>Katys Hair salon would like to offer you a 15% discount on a cut &amp; colour for your birthday. Call us now on 03069 990667.</p>
+          </div>
+
+        </div>
+      </div>
+    </div><!--/ .container -->
+  </div><!--/ #features -->
+
+
+  <section id="contact" name="contact"></section>
+  <div id="footerwrap">
+    <div class="container">
+      <div class="col-lg-5">
+        <h3>Address</h3>
+        <p>
+        Av. Greenville 987,<br/>
+        New York,<br/>
+        90873<br/>
+        United States
+        </p>
+      </div>
       
-      <? if ($data['user']): ?>
-        <p><a class="btn btn-success" href="/binball/play"><i class="fa fa-play-circle"></i> Play BinBall</a></p>
-      <? else: ?>
-        <p>To use our handy scorecard, you will need to authenticate via Facebook. This is to record player statistics, and we will not share your data with anyone else.</p>
-        <p><a href="/auth/facebook" class="btn btn-primary"><i class="fa fa-facebook-square fa-lg"></i>&nbsp;&nbsp;Connect with Facebook</a></p>
-      <? endif; ?>
-
-    </div>
-    <div class="col-md-5">
-      <img src="/images/equipment.png" />
-    </div>
-  </div>
-
-  <div class="row feature">
-    <div class="col-md-5">
-      <img src="/images/howtoplay.png" />
-    </div>
-    <div class="col-md-7">
-      <h1 class="headline">Are there any rules? <span>Or maybe a scoring system?</span></h1>
-      <p>The OFFICIAL rules of BinBall are evolving all the time but all rules must adhere to our philosophy:</p>
-      <p><em>BinBall is all about competitively throwing balls into bins to score points. The player with the most points at the end of the game wins!</em></p>
-      <p>For a complete run down of the current OFFICIAL BinBall rules and and regulations, click <a href='/rules'>here</a>.</p>
-
-      <? if ($data['user']): ?>
-        <p><a class="btn btn-success" href="/binball/play"><i class="fa fa-play-circle"></i> Play BinBall</a></p>
-      <? else: ?>
-        <p>To use our handy scorecard, you will need to authenticate via Facebook. This is to record player statistics, and we will not share your data with anyone else.</p>
-        <p><a href="/auth/facebook" class="btn btn-primary"><i class="fa fa-facebook-square fa-lg"></i>&nbsp;&nbsp;Connect with Facebook</a></p>
-      <? endif; ?>
+      <div class="col-lg-7">
+        <h3>Drop Us A Line</h3>
+        <br>
+        <form role="form" action="#" method="post" enctype="plain"> 
+          <div class="form-group">
+            <label for="name1">Your Name</label>
+            <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email1">Email address</label>
+            <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label>Your Text</label>
+            <textarea class="form-control" name="Message" rows="3"></textarea>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
+        </form>
+      </div>
     </div>
   </div>
-
-  <div class="row feature">
-    <div class="col-md-7">
-      <h1 class="headline">Can I win anything?</h1>
-      <p>Unfortunately we cannot offer any prizes for your participation in BinBall, however, every time a game is completed the person with the most points shall be declared the <b>BinBall Wizard</b>, until he/she is next defeated in a game of BinBall.</p>
-      <p>It is customary that the person currently holding the title of <b>BinBall Wizard</b> shall not have to make his own beverage whilst in the working environment.</p>
-      <p>Keep an eye-out for OFFICIAL BinBall competitions in the future...</p>
-      <? if ($data['user']): ?>
-        <p><a class="btn btn-success" href="/binball/play"><i class="fa fa-play-circle"></i> Play BinBall</a></p>
-      <? else: ?>
-        <p>To use our handy scorecard, you will need to authenticate via Facebook. This is to record player statistics, and we will not share your data with anyone else.</p>
-        <p><a href="/auth/facebook" class="btn btn-primary"><i class="fa fa-facebook-square fa-lg"></i>&nbsp;&nbsp;Connect with Facebook</a></p>
-      <? endif; ?>
-    </div>
-    <div class="col-md-5">
-      <img src="/images/binball-wizard-500.png" />
-    </div>
-  </div>
-
-</div>

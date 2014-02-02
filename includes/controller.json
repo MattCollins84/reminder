@@ -7,63 +7,87 @@
         "authentication": false 
     },
     {
-        "regex": "^/rules$",
-        "controllerClass": "MainController",
-        "method": "renderRules",
+        "regex": "^/customer/create$",
+        "controllerClass": "CustomerController",
+        "method": "createCustomer",
         "authentication": false 
     },
     {
-        "regex": "^/guide$",
-        "controllerClass": "MainController",
-        "method": "renderGuide",
+        "regex": "^/customer/get/byId$",
+        "controllerClass": "CustomerController",
+        "method": "getCustomerById",
         "authentication": false 
     },
     {
-        "regex": "^/binball/play/?$",
-        "controllerClass": "BinBallController",
-        "method": "playBinball",
+        "regex": "^/customer/get/byEmail$",
+        "controllerClass": "CustomerController",
+        "method": "getCustomerByEmail",
         "authentication": false 
     },
     {
-        "regex": "^/binball/game/[a-z0-9]+$",
-        "controllerClass": "BinBallController",
-        "method": "renderScorecard",
+        "regex": "^/customer/addTokens$",
+        "controllerClass": "CustomerController",
+        "method": "addTokens",
         "authentication": false 
     },
     {
-        "regex": "^/auth/facebook$",
-        "controllerClass": "SocialAuthenticationController",
-        "method": "authFacebook",
+        "regex": "^/customer/removeTokens$",
+        "controllerClass": "CustomerController",
+        "method": "removeTokens",
         "authentication": false 
     },
     {
-        "regex": "^/sign-out$",
-        "controllerClass": "MainController",
-        "method": "signout",
+        "regex": "^/contact/create$",
+        "controllerClass": "ContactController",
+        "method": "createContact",
         "authentication": false 
     },
     {
-        "regex": "^/create/player$",
-        "controllerClass": "BinBallController",
-        "method": "createPlayer",
+        "regex": "^/contact/get/byCustomer$",
+        "controllerClass": "ContactController",
+        "method": "getContactsByCustomer",
         "authentication": false 
     },
     {
-        "regex": "^/add/score$",
-        "controllerClass": "BinBallController",
-        "method": "addScore",
+        "regex": "^/contact/get/byId",
+        "controllerClass": "ContactController",
+        "method": "getContactById",
         "authentication": false 
     },
     {
-        "regex": "^/miss/joker$",
-        "controllerClass": "BinBallController",
-        "method": "missJoker",
+        "regex": "^/contact/sendSMS",
+        "controllerClass": "ContactController",
+        "method": "sendContactSMS",
         "authentication": false 
     },
     {
-        "regex": "^/stats$",
-        "controllerClass": "StatsController",
-        "method": "getStats",
+        "regex": "^/message/create",
+        "controllerClass": "MessagesController",
+        "method": "createMessage",
+        "authentication": false 
+    },
+    {
+        "regex": "^/message/get/byId",
+        "controllerClass": "MessagesController",
+        "method": "getMessageById",
+        "authentication": false 
+    },
+    {
+        "regex": "^/message/get/byCustomerId",
+        "controllerClass": "MessagesController",
+        "method": "getMessagesByCustomerId",
+        "authentication": false 
+    },
+    {
+        "regex": "^/message/get/byContactId",
+        "controllerClass": "MessagesController",
+        "method": "getMessagesByContactId",
+        "authentication": false 
+    },
+    {
+        "regex": "^/message/send",
+        "controllerClass": "MessagesController",
+        "method": "sendMessage",
         "authentication": false 
     }
   ]
