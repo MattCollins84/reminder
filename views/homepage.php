@@ -133,7 +133,7 @@
                   <strong>&pound;5</strong>
               </li>
               <li>
-                  <strong>500</strong> Tokens
+                  <strong>500</strong> &lt;Name&gt; Tokens
               </li>
               <li>
                   Up to <strong>5</strong> custom messages
@@ -153,7 +153,7 @@
                   <strong>&pound;10</strong>
               </li>
               <li>
-                  <strong>1000</strong> Tokens
+                  <strong>1000</strong> &lt;Name&gt; Tokens
               </li>
               <li>
                   Up to <strong>10</strong> custom messages
@@ -173,13 +173,13 @@
                   <strong>&pound;20</strong>
               </li>
               <li>
-                  <strong>2500</strong> Tokens
+                  <strong>2500</strong> &lt;Name&gt; Tokens
               </li>
               <li>
                   Up to <strong>25</strong> custom messages
               </li>
               <li>
-                  Up to <strong>75</strong> fixed messages
+                  Up to <strong>125</strong> fixed messages
               </li>
             </ul>
           </div>
@@ -193,13 +193,13 @@
                   <strong>&pound;50</strong>
               </li>
               <li>
-                  <strong>8000</strong> Tokens
+                  <strong>8000</strong> &lt;Name&gt; Tokens
               </li>
               <li>
-                  Up to <strong>40</strong> custom messages
+                  Up to <strong>80</strong> custom messages
               </li>
               <li>
-                  Up to <strong>200</strong> fixed messages
+                  Up to <strong>400</strong> fixed messages
               </li>
             </ul>
           </div>
@@ -207,7 +207,7 @@
            
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-6">
           
           <h3>Fixed messages</h3>
           <p>Fixed messages are non-customisable messages designed to be sent on a regular basis to customers. We currently offer fixed messages in the form of <strong>appointment reminders</strong>, and they include the company name, appointment date and a contact number.</p>
@@ -219,7 +219,7 @@
 
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-6">
           
           <h3>Custom messages</h3>
           <p>Custom messages can take any form you wish up to the length of 160 characters, and are often used to offer services that are specific to this customer at this time of year.</p>
