@@ -136,7 +136,7 @@
                   <strong>500</strong> &lt;Name&gt; Tokens
               </li>
               <li>
-                  Up to <strong>5</strong> custom messages
+                  Up to <strong>6</strong> custom messages
               </li>
               <li>
                   Up to <strong>25</strong> fixed messages
@@ -156,7 +156,7 @@
                   <strong>1000</strong> &lt;Name&gt; Tokens
               </li>
               <li>
-                  Up to <strong>10</strong> custom messages
+                  Up to <strong>12</strong> custom messages
               </li>
               <li>
                   Up to <strong>50</strong> fixed messages
@@ -176,7 +176,7 @@
                   <strong>2500</strong> &lt;Name&gt; Tokens
               </li>
               <li>
-                  Up to <strong>25</strong> custom messages
+                  Up to <strong>31</strong> custom messages
               </li>
               <li>
                   Up to <strong>125</strong> fixed messages
@@ -196,7 +196,7 @@
                   <strong>8000</strong> &lt;Name&gt; Tokens
               </li>
               <li>
-                  Up to <strong>80</strong> custom messages
+                  Up to <strong>100</strong> custom messages
               </li>
               <li>
                   Up to <strong>400</strong> fixed messages
