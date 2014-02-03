@@ -22,6 +22,10 @@
   margin-top: 20px;
 }
 
+.mt40 {
+  margin-top: 40px;
+}
+
 .mb0 {
   margin-bottom: 0;
 }
@@ -83,8 +87,34 @@
   margin: 0;
   padding: 0;
   color: white;
+  height: 200px;
+}
+
+.carousel-list li {
+  margin-bottom: 10px;
 }
 
 .carousel-indicators {
   bottom: -40px;
+}
+
+.home-form {
+  background: #fa9043;
+  height: 320px;
+  padding: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-topright: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+h4.strapline {
+  line-height: 1.4em;
+  font-weight: 400;
+}
+
+.white {
+  color: white!important;
 }

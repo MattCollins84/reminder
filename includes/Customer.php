@@ -30,7 +30,8 @@ class Customer  {
 			"password" => $password,
 			"contact_phone" => $contact_phone,
 			"contact_name" => $contact_name,
-			"available_tokens" => $tokens
+			"available_tokens" => $tokens,
+			"verified" => false
 		);
 
 		$res = Cloudant::doCurl("POST", "customers", $customer);

@@ -8,6 +8,7 @@
   require_once("includes/Cloudant.php");
   require_once("includes/Customer.php");
   require_once("controllers/Controller.php");
+  require_once("includes/Email.php");
 
   
   Class CustomerController extends Controller {
@@ -30,15 +31,38 @@
           "success" => false,
           "error" => "Missing the following fields: ".implode($errors, ", ")
         ));
+        exit;
 
       }
 
       else {
 
+        if (strlen($vars['password']) < 8) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Password is too short"
+          ));
+          exit;
+        }
+
+        if ($vars['password'] != $vars['password2']) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Passwords do not match"
+          ));
+          exit;
+        }
+
         // create the customer
         $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($vars['password']), $vars['contact_phone'], $vars['contact_name'], 200);
 
+        if ($res['success']) {
+          $_SESSION['confirmation_email'] = $vars['email'];
+          Email::confirmationEmail($vars['email'], $res['id']);
+        }
+
         echo json_encode($res);
+        exit;
 
       }
         

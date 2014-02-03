@@ -7,6 +7,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/thank-you$",
+        "controllerClass": "MainController",
+        "method": "renderThankyou",
+        "authentication": false 
+    },
+    {
         "regex": "^/customer/create$",
         "controllerClass": "CustomerController",
         "method": "createCustomer",

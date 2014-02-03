@@ -1,29 +1,42 @@
-<section id="home" name="home"></section>
+  <section id="home" name="home"></section>
   <div id="headerwrap">
-      <div class="container">
-        <div class="row centered">
-          <div class="col-lg-12">
-          <h1>Welcome To <b>&lt;Name&gt;</b></h1>
-          <h3>Turn customer knowledge into high quality business leads.</h3>
+    <div class="container">
+      <div class="row centered">
+        
+        <div class="col-lg-12">
+          <h1>Welcome To <b>ScheduleSMS</b></h1>
+          <h3>Turn customer &amp; business intelligence into high quality business leads.</h3>
           <br>
-          </div>
-          
-          <div class="col-lg-2">
-            <h5>Amazing Results</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png">
-          </div>
-          <div class="col-lg-8">
-            <img class="img-responsive" src="/img/app-bg.png" alt="">
-          </div>
-          <div class="col-lg-2">
-            <br>
-            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png">
-            <h5>Awesome Design</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          </div>
         </div>
-      </div> <!--/ .container -->
+        
+        <div class="col-lg-2">
+          <h5 class="mt40">Amazing Results</h5>
+          <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
+          <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png">
+        </div>
+
+        <div class="col-lg-8">
+          <form role="form" class="home-form" action="#" method="post" enctype="plain"> 
+            <div class="form-group">
+              <input type="email" name="email" class="form-control input-lg" id="email" placeholder="Your email address" />
+            </div>
+            <br>
+            <button type="submit" class="btn btn-lg btn-success">Start Free Trial!</button>
+            <br>
+            <h3>No monthly fee or hidden costs, pay as you go!</h3>
+            <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+          </form>
+        </div>
+
+        <div class="col-lg-2">
+          <br>
+          <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png">
+          <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
+          <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
+        </div>
+
+      </div>
+    </div> <!--/ .container -->
   </div><!--/ #headerwrap -->
 
 
@@ -43,12 +56,12 @@
         <div class="col-lg-4">
           <i class="fa fa-8x fa-calendar icon-red"></i>
           <h3>Targetted Messaging</h3>
-          <p>We will send SMS messages direct to your customers on key dates identified by you. Whether this is an appointment confirmation, call to action, or promotional messages - we will get your message there.</p>
+          <p>We will send SMS messages direct to your customers on <strong>key dates</strong> identified by you. Whether this is an appointment confirmation, call to action, or promotional messages - we will get your message there.</p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-8x fa-check-circle icon-green"></i>
           <h3>Getting Results</h3>
-          <p>Targetting customers with relevant services at identified key times is proven to drive repeat business &amp; customer loyalty; while appointment reminders help you to maximise your productivity.</p>
+          <p>Targetting customers with relevant services at identified key times is proven to drive <strong>repeat business</strong> &amp; customer loyalty; while appointment reminders help you to maximise your productivity &amp; <strong>prevent avoidable no-shows.</strong></p>
         </div>
       </div>
     </div> <!--/ .container -->
@@ -58,7 +71,7 @@
   <div id="showcase">
     <div class="container">
       <div class="row">
-        <h1 class="centered">How Others Use &lt;Name&gt;</h1>
+        <h1 class="centered">How Others Use ScheduleSMS</h1>
         <br>
         <div class="col-lg-8 col-lg-offset-2">
           <div id="carousel-example-generic" class="carousel slide">
@@ -72,7 +85,7 @@
                   <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting M.O.T</li>
                   <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting identified future work</li>
                   <li><i class="fa fa-calendar-o mr20"></i> Appointment reminders to prevent un-expected downtime</li>
-                  <li><i class="fa fa-bullhorn mr20"></i> Special offers and promotions</li>
+                  <li><i class="fa fa-bullhorn mr20"></i> Special offers &amp; promotions</li>
                 </ul>
               </div>
               <div class="item">
@@ -80,7 +93,7 @@
                 <ul class="carousel-list">
                   <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting yearly events such as Valentines day</li>
                   <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting personal events (Anniversaries, Birthdays, etc...)</li>
-                  <li><i class="fa fa-bullhorn mr20"></i> Special offers and promotions</li>
+                  <li><i class="fa fa-bullhorn mr20"></i> Special offers &amp; promotions</li>
                 </ul>
               </div>
               <div class="item">
@@ -89,7 +102,7 @@
                   <li><i class="fa fa-calendar-o mr20"></i> Appointment reminders to minimise empty seats</li>
                   <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting yearly events such as New Year</li>
                   <li><i class="fa fa-calendar mr20"></i> Scheduled messages targetting personal events (Anniversaries, Birthdays, etc...)</li>
-                  <li><i class="fa fa-bullhorn mr20"></i> Special offers and promotions</li>
+                  <li><i class="fa fa-bullhorn mr20"></i> Special offers &amp; promotions</li>
                 </ul>
               </div>
             </div>
@@ -115,105 +128,63 @@
   <div id="pricing">
     <div class="container">
       <div class="row">
-        <h1 class="centered">Pricing</h1>
+        <h1 class="centered mt20">Pricing &amp; Tokens</h1>
 
         <div class="col-lg-12">
           
-          <p>&lt;Name&gt; provides you with two ways to contact your customers, designed to offer you the flexibility you &amp; your business require.</p>
-          <p>Each message costs a certain amount of &lt;Name&gt; tokens to send, with tokens being purchased via your personalised dashboard - don't worry, we will give you some free tokens to get the hang of it!</p>
+          <h3>No monthly fees, just pay for what you use!</h3>
+          <p>With ScheduleSMS you will always know just how much you are spending, there are no sign-up fees &amp; no hidden costs!</p>
+          <p>Simply sign-up for your <strong>free, no obligation</strong> account &amp; use your complimentary ScheduleSMS tokens to get started instantly. Simply purchase more tokens as &amp; when you need them - it's that easy!</p>          
+          <p>Each SMS costs ScheduleSMS tokens to send, with tokens being purchased via your personalised dashboard - don't worry, we will give you some <strong>free tokens</strong> to get the hang of it!</p>
+        
         </div>
 
+        <div class="col-lg-12 mb20">
+          
+          <h3>How to buy tokens</h3>
+          <p>Tokens can be bought in pre-defined bundles (shown below) for your convenience, simply sign in to your personalised dashboard &amp; select the bundle you require. All transactions are handled through PayPal to provide you with peace of mind - ScheduleSMS will NEVER ask for your personal details.</p>
+          <p>Once bought, a token will remain in your account until used - there are <strong>no expiry dates!</strong></p>
+          <p>ScheduleSMS provides you with two ways to contact your customers, designed to offer you the flexibility you &amp; your business require.</p>
+
+        </div>
+
+        
+
         <div class="row flat">
+          
+          <? foreach ($data['plans'] as $key => $plan): ?>
+
           <div class="col-lg-3 col-md-3 col-xs-6">
-            <ul class="plan plan1">
+            <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
               <li class="plan-name">
-                  Economy
+                  <?=$plan['name'];?>
               </li>
               <li class="plan-price">
-                  <strong>&pound;5</strong>
+                  <strong>&pound;<?=$plan['price'];?></strong>
               </li>
               <li>
-                  <strong>500</strong> &lt;Name&gt; Tokens
+                  <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
               </li>
               <li>
-                  Up to <strong>6</strong> custom messages
+                  Up to <strong><?=floor($plan['tokens'] / $data['tokens']['custom']);?></strong> custom messages
               </li>
               <li>
-                  Up to <strong>25</strong> fixed messages
+                  Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
               </li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-3 col-xs-6">
-            <ul class="plan plan2">
-              <li class="plan-name">
-                  Standard
-              </li>
-              <li class="plan-price">
-                  <strong>&pound;10</strong>
-              </li>
-              <li>
-                  <strong>1000</strong> &lt;Name&gt; Tokens
-              </li>
-              <li>
-                  Up to <strong>12</strong> custom messages
-              </li>
-              <li>
-                  Up to <strong>50</strong> fixed messages
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-xs-6">
-            <ul class="plan plan3 featured">
-              <li class="plan-name">
-                  Premium
-              </li>
-              <li class="plan-price">
-                  <strong>&pound;20</strong>
-              </li>
-              <li>
-                  <strong>2500</strong> &lt;Name&gt; Tokens
-              </li>
-              <li>
-                  Up to <strong>31</strong> custom messages
-              </li>
-              <li>
-                  Up to <strong>125</strong> fixed messages
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-xs-6">
-            <ul class="plan plan4">
-              <li class="plan-name">
-                  Bumper
-              </li>
-              <li class="plan-price">
-                  <strong>&pound;50</strong>
-              </li>
-              <li>
-                  <strong>8000</strong> &lt;Name&gt; Tokens
-              </li>
-              <li>
-                  Up to <strong>100</strong> custom messages
-              </li>
-              <li>
-                  Up to <strong>400</strong> fixed messages
-              </li>
-            </ul>
-          </div>
-
+          <? endforeach; ?>
            
         </div>
 
         <div class="col-lg-6">
           
           <h3>Fixed messages</h3>
-          <p>Fixed messages are non-customisable messages designed to be sent on a regular basis to customers. We currently offer fixed messages in the form of <strong>appointment reminders</strong>, and they include the company name, appointment date and a contact number.</p>
-          <p>A fixed message is priced at 20 &lt;Name&gt; tokens.</p>
+          <p>Fixed messages are non-customisable messages designed to be sent on a regular basis to customers. We currently offer fixed messages in the form of <strong>appointment reminders</strong>, &amp; they include the company name, appointment date &amp; a contact number.</p>
+          <p>A fixed message is priced at 20 ScheduleSMS tokens.</p>
 
-          <div class="alert alert-info">
+          <div class="alert alert-danger">
             <p>This is a reminder of your appointment with Katys Hair Salon on 21/05/2014 @ 14:00. Call us now on 03069 990667.</p>
           </div>
 
@@ -222,14 +193,14 @@
         <div class="col-lg-6">
           
           <h3>Custom messages</h3>
-          <p>Custom messages can take any form you wish up to the length of 160 characters, and are often used to offer services that are specific to this customer at this time of year.</p>
-          <p>A custom message is priced at 80 &lt;Name&gt; tokens.</p>
+          <p>Custom messages can take any form you wish up to the length of 160 characters, &amp; are often used to offer services that are specific to this customer at this time of year.</p>
+          <p>A custom message is priced at 80 ScheduleSMS tokens.</p>
 
-          <div class="alert alert-info">
+          <div class="alert alert-danger">
             <p>It has been almost a year since you last serviced your Ford Focus, arrange a service with SB Motors now on 0773130955 for a 10% discount.</p>
           </div>
 
-          <div class="alert alert-info">
+          <div class="alert alert-danger">
             <p>Katys Hair salon would like to offer you a 15% discount on a cut &amp; colour for your birthday. Call us now on 03069 990667.</p>
           </div>
 
@@ -239,38 +210,59 @@
   </div><!--/ #features -->
 
 
-  <section id="contact" name="contact"></section>
+  <section id="signup" name="signup"></section>
   <div id="footerwrap">
     <div class="container">
-      <div class="col-lg-5">
-        <h3>Address</h3>
-        <p>
-        Av. Greenville 987,<br/>
-        New York,<br/>
-        90873<br/>
-        United States
-        </p>
-      </div>
-      
+
       <div class="col-lg-7">
-        <h3>Drop Us A Line</h3>
+        <h3>Start your free trial now!</h3>
         <br>
-        <form role="form" action="#" method="post" enctype="plain"> 
+        <form role="form" id="form-signup" enctype="plain"> 
           <div class="form-group">
-            <label for="name1">Your Name</label>
-            <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
+            <label for="name">Company Name *</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your company name" />
           </div>
           <div class="form-group">
-            <label for="email1">Email address</label>
-            <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
+            <label for="email">Email address *</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Your email address" />
           </div>
           <div class="form-group">
-            <label>Your Text</label>
-            <textarea class="form-control" name="Message" rows="3"></textarea>
+            <label for="contact_name">Contact name</label>
+            <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="A contact name" />
+          </div>
+          <div class="form-group">
+            <label for="contact_phone">Contact number</label>
+            <input type="text" name="contact_phone" class="form-control" id="contact_phone" placeholder="A contact number" />
+          </div>
+          <div class="form-group">
+            <label for="password">Your password *</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="" />
+            <span class="help-block">Password should be at least 8 characters long.</span>
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm password *</label>
+            <input type="password" name="password2" class="form-control" id="password2" placeholder="" />
+          </div>
+          <div class="alert alert-danger mt20 hidden" id="error-container">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4>There was a problem when submitting the form</h4>
+            <span id="errors-signup"></span>
           </div>
           <br>
-          <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
+          <button type="button" id="btn-signup" class="btn btn-large btn-success">Start Free Trial!</button>
         </form>
       </div>
+
+      <div class="col-lg-5">
+
+        <h3>Complimentary tokens</h3>
+        <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free tokens to get you started.</p>
+        <p>There are no recurring costs and no sign-up fee, so what have you got to lose?</p>
+
+        <h3>Contact details</h3>
+        <p>ScheduleSMS will never use your contact details for anything other than resolving account issues, we know you have better things to do with your time.</p>
+
+      </div>
+
     </div>
   </div>

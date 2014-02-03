@@ -25,7 +25,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Reminder thing</title>
+    <title>ScheduleSMS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
@@ -41,6 +41,7 @@
     
     <script src="/js/jquery.min.js"></script>
     <script src="/js/smoothscroll.js"></script>
+    <script src="/js/schedulesms.js"></script>
     
 
   </head>
@@ -51,21 +52,25 @@
       <div id="navigation" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
+            <? if ($data['hide_menu'] !== true): ?>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#home"><b>&lt;Name&gt;</b></a>
+            <? endif;?>
+            <a class="navbar-brand" href="#home"><b>ScheduleSMS</b></a>
           </div>
+          <? if ($data['hide_menu'] !== true): ?>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#home" class="smoothScroll">Home</a></li>
               <li><a href="#how" class="smoothScroll">How it works</a></li>
               <li><a href="#usecase" class="smoothScroll">Use cases</a></li>
               <li><a href="#pricing" class="smoothScroll">Pricing</a></li>
-              <li><a href="#contact" class="smoothScroll">Contact</a></li>
+              <li><a href="#signup" class="smoothScroll">Sign-up</a></li>
             </ul>
           </div><!--/.nav-collapse -->
+          <? endif;?>
         </div>
       </div>

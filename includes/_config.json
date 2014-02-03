@@ -7,7 +7,38 @@
       	"host": "https://username.cloudant.com/",
       	"username": "username",
       	"password": "password"      	
-      }
+      },
+      "tokens": {
+        "fixed": 20,
+        "custom": 80,
+        "complimentary": 500
+      },
+      "plans": [
+        {
+          "name": "Economy",
+          "price": 5,
+          "tokens": 500,
+          "selected": false
+        },
+        {
+          "name": "Standard",
+          "price": 10,
+          "tokens": 1000,
+          "selected": false
+        },
+        {
+          "name": "Premium",
+          "price": 20,
+          "tokens": 2500,
+          "selected": true
+        },
+        {
+          "name": "Bumper",
+          "price": 50,
+          "tokens": 8000,
+          "selected": false
+        }
+      ]
     }
   ]
 }
