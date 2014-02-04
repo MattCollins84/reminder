@@ -26,4 +26,13 @@ $(document).ready(function() {
 
   });
 
+  // free trial button
+  $("#start-btn").click(function() {
+
+    $('#email').val($("#start-email").val());
+
+    document.location.href = "/#signup";
+
+  });
+
 });

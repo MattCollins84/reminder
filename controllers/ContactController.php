@@ -151,8 +151,21 @@
           exit;
         }
 
+        // get the customer
+        $customer = Customer::getById($contact['customer_id']);
+
+        if (!$customer) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Cannot find customer"
+          ));
+          exit;
+        }
+
+        $country = ($customer['country']?$customer['country']:"us");
+
         // send the SMS
-        $sms = SMS::sendSMS($contact['mobile_phone'], $vars['message']);
+        $sms = SMS::sendSMS($contact['mobile_phone'], $vars['message'], $country);
 
         echo json_encode($sms);
 

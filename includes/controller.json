@@ -13,6 +13,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/confirmation/[0-9a-zA-Z]+$",
+        "controllerClass": "CustomerController",
+        "method": "renderConfirmation",
+        "authentication": false 
+    },
+    {
         "regex": "^/customer/create$",
         "controllerClass": "CustomerController",
         "method": "createCustomer",

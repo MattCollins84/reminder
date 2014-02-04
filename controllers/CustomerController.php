@@ -22,7 +22,7 @@
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
       
-      $errors = Validation::required(array("name", "email", "password"), $vars);
+      $errors = Validation::required(array("country", "name", "email", "password"), $vars);
 
       // do we have any errors
       if (count($errors)) {
@@ -54,7 +54,7 @@
         }
 
         // create the customer
-        $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($vars['password']), $vars['contact_phone'], $vars['contact_name'], 200);
+        $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($vars['password']), $vars['country'], $vars['contact_phone'], $vars['contact_name'], 200);
 
         if ($res['success']) {
           $_SESSION['confirmation_email'] = $vars['email'];
@@ -255,6 +255,37 @@
           
 
       } 
+
+    }
+
+    static public function renderConfirmation($rest) {
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data['customer'] = Customer::getById($h[1]);
+
+      // if we failed to get a customer, show fail page
+      if (!$data['customer']) {
+        echo View::renderView("confirmation_fail", $data);
+      }
+
+      // otherwise, mark as verified
+      else {
+
+        $data['customer']['verified'] = true;
+        Customer::updateCustomer($data['customer']);
+        
+        $data['customer'] = Customer::getById($h[1]);
+
+        echo View::renderView("confirmation", $data);
+
+      }
+
+      
 
     }
 

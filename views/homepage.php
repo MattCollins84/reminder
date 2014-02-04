@@ -16,12 +16,11 @@
         </div>
 
         <div class="col-lg-8">
-          <form role="form" class="home-form" action="#" method="post" enctype="plain"> 
+          <form role="form" class="home-form" enctype="plain"> 
             <div class="form-group">
-              <input type="email" name="email" class="form-control input-lg" id="email" placeholder="Your email address" />
+              <input type="email" name="start-email" class="form-control input-lg" id="start-email" placeholder="Your email address" />
             </div>
-            <br>
-            <button type="submit" class="btn btn-lg btn-success">Start Free Trial!</button>
+            <button type="button" id='start-btn' class="btn btn-lg btn-success">Start Free Trial!</button>
             <br>
             <h3>No monthly fee or hidden costs, pay as you go!</h3>
             <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
@@ -219,12 +218,21 @@
         <br>
         <form role="form" id="form-signup" enctype="plain"> 
           <div class="form-group">
+            <label for="name">Country *</label>
+            <select id="country" name="country" class="form-control" >
+              <option value="">- Select Country -</option>
+              <option value="us">United States</option>
+              <option value="uk">United Kingdom</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="name">Company Name *</label>
             <input type="text" name="name" class="form-control" id="name" placeholder="Your company name" />
           </div>
           <div class="form-group">
             <label for="email">Email address *</label>
             <input type="email" name="email" class="form-control" id="email" placeholder="Your email address" />
+            <span class="help-block">We will send a confirmation email to this address.</span>
           </div>
           <div class="form-group">
             <label for="contact_name">Contact name</label>

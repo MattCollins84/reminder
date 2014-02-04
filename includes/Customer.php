@@ -6,7 +6,7 @@ require_once("includes/Validation.php");
 class Customer  {
 
 	// create a customer
-	static public function createCustomer($name, $email, $password, $contact_phone, $contact_name, $tokens=0) {
+	static public function createCustomer($name, $email, $password, $country, $contact_phone, $contact_name, $tokens=0) {
 
 		if (Validation::email($email) === false) {
 			return array(
@@ -28,6 +28,7 @@ class Customer  {
 			"name" => $name,
 			"email" => $email,
 			"password" => $password,
+			"country" => $country,
 			"contact_phone" => $contact_phone,
 			"contact_name" => $contact_name,
 			"available_tokens" => $tokens,
@@ -35,6 +36,27 @@ class Customer  {
 		);
 
 		$res = Cloudant::doCurl("POST", "customers", $customer);
+
+		$response = array(
+			"success" => $res['ok'],
+		);
+
+		if ($response['success']) {
+			$response['id'] = $res['id'];
+		} else {
+			$response['error'] = "Cloudant error";
+		}
+
+		return $response;
+
+	}
+
+	// update a customer
+	static public function updateCustomer($customer) {
+
+		$res =  Cloudant::doCurl("POST", "customers", $customer);
+
+		$res['customer'] = $customer;
 
 		$response = array(
 			"success" => $res['ok'],

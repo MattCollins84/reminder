@@ -4,22 +4,32 @@ require_once("includes/twilio-php/Services/Twilio.php");
 
 Class SMS {
 
-  static public function sendSMS($number, $message) {
+  static public function sendSMS($number, $message, $country="us") {
 
     global $config;
 
-    if (!number) {
+    if (!$number) {
       return array(
         "success" => false,
         "error" => "Invalid number"
       );
     }
 
+    if ($config['in_production'] === false) {
+      $number = $config['test_number'];
+    }
+
+    $from = $config['numbers'][$country];
+
+    if ($config['in_production'] === false) {
+      $from = $config['test_sender'];
+    }
+
     $client = new Services_Twilio($config['twilio']['sid'], $config['twilio']['token']); 
   
     $data = array(
       'To'   => $number,
-      'From' => "+441994342033", 
+      'From' => $from, 
       'Body' => $message  
     );
 

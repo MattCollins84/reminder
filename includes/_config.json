@@ -38,7 +38,13 @@
           "tokens": 8000,
           "selected": false
         }
-      ]
+      ],
+      "numbers": {
+        "gb": "",
+        "us": ""
+      },
+      "test_email": "",
+      "test_number": ""
     }
   ]
 }

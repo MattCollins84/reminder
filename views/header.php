@@ -59,8 +59,11 @@
               <span class="icon-bar"></span>
             </button>
             <? endif;?>
-            <a class="navbar-brand" href="#home"><b>ScheduleSMS</b></a>
+            <a class="navbar-brand" href="/"><b>ScheduleSMS</b></a>
           </div>
+          <form class="navbar-form navbar-right">
+            <a href="/sign-in" class="btn btn-success mt10"><i class="fa fa-sign-in"></i> Sign-in now!</a>
+          </form>
           <? if ($data['hide_menu'] !== true): ?>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
