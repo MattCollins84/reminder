@@ -1,12 +1,13 @@
 <?php
 	
 	require_once("includes/config.php");
+  require_once("includes/Customer.php");
 
   if (!isset($data)) {
     $data = array();
   }
 
-  //$data['user'] = User::getActiveUser();
+  $data['active_customer'] = Customer::getActiveCustomer();
 
   // redirect?
   if ($_SESSION['ref'] && $data['user']) {
@@ -61,9 +62,17 @@
             <? endif;?>
             <a class="navbar-brand" href="/"><b>ScheduleSMS</b></a>
           </div>
+
           <form class="navbar-form navbar-right">
-            <a href="/sign-in" class="btn btn-success mt10"><i class="fa fa-sign-in"></i> Sign-in now!</a>
+            <? if ($data['active_customer']): ?>
+              <a href="/dashboard" class="btn btn-success mt10"><i class="fa fa-user"></i>&nbsp;&nbsp;<?=$data['active_customer']['name'];?>&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-primary"><?=$data['active_customer']['available_tokens'];?> Tokens</span></a>
+              <a href="/sign-out" class="btn btn-warning mt10"><i class="fa fa-sign-out"></i> Sign out</a>
+            <? else: ?>  
+              <a href="/sign-in" class="btn btn-success mt10"><i class="fa fa-sign-in"></i> Sign-in</a>
+            <? endif;?>  
+            
           </form>
+          
           <? if ($data['hide_menu'] !== true): ?>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -71,7 +80,9 @@
               <li><a href="#how" class="smoothScroll">How it works</a></li>
               <li><a href="#usecase" class="smoothScroll">Use cases</a></li>
               <li><a href="#pricing" class="smoothScroll">Pricing</a></li>
-              <li><a href="#signup" class="smoothScroll">Sign-up</a></li>
+              <? if (!$data['active_customer']): ?>
+                <li><a href="#signup" class="smoothScroll">Sign-up</a></li>
+              <? endif; ?>
             </ul>
           </div><!--/.nav-collapse -->
           <? endif;?>

@@ -72,12 +72,23 @@ class Customer  {
 
 	}
 
-	// get a user by social ID
+	// get a customer by email
 	static public function getByEmail($email) {
 
 		$params = array("key" => '"'.$email.'"', "include_docs" => "true");
 
 		$res = Cloudant::doCurl("GET", "customers/_design/find/_view/byEmail", array(), $params);
+
+		return ($res['rows'][0]['doc']?$res['rows'][0]['doc']:false);
+
+	}
+
+	// get a customer by email and password
+	static public function getByEmailPassword($email, $password) {
+
+		$params = array("startkey" => '["'.$email.'","'.$password.'"]', "include_docs" => "true");
+
+		$res = Cloudant::doCurl("GET", "customers/_design/find/_view/byEmailPassword", array(), $params);
 
 		return ($res['rows'][0]['doc']?$res['rows'][0]['doc']:false);
 

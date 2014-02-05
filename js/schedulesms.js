@@ -35,4 +35,31 @@ $(document).ready(function() {
 
   });
 
+  // sign in button
+  $("#signin-btn").click(function() {
+
+    var data = {
+      email : $("#signin-email").val(),
+      password: $("#signin-password").val()
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "/customer/auth",
+      data: data
+    }).done (function(res) {
+
+      res = JSON.parse(res);
+
+      if (res.success) {
+        document.location.href = "/";
+      } else {
+        $('#errors-signin').html(res.error);
+        $("#error-container").removeClass("hidden");
+      }
+
+    });
+
+  });
+
 });

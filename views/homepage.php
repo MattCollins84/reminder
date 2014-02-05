@@ -208,7 +208,7 @@
     </div><!--/ .container -->
   </div><!--/ #features -->
 
-
+  <? if (!$data['active_customer']): ?>
   <section id="signup" name="signup"></section>
   <div id="footerwrap">
     <div class="container">
@@ -274,3 +274,4 @@
 
     </div>
   </div>
+  <? endif; ?>

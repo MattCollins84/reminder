@@ -7,6 +7,18 @@
         "authentication": false 
     },
     {
+        "regex": "^/sign-in$",
+        "controllerClass": "MainController",
+        "method": "renderSignIn",
+        "authentication": false 
+    },
+    {
+        "regex": "^/sign-out$",
+        "controllerClass": "AuthenticationController",
+        "method": "doSignOut",
+        "authentication": false 
+    },
+    {
         "regex": "^/thank-you$",
         "controllerClass": "MainController",
         "method": "renderThankyou",
@@ -16,6 +28,12 @@
         "regex": "^/confirmation/[0-9a-zA-Z]+$",
         "controllerClass": "CustomerController",
         "method": "renderConfirmation",
+        "authentication": false 
+    },
+    {
+        "regex": "^/customer/auth$",
+        "controllerClass": "AuthenticationController",
+        "method": "doSignIn",
         "authentication": false 
     },
     {

@@ -46,6 +46,21 @@
           
     }
 
+    // Render the thankyou
+    static public function renderSignIn($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("signin", $data);
+          
+    }
+
   }
   
   
