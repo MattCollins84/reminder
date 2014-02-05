@@ -7,7 +7,9 @@
     $data = array();
   }
 
-  $data['active_customer'] = Customer::getActiveCustomer();
+  if (!isset($data['active_customer'])) {
+    $data['active_customer'] = Customer::getActiveCustomer();
+  }
 
   // redirect?
   if ($_SESSION['ref'] && $data['user']) {

@@ -35,7 +35,13 @@ $(document).ready(function() {
 
   });
 
-  // sign in button
+  // sign in
+  $('#signin-form input').keyup(function(e) {
+    if (e.keyCode == 13) {
+      $("#signin-btn").click();
+    }
+  });
+
   $("#signin-btn").click(function() {
 
     var data = {

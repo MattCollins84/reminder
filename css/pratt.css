@@ -104,11 +104,15 @@ a:after {
 #intro {
 	padding-top: 50px;
 	border-top: #bdc3c7 solid 5px;
+    border-bottom: #bdc3c7 solid 5px;
 }
 
-#pricing {
+#pricing-wrap {
 	padding-top: 10px;
 	padding-bottom: 10px;
+
+    border-top: #bdc3c7 solid 5px;
+    border-bottom: #bdc3c7 solid 5px;
 }
 
 #pricing .ac a{

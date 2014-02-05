@@ -31,6 +31,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/dashboard$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardHome",
+        "authentication": "authCustomer" 
+    },
+    {
         "regex": "^/customer/auth$",
         "controllerClass": "AuthenticationController",
         "method": "doSignIn",

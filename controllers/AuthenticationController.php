@@ -12,10 +12,9 @@
   Class AuthenticationController extends Controller {
 
     // Make sure the user is logged in
-    static public function isAuthenticated($rest) {
+    static public function authCustomer($rest) {
       
-      return true;
-      return User::getActiveUser();
+      return Customer::getActiveCustomer();
 
     }
 

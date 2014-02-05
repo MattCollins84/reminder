@@ -86,7 +86,7 @@ class Customer  {
 	// get a customer by email and password
 	static public function getByEmailPassword($email, $password) {
 
-		$params = array("startkey" => '["'.$email.'","'.$password.'"]', "include_docs" => "true");
+		$params = array("startkey" => '["'.$email.'","'.$password.'"]', "endkey" => '["'.$email.'","'.$password.'z"]', "include_docs" => "true");
 
 		$res = Cloudant::doCurl("GET", "customers/_design/find/_view/byEmailPassword", array(), $params);
 

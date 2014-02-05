@@ -13,32 +13,60 @@
         "custom": 80,
         "complimentary": 500
       },
-      "plans": [
-        {
-          "name": "Economy",
-          "price": 5,
-          "tokens": 500,
-          "selected": false
-        },
-        {
-          "name": "Standard",
-          "price": 10,
-          "tokens": 1000,
-          "selected": false
-        },
-        {
-          "name": "Premium",
-          "price": 20,
-          "tokens": 2500,
-          "selected": true
-        },
-        {
-          "name": "Bumper",
-          "price": 50,
-          "tokens": 8000,
-          "selected": false
-        }
-      ],
+      "plans": {
+        "uk": [  
+          {
+            "name": "Economy",
+            "price": 5,
+            "tokens": 500,
+            "selected": false
+          },
+          {
+            "name": "Standard",
+            "price": 10,
+            "tokens": 1000,
+            "selected": false
+          },
+          {
+            "name": "Premium",
+            "price": 20,
+            "tokens": 2500,
+            "selected": true
+          },
+          {
+            "name": "Bumper",
+            "price": 50,
+            "tokens": 8000,
+            "selected": false
+          }
+        ],
+        "us": [  
+          {
+            "name": "Economy",
+            "price": 7,
+            "tokens": 500,
+            "selected": false
+          },
+          {
+            "name": "Standard",
+            "price": 14,
+            "tokens": 1000,
+            "selected": false
+          },
+          {
+            "name": "Premium",
+            "price": 28,
+            "tokens": 2500,
+            "selected": true
+          },
+          {
+            "name": "Bumper",
+            "price": 70,
+            "tokens": 8000,
+            "selected": false
+          }
+        ]  
+      },
       "numbers": {
         "gb": "",
         "us": ""

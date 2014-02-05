@@ -12,7 +12,7 @@
       </div>
 
       <div class="col-lg-8">
-        <form role="form" class="signin-form" enctype="plain"> 
+        <form role="form" id="signin-form" enctype="plain"> 
           <div class="form-group">
             <input type="email" name="signin-email" class="form-control input-lg" id="signin-email" placeholder="Your email address" />
           </div>

@@ -8,7 +8,8 @@
           <h3>Turn customer &amp; business intelligence into high quality business leads.</h3>
           <br>
         </div>
-        
+
+        <? if (!$data['active_customer']): ?>
         <div class="col-lg-2">
           <h5 class="mt40">Amazing Results</h5>
           <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
@@ -33,6 +34,7 @@
           <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
           <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
         </div>
+        <? endif; ?>
 
       </div>
     </div> <!--/ .container -->
@@ -104,6 +106,15 @@
                   <li><i class="fa fa-bullhorn mr20"></i> Special offers &amp; promotions</li>
                 </ul>
               </div>
+              <div class="item">
+                <h1>Schools</h1>
+                <ul class="carousel-list">
+                  <li><i class="fa fa-calendar-o mr20"></i> Appointment reminders for parents &amp; students</li>
+                  <li><i class="fa fa-calendar-o mr20"></i> Sending important notifications direct to parents</li>
+                  <li><i class="fa fa-calendar-o mr20"></i> Sending report cards direct to parents</li>
+                  <li><i class="fa fa-bullhorn mr20"></i> Special event promotion </li>
+                </ul>
+              </div>
             </div>
 
             <!-- Indicators -->
@@ -111,6 +122,7 @@
               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             </ol>
 
           </div>
@@ -124,7 +136,7 @@
 
   <section id="pricing" name="pricing"></section>
   <!-- PRICING WRAP -->
-  <div id="pricing">
+  <div id="pricing-wrap">
     <div class="container">
       <div class="row">
         <h1 class="centered mt20">Pricing &amp; Tokens</h1>
@@ -147,35 +159,79 @@
 
         </div>
 
-        
-
         <div class="row flat">
           
-          <? foreach ($data['plans'] as $key => $plan): ?>
+          <ul class="nav nav-tabs" id="price-tabs">
+            <li class="active"><a href="#pricing-us" data-toggle="tab">US Pricing</a></li>
+            <li><a href="#pricing-uk" data-toggle="tab">UK Pricing</a></li>
+          </ul>
+          
+          <div class="tab-content pt20 pb20">
+            
+            <div class="tab-pane active" id="pricing-us">
+              <? foreach ($data['plans']['us'] as $key => $plan): ?>
+              
+                <div class="col-lg-3 col-md-3 col-xs-6">
+                  <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
+                    <li class="plan-name">
+                        <?=$plan['name'];?>
+                    </li>
+                    <li class="plan-price">
+                        <strong>&dollar;<?=$plan['price'];?></strong>
+                    </li>
+                    <li>
+                        <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
+                    </li>
+                    <li>
+                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['custom']);?></strong> custom messages
+                    </li>
+                    <li>
+                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
+                    </li>
+                  </ul>
+                </div>
+              
+              <? endforeach; ?>
+            </div>
 
-          <div class="col-lg-3 col-md-3 col-xs-6">
-            <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
-              <li class="plan-name">
-                  <?=$plan['name'];?>
-              </li>
-              <li class="plan-price">
-                  <strong>&pound;<?=$plan['price'];?></strong>
-              </li>
-              <li>
-                  <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
-              </li>
-              <li>
-                  Up to <strong><?=floor($plan['tokens'] / $data['tokens']['custom']);?></strong> custom messages
-              </li>
-              <li>
-                  Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
-              </li>
-            </ul>
+            <div class="tab-pane" id="pricing-uk">
+              <? foreach ($data['plans']['uk'] as $key => $plan): ?>
+              
+                <div class="col-lg-3 col-md-3 col-xs-6">
+                  <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
+                    <li class="plan-name">
+                        <?=$plan['name'];?>
+                    </li>
+                    <li class="plan-price">
+                        <strong>&pound;<?=$plan['price'];?></strong>
+                    </li>
+                    <li>
+                        <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
+                    </li>
+                    <li>
+                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['custom']);?></strong> custom messages
+                    </li>
+                    <li>
+                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
+                    </li>
+                  </ul>
+                </div>
+              
+              <? endforeach; ?>
+            </div>
+
           </div>
-
-          <? endforeach; ?>
            
         </div>
+
+        <script>
+
+          $('#price-tabs a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+          })
+
+        </script>
 
         <div class="col-lg-6">
           

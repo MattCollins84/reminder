@@ -10,6 +10,10 @@
   margin-bottom: 20px!important;
 }
 
+.mb40 {
+  margin-bottom: 40px!important;
+}
+
 .mb60 {
   margin-bottom: 60px!important;
 }
@@ -48,6 +52,14 @@
 
 .pad0 {
   padding: 0!important;
+}
+
+.pt20 {
+  padding-top: 20px;ß
+}
+
+.pb20 {
+  padding-bottom: 20px;ß
 }
 
 .br0 {
@@ -100,7 +112,7 @@
 
 .home-form {
   background: #fa9043;
-  height: 320px;
+  min-  height: 320px;
   padding: 20px;
   -webkit-border-top-left-radius: 20px;
   -webkit-border-top-right-radius: 20px;
@@ -123,3 +135,22 @@ h4.strapline {
   color: whitesmoke;
 }
 
+.overflow {
+  overflow: auto;
+}
+
+#price-tabs a {
+  color: red!important;
+}
+
+.dash-nav {
+
+}
+
+.dash-nav a {
+  color: #333;
+}
+
+.dash-nav a:hover  {
+  color: #fa9043;
+}

@@ -232,9 +232,9 @@
        * @return
        *   n/a
        */
-      public function checkAuthentication()   {  
+      public function checkAuthentication($method)   {  
         
-        if (AuthenticationController::isAuthenticated() === false) {
+        if (call_user_func("AuthenticationController::".$method) === false) {
           $_SESSION['ref'] = $_SERVER['REQUEST_URI'];
           header("Location: /sign-in");
           exit;
@@ -474,7 +474,7 @@
             
             //do we need to check authentication?
             if ($controller->authentication) {
-              $this->checkAuthentication();
+              $this->checkAuthentication($controller->authentication);
             }
             
             // include the correct class

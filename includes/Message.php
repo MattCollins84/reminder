@@ -18,6 +18,7 @@ class Message  {
     $message = array(
       "contact_id" => $contact['_id'],
       "customer_id" => $contact['customer_id'],
+      "contact_name" => $contact['name'],
       "message" => $message,
       "number" => $contact['mobile_phone'],
       "date" => $date,
@@ -95,6 +96,31 @@ class Message  {
     $params = array("key" => '"'.$contact_id.'"', "include_docs" => "true");
 
     $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byContactId", array(), $params);
+
+    $arr = array();
+    foreach ($res['rows'] as $row) {
+
+      $arr[] = $row['doc'];
+
+    }
+
+    return $arr;
+
+  }
+
+  // get by contact id
+  static public function getMessageByCustomerDate($customer_id, $from, $to="") {
+
+    if (!$to) {
+      $to = $from;
+    }
+
+    $from = explode("-", $from);
+    $to = explode("-", $to);
+
+    $params = array("startkey" => '["'.$customer_id.'",'.$from[0].','.$from[1].','.$from[2].']', "endkey" => '["'.$customer_id.'",'.$to[0].','.$to[1].','.$to[2].']', "include_docs" => "true");
+
+    $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byCustomerDate", array(), $params);
 
     $arr = array();
     foreach ($res['rows'] as $row) {
