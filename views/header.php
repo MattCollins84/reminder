@@ -67,7 +67,7 @@
 
           <form class="navbar-form navbar-right">
             <? if ($data['active_customer']): ?>
-              <a href="/dashboard" class="btn btn-success mt10"><i class="fa fa-user"></i>&nbsp;&nbsp;<?=$data['active_customer']['name'];?>&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-primary"><?=$data['active_customer']['available_tokens'];?> Tokens</span></a>
+              <a href="/dashboard" class="btn btn-success mt10"><i class="fa fa-user"></i>&nbsp;&nbsp;<strong><?=$data['active_customer']['name'];?> Dashboard</strong> &nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-primary"><?=$data['active_customer']['available_tokens'];?> Tokens</span></a>
               <a href="/sign-out" class="btn btn-warning mt10"><i class="fa fa-sign-out"></i> Sign out</a>
             <? else: ?>  
               <a href="/sign-in" class="btn btn-success mt10"><i class="fa fa-sign-in"></i> Sign-in</a>

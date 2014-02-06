@@ -68,6 +68,89 @@
         
     }
 
+    // update a customer
+    static public function updateCustomer($rest) {
+      
+      $data = array();
+      
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+      
+      $errors = Validation::required(array("name", "email"), $vars);
+
+      // do we have any errors
+      if (count($errors)) {
+
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Missing the following fields: ".implode($errors, ", ")
+        ));
+        exit;
+
+      }
+
+      else {
+
+        if (Validation::email($vars['email']) === false) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Invalid email address"
+          ));
+          exit;
+        }
+
+        // are we changing passwords?
+        if ($vars['password'] != "" && strlen($vars['password']) < 8) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "New password is too short"
+          ));
+          exit;
+        }
+
+        if ($vars['password'] != "" && $vars['password'] != $vars['password2']) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "New passwords do not match"
+          ));
+          exit;
+        }
+
+        $customer = Customer::getActiveCustomer();
+
+        $customer['name'] = $vars['name'];
+        $customer['email'] = $vars['email'];
+        $customer['contact_phone'] = $vars['contact_phone'];
+        $customer['contact_name'] = $vars['contact_name'];
+
+        if ($vars['password']) {
+          $customer['password'] = sha1($vars['password']);
+        }
+
+        // update
+        $update = Customer::updateCustomer($customer);
+        
+        if ($update['success']) {
+          // make sure latest revision is in session
+          $_SESSION['customer'] = Customer::getById($customer['_id']);
+          $_SESSION['account_changed'] = true;
+          echo json_encode(array(
+            "success" => true
+          ));
+          exit;
+        }
+        
+        else {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Unable to update customer"
+          ));
+          exit;
+        }
+      }
+        
+    }
+
     // get a customer by id
     static public function getCustomerById($rest) {
 

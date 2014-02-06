@@ -37,6 +37,12 @@
         "authentication": "authCustomer" 
     },
     {
+        "regex": "^/dashboard/account$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardAccount",
+        "authentication": "authCustomer" 
+    },
+    {
         "regex": "^/customer/auth$",
         "controllerClass": "AuthenticationController",
         "method": "doSignIn",
@@ -46,6 +52,12 @@
         "regex": "^/customer/create$",
         "controllerClass": "CustomerController",
         "method": "createCustomer",
+        "authentication": false 
+    },
+    {
+        "regex": "^/customer/update$",
+        "controllerClass": "CustomerController",
+        "method": "updateCustomer",
         "authentication": false 
     },
     {

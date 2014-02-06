@@ -50,6 +50,24 @@
           
     }
 
+    // Render the account page
+    static public function renderDashboardAccount($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+      $data['active_customer'] = Customer::getActiveCustomer();
+      $data['show_success'] = ($_SESSION['account_changed'] === true?true:false);
+      $_SESSION['account_changed'] = false;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("dashboard_account", $data);
+          
+    }
+
   }
 
 ?>

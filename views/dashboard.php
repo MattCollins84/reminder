@@ -4,6 +4,7 @@
       
       <div class="col-lg-12 centered mb60">
         <h1>Welcome back, <?=$data['active_customer']['name'];?>!</b></h1>
+        <h3>This is your personalised dashboard, with everything you need to manage your account.</h3>
       </div>
 
     </div>
@@ -14,12 +15,7 @@
   <div class="row">
     
     <div class="col-lg-3">
-      <ul class="list-group dash-nav">
-        <li class="list-group-item"><a href='#'><i class="fa fa-cog"></i>&nbsp;&nbsp;Account Settings</a></li>
-        <li class="list-group-item"><a href='#'><i class="fa fa-phone"></i>&nbsp;&nbsp;Tokens</a></li>
-        <li class="list-group-item"><a href='#'><i class="fa fa-users"></i>&nbsp;&nbsp;Contacts</a></li>
-        <li class="list-group-item"><a href='#'><i class="fa fa-calendar"></i>&nbsp;&nbsp;Schedule</a></li>
-      </ul>
+      <? require_once("views/dashboard_menu.php"); ?>
     </div> 
 
     <div class="col-lg-4">
@@ -58,7 +54,7 @@
     </div>
 
     <div class="col-lg-9">
-      <? print_r($data['messages_today']); ?>
+      <? //print_r($data['messages_today']); ?>
     </div> 
 
   </div>

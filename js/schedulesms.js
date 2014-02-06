@@ -68,4 +68,34 @@ $(document).ready(function() {
 
   });
 
+  // account settings
+  $('#acount-settings').submit(function(e) {
+    
+    e.preventDefault();
+
+    $.post("/customer/update", $(this).serialize()).done(function(data) {
+      
+      $("#error-container").addClass("hidden");
+      $("#success-container").addClass("hidden");
+
+      try {
+        data = JSON.parse(data);
+      } catch(e) {
+        alert("There was a problem submitting the form, please try again later");
+      }
+
+      if (data.success === false) {
+        $("#errors-signup").html(data.error+"<br />Please correct these errors and try again.");
+        $("#error-container").removeClass("hidden");
+      }
+
+      else {
+        document.location.href="/dashboard/account";
+      }
+
+    });
+
+  });
+
+
 });
