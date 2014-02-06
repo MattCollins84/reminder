@@ -18,7 +18,7 @@
   <li class="list-group-item contact-panel hidden" data-number="<?=preg_replace('/[^0-9]/', '', $contact['mobile_phone']);?>" data-name="<?=strtolower($contact['name']);?>">
     <div>
       <a class="pull-right contact-btn" id="edit<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" data-toggle="tooltip" title="Edit this contact"><i class="fa fa-edit"></i></a>
-      <a class="pull-right contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" data-toggle="tooltip" title="Schedule message for this contact"><i class="fa fa-calendar"></i></a>
+      <a class="pull-right contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/schedule/<?=$contact['_id'];?>" data-toggle="tooltip" title="Schedule message for this contact"><i class="fa fa-calendar"></i></a>
       <h3 class="panel-title"><?=$contact['name'];?></h3>
     </div>
     <div>

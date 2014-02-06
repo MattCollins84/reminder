@@ -55,6 +55,12 @@
         "authentication": "authCustomer" 
     },
     {
+        "regex": "^/dashboard/schedule/[a-zA-z0-9]+$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardScheduleContact",
+        "authentication": "authCustomer" 
+    },
+    {
         "regex": "^/customer/auth$",
         "controllerClass": "AuthenticationController",
         "method": "doSignIn",

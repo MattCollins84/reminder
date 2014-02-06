@@ -112,6 +112,27 @@
           
     }
 
+    // Render the contacts page
+    static public function renderDashboardScheduleContact($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+      $data['active_customer'] = Customer::getActiveCustomer();
+      $data['show_success'] = ($_SESSION['contact_scheduled'] === true?true:false);
+      $_SESSION['contact_scheduled'] = false;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data['contact'] = Contact::getById($h[2]);
+      $data['contacts'] = Contact::getContactsByCustomer($data['active_customer']['_id']);
+
+      echo View::renderView("dashboard_schedule_contact", $data);
+          
+    }
+
   }
 
 ?>
