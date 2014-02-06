@@ -1,9 +1,6 @@
 * Forgotten password email
 * dashboard homepage
-* Account settings
-* add contact
 * schedule message
-* change customer details
 * view message calendar
 * buy tokens
 * message cron

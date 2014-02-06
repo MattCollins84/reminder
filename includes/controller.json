@@ -43,6 +43,18 @@
         "authentication": "authCustomer" 
     },
     {
+        "regex": "^/dashboard/contacts$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardContacts",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/contacts/[a-zA-z0-9]+$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardEditContact",
+        "authentication": "authCustomer" 
+    },
+    {
         "regex": "^/customer/auth$",
         "controllerClass": "AuthenticationController",
         "method": "doSignIn",
@@ -88,6 +100,12 @@
         "regex": "^/contact/create$",
         "controllerClass": "ContactController",
         "method": "createContact",
+        "authentication": false 
+    },
+    {
+        "regex": "^/contact/update$",
+        "controllerClass": "ContactController",
+        "method": "updateContact",
         "authentication": false 
     },
     {

@@ -1,5 +1,5 @@
 <?
-  
+
   /*
    *  MainController
    */
@@ -10,14 +10,13 @@
   require_once("includes/Contact.php");
   require_once("includes/SMS.php");
   require_once("controllers/Controller.php");
-
   
   Class ContactController extends Controller {
 
 
     // create a contact
     static public function createContact($rest) {
-      
+
       $data = array();
       
       $h = $rest->getHierarchy();    
@@ -38,9 +37,69 @@
       else {
 
         // create the contact
-        $res = Contact::createContact($vars['customer_id'], $vars['name'], $vars['mobile_phone'], $vars['email']);
-
+        $res = Contact::createContact($vars['customer_id'], $vars['name'], $vars['mobile_phone'], $vars['email'], $vars['notes']);
+        $_SESSION['contact_created'] = true;
         echo json_encode($res);
+
+      }
+        
+    }
+
+    // update a contact
+    static public function updateContact($rest) {
+
+      $data = array();
+      
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+      
+      $errors = Validation::required(array("contact_id", "name", "mobile_phone"), $vars);
+
+      // do we have any errors
+      if (count($errors)) {
+
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Missing the following fields: ".implode($errors, ", ")
+        ));
+
+      }
+
+      else {
+
+        if ($vars['email'] != "" && Validation::email($vars['email']) === false) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Invalid email address"
+          ));
+          exit;
+        }
+
+        $contact = Contact::getById($vars['contact_id']);
+
+        $contact['name'] = $vars['name'];
+        $contact['mobile_phone'] = $vars['mobile_phone'];
+        $contact['email'] = $vars['email'];
+        $contact['notes'] = $vars['notes'];
+
+        $update = Contact::updateContact($contact);
+
+        if ($update['success']) {
+          $_SESSION['contact_edited'] = true;
+          echo json_encode(array(
+            "success" => true
+          ));
+          exit;
+        }
+
+        else {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Unable to update contact"
+          ));
+          exit;
+        }
+          
 
       }
         

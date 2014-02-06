@@ -7,7 +7,7 @@ require_once("includes/Customer.php");
 class Contact  {
 
   // create a contact
-  static public function createContact($customer_id, $name, $mobile_phone, $email="") {
+  static public function createContact($customer_id, $name, $mobile_phone, $email="", $notes="") {
 
     if ($email != "" && Validation::email($email) === false) {
       return array(
@@ -29,10 +29,32 @@ class Contact  {
       "customer_id" => $customer_id,
       "name" => $name,
       "mobile_phone" => $mobile_phone,
-      "email" => $email
+      "email" => $email,
+      "notes" => $notes
     );
 
     $res = Cloudant::doCurl("POST", "contacts", $contact);
+
+    $response = array(
+      "success" => $res['ok'],
+    );
+
+    if ($response['success']) {
+      $response['id'] = $res['id'];
+    } else {
+      $response['error'] = "Cloudant error";
+    }
+
+    return $response;
+
+  }
+
+  // update a customer
+  static public function updateContact($contact) {
+
+    $res =  Cloudant::doCurl("POST", "contacts", $contact);
+
+    $res['contact'] = $contact;
 
     $response = array(
       "success" => $res['ok'],

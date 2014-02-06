@@ -42,6 +42,10 @@
   margin-right: 20px!important;
 }
 
+.mr10 {
+  margin-right: 10px!important;
+}
+
 .ml20 {
   margin-left: 20px!important;
 }
@@ -157,4 +161,22 @@ h4.strapline {
 
 .dash-nav a:hover  {
   color: #fa9043;
+}
+
+.contact-panel p:first {
+  margin: 5px 0 0 0;
+}
+
+.contact-panel p {
+  margin: 0;
+}
+
+.panel-heading {
+  background: #728796!important;
+  color: white!important;
+}
+
+.panel-heading h3 {
+  color: white!important;
+  font-weight: bold;
 }

@@ -34,6 +34,8 @@
           <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
           <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
         </div>
+        <? else: ?>
+          <a href="/dashboard" class="btn btn-lg btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>              
         <? endif; ?>
 
       </div>

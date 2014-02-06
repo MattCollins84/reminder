@@ -44,8 +44,11 @@
     
     <script src="/js/jquery.min.js"></script>
     <script src="/js/smoothscroll.js"></script>
-    <script src="/js/schedulesms.js"></script>
+    <? if ($data['phone_js']): ?>
+    <script src="/js/phone.js"></script>
+    <? endif; ?>
     
+    <script src="/js/schedulesms.js"></script>
 
   </head>
 
