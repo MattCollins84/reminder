@@ -130,7 +130,7 @@ $(document).ready(function() {
       }
 
       else {
-        document.location.href="/dashboard/contacts";
+        document.location.href="/dashboard/contacts/"+data.id;
       }
 
     });

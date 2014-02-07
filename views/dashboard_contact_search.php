@@ -30,6 +30,19 @@
   </li>
 
 <? endforeach; ?>
+  <li class="list-group-item contact-panel hidden" id="contact-search-add">
+    <div>
+      <a class="pull-right contact-btn" id="edit<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" data-toggle="tooltip" title="Edit this contact"><i class="fa fa-edit"></i></a>
+      <a class="pull-right contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/schedule/<?=$contact['_id'];?>" data-toggle="tooltip" title="Schedule message for this contact"><i class="fa fa-calendar"></i></a>
+      <h3 class="panel-title"><?=$contact['name'];?></h3>
+    </div>
+    <div>
+      <p><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;<?=$contact['mobile_phone'];?></p>
+      <? if ($contact['email']): ?>
+        <p><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;&nbsp;<?=$contact['email'];?></p>
+      <? endif; ?>
+    </div>
+  </li>
 </ul>
 
 </div>

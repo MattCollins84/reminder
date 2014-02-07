@@ -16,6 +16,8 @@
     
     <div class="col-lg-3">
       <? require_once("views/dashboard_menu.php"); ?>
+      
+      <a href="/dashboard/schedule/<?=$data['contact']['_id'];?>" class="btn btn-success btn-lg btn-block mb20"><i class="fa fa-calendar-o"></i> Schedule a message</a>
 
       <? require_once("views/dashboard_contact_search.php"); ?>
 

@@ -23,7 +23,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Schedule <?=$data['contact']['name'];?></h3>
+          <h3 class="panel-title">Schedule a message for <?=$data['contact']['name'];?></h3>
         </div>
         <div class="panel-body">
           <form role="form" id="schedule-contact">
