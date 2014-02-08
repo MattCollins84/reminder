@@ -17,8 +17,8 @@
 
   <li class="list-group-item contact-panel hidden" data-number="<?=preg_replace('/[^0-9]/', '', $contact['mobile_phone']);?>" data-name="<?=strtolower($contact['name']);?>">
     <div>
-      <a class="pull-right contact-btn" id="edit<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" data-toggle="tooltip" title="Manage this contact"><i class="fa fa-user"></i></a>
-      <a class="pull-right contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/schedule/<?=$contact['_id'];?>" data-toggle="tooltip" title="Schedule message for this contact"><i class="fa fa-calendar"></i></a>
+      <a class="pull-right btn btn-success contact-btn" id="edit<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" data-toggle="tooltip" title="Manage this contact"><i class="fa fa-user"> </i> Manage this user</a>
+      <a class="pull-right btn btn-success contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/schedule/<?=$contact['_id'];?>" data-toggle="tooltip" title="Schedule message for this contact"><i class="fa fa-calendar"> </i> Schedule a message</a>
       <h3 class="panel-title"><?=$contact['name'];?></h3>
     </div>
     <div>
@@ -30,8 +30,9 @@
   </li>
 
 <? endforeach; ?>
-  <li class="list-group-item contact-panel hidden centered" id="contact-search-add">
+  <li class="list-group-item contact-panel hidden" id="contact-search-add">
     <div>
+      <p>Not found what you are looking for?</p>
       <a class="btn btn-success" href="/dashboard/contacts"><i class="fa fa-users"> </i> Create a new contact</a>
     </div>
   </li>

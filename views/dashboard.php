@@ -24,7 +24,8 @@
           <h3 class="panel-title">Account ID</h3>
         </div>
         <div class="panel-body">
-          <?=$data['active_customer']['_id'];?>
+          <p><span class="label label-info"><?=$data['active_customer']['_id'];?></span></p>
+          <p>This ID is your unique ID, do not share this with anyone.</p>
         </div>
       </div>
     </div> 
@@ -35,7 +36,7 @@
           <h3 class="panel-title">Available Tokens</h3>
         </div>
         <div class="panel-body">
-          <p><strong><?=$data['active_customer']['available_tokens'];?></strong></p>
+          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> Tokens available.</p>
           <p>This is enough for <strong><?=$data['token_fixed'];?></strong> fixed messages, or <strong><?=$data['token_custom'];?></strong> custom messages.</p>
           <div class="progress">
             <div class="progress-bar <?=$data['token_class'];?>" role="progressbar" aria-valuenow="<?=$data['token_bar'];?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$data['token_bar'];?>%;"></div>          </div>
@@ -50,11 +51,16 @@
   <div class="row">
     
     <div class="col-lg-3">
-      
+      <? if (count($data['contacts']) == 0): ?>
+        <div class="alert alert-info">
+          <p><i class="fa fa-info-circle"> </i> You have no contacts.</p>
+          <p><a class="btn btn-success" href='/dashboard/contacts'>Create a contact</a></p>
+        </div>
+      <? endif; ?>
     </div>
 
     <div class="col-lg-9">
-      <? //print_r($data['messages_today']); ?>
+      <? require_once("views/dashboard_contact_search_large.php") ?>
     </div> 
 
   </div>

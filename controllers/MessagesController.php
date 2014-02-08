@@ -19,12 +19,15 @@
     // create a contact
     static public function createMessage($rest) {
       
+      global $config;
+
       $data = array();
-      
+      $data['tokens'] = $config['tokens'];
+
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
       
-      $errors = Validation::required(array("contact_id", "message", "date", "tokens"), $vars);
+      $errors = Validation::required(array("contact_id", "message", "date", "country", "type"), $vars);
 
       // do we have any errors
       if (count($errors)) {
@@ -72,11 +75,22 @@
         }
 
         // create the message
-        $message = Message::createMessage($contact, $vars['message'], $vars['date'], $vars['tokens']);
+        $message = Message::createMessage($contact, $vars['message'], $vars['date'], $data['tokens'][$vars['type']], $vars['country'], $vars['type']);
 
         // if we're successful, remove these tokens
-        if ($message['success'] && $vars['tokens'] && is_numeric($vars['tokens'])) {
-          Customer::removeTokens($customer, $vars['tokens']);
+        if ($message['success']) {
+          Customer::removeTokens($customer, $data['tokens'][$vars['type']]);
+          $_SESSION['customer'] = Customer::getById($customer['_id']);
+          $_SESSION['message_scheduled'] = true;
+        }
+
+        // create a template?
+        if ($vars['template'] == "true") {
+
+          $storeDate = ($vars['template_date']!="false"?$vars['template_date']:false);
+
+          $template = Message::createTemplate($customer['_id'], $vars['template_name'], $vars['message'], $storeDate);
+
         }
 
         echo json_encode($message);

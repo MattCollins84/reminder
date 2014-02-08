@@ -58,7 +58,7 @@ $(document).ready(function() {
       res = JSON.parse(res);
 
       if (res.success) {
-        document.location.href = "/";
+        document.location.href = "/dashboard";
       } else {
         $('#errors-signin').html(res.error);
         $("#error-container").removeClass("hidden");
@@ -149,6 +149,8 @@ $(document).ready(function() {
       $(items[i]).removeClass("hidden");
     });
 
+    $('#contact-search-add').removeClass("hidden");
+
   });
 
   // edit contact
@@ -186,5 +188,201 @@ $(document).ready(function() {
 
   });
 
+  // fixed message setup
+  $('a.fixed-btn').click(function(e) {
+
+    $(this).addClass("btn-success");
+    $(this).siblings().removeClass("btn-success");
+
+    var target = $(this).attr("data-target");
+    var target = $(target);
+    var value = $(this).attr("data-value");
+
+    
+    target.val(value);
+    target.change();
+    target.parent(".fixed-section").next().removeClass("hidden");
+
+    generateFixedPreview();
+
+  });
+
+  $('#fixed-variation').change(function(e) {
+    $('#variation-placeholder').text(this.value);
+  });
+
+  $('#fixed-variation-time').keyup(function(e) {
+    generateFixedPreview();
+  });
+
+  $('.datepicker').change(function(e) {
+    generateFixedPreview();
+    $(this).parent().parent().parent().next().removeClass("hidden");
+  });
+
+  var generateFixedPreview = function() {
+
+    var time = ($('#fixed-variation-time').val()?" @ "+$('#fixed-variation-time').val():"");
+
+    var preview = "This is a "+$('#fixed-type').val()+" of your "+$('#fixed-variation').val()+" with "+$('#company_name').val()+" on "+$('#fixed-variation-date').val()+time+". Phone: "+$('#company_contact').val();
+    $('#fixed-preview').text(preview);
+
+    return preview;
+
+  }
+
+  // create fixed message
+  $('#fixed-form').submit(function(e) {
+
+    e.preventDefault();
+
+    var date = $("#fixed-message-date").val().split("/");
+
+    switch ($('#country').val()) {
+
+      case "gb":
+        date = date[2]+"-"+date[0]+"-"+date[1];
+        break;
+
+      case "us":
+        date = date[2]+"-"+date[1]+"-"+date[0];
+        break;
+
+    }
+
+    var data = {
+      contact_id: $('#contact_id').val(),
+      message: generateFixedPreview(),
+      date: date,
+      country: $('#country').val(),
+      type: "fixed"
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "/message/create",
+      data: data
+    }).done (function(res) {
+
+      res = JSON.parse(res);
+
+      if (res.success) {
+        document.location.href = "/dashboard/schedule/"+data.contact_id;
+      } else {
+        $('#fixed-error').html(res.error);
+        $("#fixed-failure").removeClass("hidden");
+      }
+
+    });
+
+  });
+
+  // custom message
+  $('#custom-message').keyup(function(e) {
+
+    var max = 160;
+
+    var remaining = max - this.value.length;
+
+    $('#message-count').text(remaining);
+
+    if (remaining < 0) {
+      $('#message-count').css("color", "red");
+      $('#custom-btn').attr("disabled", true);
+    } else {
+      $('#message-count').css("color", "black");
+      $('#custom-btn').attr("disabled", false);
+    }
+
+  });
+
+  $('#custom-form').submit(function(e) {
+
+    e.preventDefault();
+
+    var date = $("#custom-message-date").val().split("/");
+
+    switch ($('#country').val()) {
+
+      case "gb":
+        date = date[2]+"-"+date[0]+"-"+date[1];
+        break;
+
+      case "us":
+        date = date[2]+"-"+date[1]+"-"+date[0];
+        break;
+
+    }
+
+    if ($("#custom-message-date").val().split("/").length != 3) {
+      date = "";
+    }
+
+    var data = {
+      contact_id: $('#contact_id').val(),
+      message: $('#custom-message').val(),
+      date: date,
+      country: $('#country').val(),
+      type: "custom",
+      template: ($('#custom-save').val()=="yes"?true:false),
+      template_name: $('#custom-template-name').val(),
+      template_date: ($('#custom-template-date').is(":checked")?$("#custom-message-date").val():false)
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "/message/create",
+      data: data
+    }).done (function(res) {
+
+      res = JSON.parse(res);
+
+      if (res.success) {
+        document.location.href = "/dashboard/schedule/"+data.contact_id;
+      } else {
+        $('#custom-error').html(res.error);
+        $("#custom-failure").removeClass("hidden");
+      }
+
+    });
+
+  });
+
+  // save as template?
+  $('a.custom-save').click(function(e) {
+
+    $(this).addClass("btn-info");
+    $(this).siblings().removeClass("btn-info");
+
+    var target = $(this).attr("data-target");
+    var target = $(target);
+    var value = $(this).attr("data-value");
+
+    
+    target.val(value);
+    target.change();
+
+    if (target.val() == "yes") {
+      $('#template-details').removeClass("hidden");
+    }
+
+    else {
+      $('#template-details').addClass("hidden");
+    }
+
+  });
+
+  // restore template
+  $('.btn-template').click(function(e) {
+
+    var message = $(this).attr("data-message");
+    var date = $(this).attr("data-date");
+
+    $('#custom-message').val(message);
+    $("#custom-message-date").val(date);
+
+    $('#schedule-tabs a[href="#schedule-custom"]').tab('show')
+
+  })
 
 });

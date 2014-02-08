@@ -131,6 +131,10 @@ h4.strapline {
   font-weight: 400;
 }
 
+.grey {
+  color: whitesmoke!important;
+}
+
 .white {
   color: white!important;
 }
@@ -179,4 +183,13 @@ h4.strapline {
 .panel-heading h3 {
   color: white!important;
   font-weight: bold;
+}
+
+.input-small {
+  width: 200px;
+}
+
+.fixed-section {
+  border-bottom: 1px solid whitesmoke;
+  padding: 10px 0 10px 0;
 }

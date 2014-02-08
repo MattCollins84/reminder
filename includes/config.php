@@ -1,5 +1,6 @@
 <?PHP
 session_start();
+date_default_timezone_set("UTC");
 global $config;
 $json = json_decode(file_get_contents('includes/config.json'), true);
 $hostname = $_SERVER['HTTP_HOST'];

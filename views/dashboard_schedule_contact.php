@@ -26,39 +26,188 @@
           <h3 class="panel-title">Schedule a message for <?=$data['contact']['name'];?></h3>
         </div>
         <div class="panel-body">
-          <form role="form" id="schedule-contact">
-            <div class="alert alert-success mt20 <?=($data['show_success']?"":"hidden");?>" id="success-container">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h4>Message scheduled successfully.</h4>
+            
+          <div class="alert alert-success mt20 <?=($data['show_success']?"":"hidden");?>" id="success-container">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4>Message scheduled successfully.</h4>
+          </div>
+
+          <p>Set up a message for this contact.</p>
+          
+          <ul class="nav nav-tabs" id="schedule-tabs">
+            <li class="active"><a href="#schedule-fixed" data-toggle="tab"><strong><i class="fa fa-bookmark"> </i> Fixed Messages</strong></a></li>
+            <li><a href="#schedule-custom" data-toggle="tab"><strong><i class="fa fa-bookmark-o"> </i> Custom Messages</strong></a></li>
+            <li><a href="#schedule-templates" data-toggle="tab"><strong><i class="fa fa-archive"> </i> Template Messages</strong></a></li>
+          </ul>
+
+          <div class="tab-content pt20 pb20">
+          
+            <div class="tab-pane active" id="schedule-fixed">
+              
+              <form role="form" id="fixed-form">
+                
+                <p>Fixed messages are used for confirmations or reminders for appointments or meetings, and cost <strong><?=$data['tokens']['fixed'];?></strong> tokens.</p>
+                
+                <? if (!$data['can_created_fixed']): ?>
+                  <div class="alert alert-danger mt20" >
+                    <h4><strong>You do not have enough tokens to schedule a message of this type.</strong></h4>
+                    <p><a href="/dashboard/tokens" class="btn btn-success"><i class="fa fa-shopping-cart"> </i> Purchase tokens</a></p>
+                  </div>
+                <? else: ?>
+                <div class="form-group fixed-section">
+                  <h4><strong>Step One</strong> Is this a reminder, or a confirmation?</h4>
+                  <p>
+                    <a class="btn btn-default fixed-btn" data-value="reminder" data-target="#fixed-type">Reminder</a> 
+                    <a class="btn btn-default fixed-btn" data-value="confirmation" data-target="#fixed-type">Confirmation</a>
+                  </p>
+                  <input type="hidden" name="fixed-type" id="fixed-type" value="" />
+                </div>
+
+                <div class="form-group fixed-section hidden">
+                  <h4><strong>Step Two</strong> Is this a meeting, or an appointment?</h4>
+                  <p>
+                    <a class="btn btn-default fixed-btn" data-value="meeting" data-target="#fixed-variation">Meeting</a>
+                    <a class="btn btn-default fixed-btn" data-value="appointment" data-target="#fixed-variation">Appointment</a>
+                  </p>
+                  <input type="hidden" name="fixed-type" id="fixed-variation" value="" />
+                </div>
+
+                <div class="form-group fixed-section hidden">
+                  <h4><strong>Step Three</strong> When is the <span id="variation-placeholder"></span>?</h4>
+                  <p>
+                    <input type="text" class="datepicker form-control input-small" id="fixed-variation-date" />
+                  </p>
+                  <span class="help-inline">Optionally enter a time e.g. 2pm, 14:00 or 2 o'clock</span>
+                  <p>
+                    <input type="text" class="form-control input-small" maxlength="10" id="fixed-variation-time" />
+                  </p>
+                </div>
+
+                <div class="form-group fixed-section hidden">
+                  <h4><strong>Step Four</strong> When should the reminder be sent?</h4>
+                  <p>
+                    <input type="text" class="datepicker form-control input-small"  id="fixed-message-date"/>
+                  </p>
+                </div>
+
+                <div class="hidden fixed-section">
+
+                  <div class="alert alert-info">
+                    <p><strong>Preview of your message</strong></p>
+                    <p id="fixed-preview"></p>
+                  </div>
+
+                  <div class="alert alert-danger mt20 hidden" id="fixed-failure">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>There was a problem when trying to schedule this message.</h4>
+                    <p id="fixed-error"></p>
+                  </div>
+
+                  <input type="hidden" name="contact_id" id="contact_id" value="<?=$data['contact']['_id'];?>" />
+                  <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
+                  <input type="hidden" name="company_contact" id="company_contact" value="<?=$data['active_customer']['contact_phone'];?>" />
+                  <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
+                  <button type="submit" class="btn btn-success"><i class="fa fa-calendar-o"></i> Schedule Message</button>
+                </div>
+
+                <? endif; ?>
+              </form>
+
             </div>
 
-            <p>Set up a message for this contact.</p>
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<?=$data['contact']['name'];?>" />
+            <div class="tab-pane" id="schedule-custom">
+              <form role="form" id="custom-form">
+                
+                <p>Custom messages can be tailored to this specific customer, often containing a targetted &amp; promotional message. These messages can be saved and re-used with other customers at a later date.</p>
+                <p>Custom messages cost <strong><?=$data['tokens']['custom'];?></strong> tokens.</p>
+                
+                <? if (!$data['can_created_custom']): ?>
+                  <div class="alert alert-danger mt20" >
+                    <h4><strong>You do not have enough tokens to schedule a message of this type.</strong></h4>
+                    <p><a href="/dashboard/tokens" class="btn btn-success"><i class="fa fa-shopping-cart"> </i> Purchase tokens</a></p>
+                  </div>
+                <? else: ?>
+
+                <div class="form-group">
+
+                  <label for="custom-message">Compose message (<span id="message-count">160</span> characters left)</label>
+                  <textarea class="form-control mb10" id="custom-message" name="custom-message" rows="3"></textarea>
+
+                </div>
+
+                <div class="form-group">
+                  <label for="custom-message-date">When should we send this message?</label>
+                  <input type="text" class="datepicker form-control input-small" id="custom-message-date" />
+                </div>
+
+                <div class="form-group">
+                  <label>Do you want to save this message as a template?</label>
+                  <p>
+                    <a class="btn btn-default custom-save" data-value="yes" data-target="#custom-save"><i class="fa fa-check"> </i> Yes</a>
+                    <a class="btn btn-default custom-save" data-value="no" data-target="#custom-save"><i class="fa fa-times"> </i> No</a>
+                    <input type="hidden" name="custom-save" id="custom-save" />
+                  </p>
+                </div>
+
+                <div class="form-group hidden" id="template-details">
+                  <label for="custom-template-name">Provide a template name</label>
+                  <input type="text" name="custom-template-name" id="custom-template-name" class="form-control" /><br />
+                  <input type="checkbox" name="custom-template-date" id="custom-template-date" value="1" /> Also save the date with this template?
+                </div>
+
+                <div class="form-group">
+
+                  <div class="alert alert-danger mb10 hidden" id="custom-failure">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>There was a problem when trying to schedule this message.</h4>
+                    <p id="custom-error"></p>
+                  </div>
+
+                  <input type="hidden" name="contact_id" id="contact_id" value="<?=$data['contact']['_id'];?>" />
+                  <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
+                  <input type="hidden" name="company_contact" id="company_contact" value="<?=$data['active_customer']['contact_phone'];?>" />
+                  <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
+                  <button type="submit" class="btn btn-success" id="custom-btn"><i class="fa fa-calendar-o"></i> Schedule Message</button>
+                </div>
+
+                <? endif; ?>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="mobile_phone">Mobile Phone *</label>
-              <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" placeholder="Enter a contact phone number" value="<?=$data['contact']['mobile_phone'];?>" />
+
+            <div class="tab-pane" id="schedule-templates">
+
+              <? if (count($data['templates']) == 0): ?>
+                <h2>You currently do not have any templates</h2>
+              <? else: ?>
+                <? foreach ($data['templates'] as $template): ?>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><?=$template['name'];?> <?=($template['date']?"(".$template['date'].")":"");?></h3>
+                    </div>
+                    <div class="panel-body">
+                      <p><?=$template['message'];?></p>
+                      <p><a class="btn btn-success btn-template" date-name="<?=$template['name'];?>" data-message="<?=$template['message'];?>" data-date="<?=($template['date']?$template['date']:"");?>"><i class="fa fa-check"> </i> Use Template</a></p>
+                    </div>
+                  </div>
+                <? endforeach; ?>
+              <? endif; ?>
+
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" value="<?=$data['contact']['email'];?>" />
-            </div>
-            <div class="form-group">
-              <label for="notes">Notes</label>
-              <textarea class="form-control" id="notes" name="notes" rows="3"><?=$data['contact']['notes'];?></textarea>
-            </div>
-            <div class="alert alert-danger mt20 hidden" id="error-container">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h4>There was a problem when attempting to add a contact</h4>
-              <span id="errors-newcontact"></span>
-            </div>
-            <input type="hidden" name="contact_id" id="contact_id" value="<?=$data['contact']['_id'];?>" />
-            <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
-            <button type="submit" class="btn btn-success"><i class="fa fa-calendar-o"></i> Schedule Message</button>
-          </form>
+
+          </div>
+                
         </div>
+
+        <script>
+          $('input.datepicker').Zebra_DatePicker({
+            format: '<?=$data['date_format'];?>',
+            direction: true,
+            onSelect: function(v, e) {
+              $(this).change();
+            }
+          });
+        </script>
+
       </div>
 
     </div>

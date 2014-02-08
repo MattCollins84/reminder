@@ -27,7 +27,7 @@
         </div>
         <div class="panel-body">
           <h3>Create a new contact.</h3>
-          <p id="show-text">Click the button below to start creating a new contact.</p>
+          <p id="show-text">Click the button below to start creating a new contact, or use the search box on the left to find an existing contact.</p>
           <button type="button" class="btn btn-success" id="show-contact-form"><i class="fa fa-asterisk"></i> Create Contact</button>
           <form role="form" class="hidden" id="new-contact">
             <div class="alert alert-success mt20 <?=($data['show_success']?"":"hidden");?>" id="success-container">

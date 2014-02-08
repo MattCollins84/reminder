@@ -136,7 +136,7 @@
         "regex": "^/message/create",
         "controllerClass": "MessagesController",
         "method": "createMessage",
-        "authentication": false 
+        "authentication": "authCustomer" 
     },
     {
         "regex": "^/message/get/byId",

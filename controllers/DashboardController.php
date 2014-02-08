@@ -47,6 +47,8 @@
 
       $data['messages_today'] = Message::getMessageByCustomerDate($data['active_customer']['_id'], date("Y-n-j"));
 
+      $data['contacts'] = Contact::getContactsByCustomer($data['active_customer']['_id']);
+
       echo View::renderView("dashboard", $data);
           
     }
@@ -119,15 +121,34 @@
 
       $data = array();
       $data['hide_menu'] = true;
+      $data['phone_js'] = false;
+      $data['date_js'] = true;
+      $data['tokens'] = $config['tokens'];
       $data['active_customer'] = Customer::getActiveCustomer();
-      $data['show_success'] = ($_SESSION['contact_scheduled'] === true?true:false);
-      $_SESSION['contact_scheduled'] = false;
+      $data['show_success'] = ($_SESSION['message_scheduled'] === true?true:false);
+      $_SESSION['message_scheduled'] = false;
+
+      $data['can_created_fixed'] = (bool) ($data['tokens']['fixed'] <= $data['active_customer']['available_tokens']);
+      $data['can_created_custom'] = (bool) ($data['tokens']['custom'] <= $data['active_customer']['available_tokens']);
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 
+      switch($data['active_customer']['country']) {
+
+        case "gb":
+          $data['date_format'] = "d/m/Y";
+          break;
+
+        case "us":
+          $data['date_format'] = "m/d/Y";
+          break;
+
+      }
+
       $data['contact'] = Contact::getById($h[2]);
       $data['contacts'] = Contact::getContactsByCustomer($data['active_customer']['_id']);
+      $data['templates'] = Message::getTemplatesByCustomer($data['active_customer']['_id']);
 
       echo View::renderView("dashboard_schedule_contact", $data);
           

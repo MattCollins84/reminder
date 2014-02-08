@@ -7,7 +7,7 @@ require_once("includes/Customer.php");
 class Message  {
 
   // create a message
-  static public function createMessage($contact, $message, $date, $tokens=0) {
+  static public function createMessage($contact, $message, $date, $tokens=0, $country="gb", $type="fixed") {
 
     if (!is_numeric($tokens)) {
       $tokens = 0;
@@ -23,6 +23,8 @@ class Message  {
       "number" => $contact['mobile_phone'],
       "date" => $date,
       "tokens" => $tokens,
+      "country" => $country,
+      "type" => $type,
       "status" => "scheduled"
     );
 
@@ -121,6 +123,50 @@ class Message  {
     $params = array("startkey" => '["'.$customer_id.'",'.$from[0].','.$from[1].','.$from[2].']', "endkey" => '["'.$customer_id.'",'.$to[0].','.$to[1].','.$to[2].']', "include_docs" => "true");
 
     $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byCustomerDate", array(), $params);
+
+    $arr = array();
+    foreach ($res['rows'] as $row) {
+
+      $arr[] = $row['doc'];
+
+    }
+
+    return $arr;
+
+  }
+
+  // create a message template
+  static public function createTemplate($customer_id, $name, $message, $date) {
+
+    $template = array(
+      "customer_id" => $customer_id,
+      "name" => $name,
+      "message" => $message,
+      "date" => $date
+    );
+
+    $res = Cloudant::doCurl("POST", "templates", $template);
+
+    $response = array(
+      "success" => $res['ok'],
+    );
+
+    if ($response['success']) {
+      $response['id'] = $res['id'];
+    } else {
+      $response['error'] = "Cloudant error";
+    }
+
+    return $response;
+
+  }
+
+  // get by customer id
+  static public function getTemplatesByCustomer($customer_id) {
+
+    $params = array("key" => '"'.$customer_id.'"', "include_docs" => "true");
+
+    $res = Cloudant::doCurl("GET", "templates/_design/find/_view/byCustomer", array(), $params);
 
     $arr = array();
     foreach ($res['rows'] as $row) {

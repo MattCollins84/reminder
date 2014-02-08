@@ -234,7 +234,7 @@
        */
       public function checkAuthentication($method)   {  
         
-        if (call_user_func("AuthenticationController::".$method) === false) {
+        if (call_user_func("AuthenticationController::".$method, $this) === false) {
           $_SESSION['ref'] = $_SERVER['REQUEST_URI'];
           header("Location: /sign-in");
           exit;
