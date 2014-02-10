@@ -17,8 +17,12 @@
     <div class="col-lg-3">
       <? require_once("views/dashboard_menu.php"); ?>
 
-      <? require_once("views/dashboard_contact_search.php"); ?>
+      <a href="/dashboard/contacts/<?=$data['contact']['_id'];?>" class="btn btn-success btn-lg btn-block mb20"><i class="fa fa-user"></i> Manage contact</a>
 
+      <? require_once("views/dashboard_contact_search.php"); ?>
+    
+    </div>
+    
     <div class="col-lg-9">
       
       <div class="panel panel-default">
@@ -142,6 +146,7 @@
 
                 <div class="form-group">
                   <label>Do you want to save this message as a template?</label>
+                  <p>Saving this message as a template will allow you to easily send this same message to a different contact.</p>
                   <p>
                     <a class="btn btn-default custom-save" data-value="yes" data-target="#custom-save"><i class="fa fa-check"> </i> Yes</a>
                     <a class="btn btn-default custom-save" data-value="no" data-target="#custom-save"><i class="fa fa-times"> </i> No</a>
@@ -175,6 +180,8 @@
             </div>
 
             <div class="tab-pane" id="schedule-templates">
+              
+              <p>This is a list of your existing templates, simply click the <strong>Use Template</strong> button to quickly setup your message.</p>
 
               <? if (count($data['templates']) == 0): ?>
                 <h2>You currently do not have any templates</h2>
@@ -211,20 +218,6 @@
       </div>
 
     </div>
-
-  </div>
-</div> <!--/ .container -->
-
-<div class="container mt20">
-  <div class="row">
-    
-    <div class="col-lg-3">
-      
-    </div>
-
-    <div class="col-lg-9">
-      <? //print_r($data['messages_today']); ?>
-    </div> 
 
   </div>
 </div> <!--/ .container -->

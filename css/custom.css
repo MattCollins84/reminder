@@ -67,7 +67,7 @@
 }
 
 .br0 {
-  border-radius: 0px;
+  border-radius: 0px!important;
 }
 
 .text-center {
@@ -155,8 +155,12 @@ h4.strapline {
   color: red!important;
 }
 
-.dash-nav {
+.dash-nav-xs li {
+  border-right: none;
+}
 
+.dash-nav-xs li:last-child {
+  border-right: 1px solid #ddd;
 }
 
 .dash-nav a {

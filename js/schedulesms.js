@@ -110,10 +110,9 @@ $(document).ready(function() {
     $("#error-container").addClass("hidden");
 
     // check mobile number
-    if (getNumberType($("#mobile_phone").val(), $("#country").val()) !== 1) {
+    if (getNumberType($("#mobile_phone").val(), $("#country").val()) !== 1 && getNumberType($("#mobile_phone").val(), $("#country").val()) !== 2) {
       $("#errors-newcontact").html("You have entered an invalid mobile number.<br />Please correct these errors and try again.");
       $("#error-container").removeClass("hidden");
-      return;
     }
 
     $.post("/contact/create", $(this).serialize()).done(function(data) {
@@ -150,6 +149,25 @@ $(document).ready(function() {
     });
 
     $('#contact-search-add').removeClass("hidden");
+
+  });
+
+  // schedule search
+  $("#schedule-search").keyup(function(e) {
+    
+    if (this.value == "") {
+      $(".schedule-panel").removeClass("hidden");
+      return
+    }
+
+    // hide all panels
+    $(".schedule-panel").addClass("hidden");
+
+    // find matches on number
+    var items = $('.schedule-panel[data-number*="'+this.value+'"], .schedule-panel[data-name*="'+this.value.toLowerCase()+'"]');
+    items.each(function(i) {
+      $(items[i]).removeClass("hidden");
+    });
 
   });
 
@@ -241,11 +259,11 @@ $(document).ready(function() {
     switch ($('#country').val()) {
 
       case "gb":
-        date = date[2]+"-"+date[0]+"-"+date[1];
+        date = date[2]+"-"+date[1]+"-"+date[0];
         break;
 
       case "us":
-        date = date[2]+"-"+date[1]+"-"+date[0];
+        date = date[2]+"-"+date[0]+"-"+date[1];
         break;
 
     }
@@ -305,11 +323,11 @@ $(document).ready(function() {
     switch ($('#country').val()) {
 
       case "gb":
-        date = date[2]+"-"+date[0]+"-"+date[1];
+        date = date[2]+"-"+date[1]+"-"+date[0];
         break;
 
       case "us":
-        date = date[2]+"-"+date[1]+"-"+date[0];
+        date = date[2]+"-"+date[0]+"-"+date[1];
         break;
 
     }

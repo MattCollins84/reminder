@@ -18,7 +18,9 @@
       <? require_once("views/dashboard_menu.php"); ?>
 
       <? require_once("views/dashboard_contact_search.php"); ?>
-
+    
+    </div>
+    
     <div class="col-lg-9">
       
       <div class="panel panel-default">

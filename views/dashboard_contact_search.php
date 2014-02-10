@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default hidden-xs">
   <div class="panel-heading">
     <h3 class="panel-title">Find Contact</h3>
   </div>
@@ -36,8 +36,6 @@
     </div>
   </li>
 </ul>
-
-</div>
 
 <script>
 $(document).ready(function() {

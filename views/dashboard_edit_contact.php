@@ -15,11 +15,14 @@
   <div class="row">
     
     <div class="col-lg-3">
+      
       <? require_once("views/dashboard_menu.php"); ?>
       
       <a href="/dashboard/schedule/<?=$data['contact']['_id'];?>" class="btn btn-success btn-lg btn-block mb20"><i class="fa fa-calendar-o"></i> Schedule a message</a>
 
       <? require_once("views/dashboard_contact_search.php"); ?>
+    
+    </div>
 
     <div class="col-lg-9">
       
@@ -68,7 +71,7 @@
   </div>
 </div> <!--/ .container -->
 
-<div class="container mt20">
+<div class="container">
   <div class="row">
     
     <div class="col-lg-3">
@@ -76,7 +79,28 @@
     </div>
 
     <div class="col-lg-9">
-      <? //print_r($data['messages_today']); ?>
+
+      <h1>Scheduled messages</h1>
+      <table class="table table-striped">
+        <tr>
+          <th>Date</th>
+          <th>Message</th>
+        </tr>
+      <? foreach ($data['messages'] as $msg): ?>
+        
+        <? if ($msg['month']): ?>
+        <tr class="warning">
+          <td colspan="2"><b><?=$msg['month'];?></b></td>
+        </tr>
+        <? endif; ?>
+
+        <tr>
+          <td><?=$msg['date'];?></td>
+          <td><?=$msg['message'];?></td>
+        </tr>
+
+      <? endforeach; ?>
+      </table>
     </div> 
 
   </div>

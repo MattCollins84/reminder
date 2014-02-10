@@ -9,6 +9,7 @@
   require_once("includes/Customer.php");
   require_once("includes/Contact.php");
   require_once("includes/Message.php");
+  require_once("includes/Tools.php");
   require_once("controllers/Controller.php");
 
   
@@ -109,6 +110,42 @@
 
       $data['contact'] = Contact::getById($h[2]);
       $data['contacts'] = Contact::getContactsByCustomer($data['active_customer']['_id']);
+      
+      $messages = Message::getMessageByContactId($data['contact']['_id']);
+      $data['messages'] = array();
+
+      foreach ($messages as $msg) {
+
+        list($y, $m, $d) = explode("-", $msg['date']);
+        
+        $msg['orig_date'] = $msg['date'];
+
+        $key = $y.$m.$d.$msg['_id'];
+
+        $msg['date'] = Tools::dateFormat($msg['date'], $data['active_customer']['country']);
+
+        $data['messages']["d".$key.$msg['_id']] = $msg;
+
+      }
+      
+      ksort($data['messages']);
+      
+      $prevMonth = "start";
+      foreach ($data['messages'] as $k => $msg) {
+
+        list($y, $m, $d) = explode("-", $msg['orig_date']);
+        
+        $msg['month'] = date("F", mktime(0, 0, 0, $m, 10));
+        
+        if ($msg['month'] == $prevMonth) {
+          $msg['month'] = "";
+        } else {
+          $prevMonth = $msg['month'];
+        }
+
+        $data['messages'][$k] = $msg;
+
+      }
 
       echo View::renderView("dashboard_edit_contact", $data);
           
@@ -151,6 +188,62 @@
       $data['templates'] = Message::getTemplatesByCustomer($data['active_customer']['_id']);
 
       echo View::renderView("dashboard_schedule_contact", $data);
+          
+    }
+
+    // Render the schedule
+    static public function renderDashboardSchedule($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+      $data['phone_js'] = false;
+      $data['date_js'] = false;
+      $data['tokens'] = $config['tokens'];
+      $data['active_customer'] = Customer::getActiveCustomer();
+      $data['contacts'] = Contact::getContactsByCustomer($data['active_customer']['_id']);
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $messages = Message::getMessageByCustomerId($data['active_customer']['_id']);
+      $data['messages'] = array();
+
+      foreach ($messages as $msg) {
+
+        list($y, $m, $d) = explode("-", $msg['date']);
+        
+        $msg['orig_date'] = $msg['date'];
+
+        $key = $y.$m.$d.$msg['_id'];
+
+        $msg['date'] = Tools::dateFormat($msg['date'], $data['active_customer']['country']);
+
+        $data['messages']["d".$key] = $msg;
+
+      }
+      
+      ksort($data['messages']);
+      
+      $prevMonth = "start";
+      foreach ($data['messages'] as $k => $msg) {
+
+        list($y, $m, $d) = explode("-", $msg['orig_date']);
+        
+        $msg['month'] = date("F", mktime(0, 0, 0, $m, 10));
+        
+        if ($msg['month'] == $prevMonth) {
+          $msg['month'] = "";
+        } else {
+          $prevMonth = $msg['month'];
+        }
+
+        $data['messages'][$k] = $msg;
+
+      }
+
+      echo View::renderView("dashboard_schedule", $data);
           
     }
 
