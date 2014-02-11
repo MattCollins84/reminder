@@ -131,6 +131,34 @@ class Message  {
   }
 
   // get by contact id
+  static public function getMessageByCountry($country, $year, $month, $day, $status="scheduled") {
+
+    if ($year == "") {
+      $year = date("Y");
+    }
+    if ($month == "") {
+      $month = date("n");
+    }
+    if ($day == "") {
+      $day = date("j");
+    }
+
+    $params = array("startkey" => '["'.$country.'","'.$status.'",'.$year.','.$month.','.$day.']', "endkey" => '["'.$country.'","'.$status.'",2014,'.$month.','.$day.']', "include_docs" => "true", "limit" => 10);
+
+    $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byCountry", array(), $params);
+
+    $arr = array();
+    foreach ($res['rows'] as $row) {
+
+      $arr[] = $row['doc'];
+
+    }
+
+    return $arr;
+
+  }
+
+  // get by contact id
   static public function getMessageByCustomerDate($customer_id, $from, $to="") {
 
     if (!$to) {

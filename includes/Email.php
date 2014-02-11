@@ -27,7 +27,7 @@ class Email  {
   static public function confirmationEmail($to, $id) {
 
     $message = "Thank you for starting your free trial with ScheduleSMS!\n\nWe just need to verify your email address, to do so please click this link:\nhttp://".$_SERVER['HTTP_HOST']."/confirmation/".$id;
-    Email::sendEmail($to, "ScheduleSMS - confirm email address", $message);
+    return Email::sendEmail($to, "ScheduleSMS - confirm email address", $message);
 
   }
 

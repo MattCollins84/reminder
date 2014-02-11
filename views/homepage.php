@@ -11,36 +11,62 @@
         </div>
 
         <? if (!$data['active_customer']): ?>
-        <div class="col-lg-2">
-          <h5 class="mt40">Amazing Results</h5>
-          <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
-          <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png">
-        </div>
-
-        <div class="col-lg-8">
-          <form role="form" class="home-form" enctype="plain"> 
-            <div class="form-group">
-              <input type="email" name="start-email" class="form-control input-lg" id="start-email" placeholder="Your email address" />
-            </div>
-            <button type="button" id='start-btn' class="btn btn-lg btn-success">Start Free Trial!</button>
-            <br>
-            <h3>No monthly fee or hidden costs, pay as you go!</h3>
-            <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
-          </form>
-        </div>
-
-        <div class="col-lg-2">
-          <br>
-          <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png">
-          <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
-          <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
-        </div>
-        <? else: ?>
-          <div class="col-lg-12 hidden-xs">
-            <a href="/dashboard" class="btn btn-lg btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>
+        <div class="visible-lg">
+          <div class="col-lg-2">
+            <h5 class="mt40">Amazing Results</h5>
+            <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png">
           </div>
-          <div class="col-lg-12 visible-xs">
-            <a href="/dashboard" class="btn btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>
+
+          <div class="col-lg-8">
+            <form role="form" class="home-form" enctype="plain"> 
+              <div class="form-group">
+                <input type="email" name="start-email" class="form-control input-lg" id="start-email" placeholder="Your email address" />
+              </div>
+              <button type="button" id='start-btn' class="btn btn-lg btn-success">Start Free Trial!</button>
+              <br>
+              <h3>No monthly fee or hidden costs, pay as you go!</h3>
+              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+            </form>
+          </div>
+
+          <div class="col-lg-2">
+            <br>
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png">
+            <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
+            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
+          </div>
+        </div>
+        <div class="hidden-lg">
+          
+          <div class="col-sm-12">
+            <h5 class="">Amazing Results</h5>
+            <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
+            <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
+            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
+          </div>
+
+          <div class="col-sm-12">
+            <form role="form" class="home-form" enctype="plain"> 
+              <div class="form-group">
+                <input type="email" name="start-email" class="form-control input-lg" id="start-email" placeholder="Your email address" />
+              </div>
+              <button type="button" id='start-btn' class="btn btn-lg btn-success">Start Free Trial!</button>
+              <br>
+              <h3>No monthly fee or hidden costs, pay as you go!</h3>
+              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+            </form>
+          </div>
+
+          
+        </div>
+          <? else: ?>
+            <div class="col-lg-12 hidden-xs">
+              <a href="/dashboard" class="btn btn-lg btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>
+            </div>
+            <div class="col-lg-12 visible-xs">
+              <a href="/dashboard" class="btn btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>
+            </div>
           </div>
         <? endif; ?>
 

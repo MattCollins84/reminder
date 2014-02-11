@@ -58,7 +58,7 @@
 
         if ($res['success']) {
           $_SESSION['confirmation_email'] = $vars['email'];
-          Email::confirmationEmail($vars['email'], $res['id']);
+          $res['email'] = Email::confirmationEmail($vars['email'], $res['id']);
         }
 
         echo json_encode($res);

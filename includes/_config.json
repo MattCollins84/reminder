@@ -8,6 +8,10 @@
       	"username": "username",
       	"password": "password"      	
       },
+      "twilio" :{
+        "sid": "",
+        "token": ""
+      },
       "tokens": {
         "fixed": 20,
         "custom": 80,

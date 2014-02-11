@@ -35,6 +35,11 @@ class Customer  {
 			"verified" => false
 		);
 
+		if ($_SESSION['ref_code']) {
+			$customer['ref_code'] = $_SESSION['ref_code'];
+			unset($_SESSION['ref_code']);
+		}
+
 		$res = Cloudant::doCurl("POST", "customers", $customer);
 
 		$response = array(

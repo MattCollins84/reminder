@@ -1,6 +1,4 @@
 * Forgotten password email
-* dashboard homepage
-* mobile view improvements
 * buy tokens
 * message cron
 * SEO

@@ -11,12 +11,8 @@
     $data['active_customer'] = Customer::getActiveCustomer();
   }
 
-  // redirect?
-  if ($_SESSION['ref'] && $data['user']) {
-    $ref = $_SESSION['ref'];
-    $_SESSION['ref'] = "";
-    header("Location: ".$ref);
-    exit;
+  if (isset($_GET['r'])) {
+    $_SESSION['ref_code'] = $_GET['r'];
   }
 
 ?>
