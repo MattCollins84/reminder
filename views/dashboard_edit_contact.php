@@ -2,9 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60">
-        <h1>Edit <?=$data['contact']['name'];?></b></h1>
+      <div class="col-lg-12 centered mb60 hidden-xs">
+        <h1>Edit <?=$data['contact']['name'];?></h1>
         <h3>Make any changes you require to this contact.</h3>
+      </div>
+
+      <div class="col-lg-12 centered mt20 visible-xs">
+        <h3 class="mt40">Edit <?=$data['contact']['name'];?></h3>
       </div>
 
     </div>

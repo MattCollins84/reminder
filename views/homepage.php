@@ -4,7 +4,8 @@
       <div class="row centered">
         
         <div class="col-lg-12">
-          <h1>Welcome To <b>ScheduleSMS</b></h1>
+          <h1 class="hidden-xs">Welcome To <b>ScheduleSMS</b></h1>
+          <h1 class="h1-sm visible-xs">ScheduleSMS</h1>
           <h3>Turn customer &amp; business intelligence into high quality business leads.</h3>
           <br>
         </div>
@@ -35,7 +36,12 @@
           <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
         </div>
         <? else: ?>
-          <a href="/dashboard" class="btn btn-lg btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>              
+          <div class="col-lg-12 hidden-xs">
+            <a href="/dashboard" class="btn btn-lg btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>
+          </div>
+          <div class="col-lg-12 visible-xs">
+            <a href="/dashboard" class="btn btn-success mb40"><i class="fa fa-user"></i>&nbsp;&nbsp;Go to your personalised dashboard</a>
+          </div>
         <? endif; ?>
 
       </div>

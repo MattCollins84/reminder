@@ -2,9 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60">
-        <h1>Schedule Message</b></h1>
+      <div class="col-lg-12 centered mb60 hidden-xs">
+        <h1>Schedule Message</h1>
         <h3>Schedule a message for <?=$data['contact']['name'];?>.</h3>
+      </div>
+
+      <div class="col-lg-12 centered mt20 visible-xs">
+        <h3 class="mt40">Schedule Message</h3>
       </div>
 
     </div>

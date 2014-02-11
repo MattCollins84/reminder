@@ -2,9 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60">
+      <div class="col-lg-12 centered mb60 hidden-xs">
         <h1>Contacts</b></h1>
         <h3>Manage all of your contacts here.</h3>
+      </div>
+
+      <div class="col-lg-12 centered mt20 visible-xs">
+        <h3 class="mt40">Contacts</h3>
       </div>
 
     </div>
@@ -29,7 +33,8 @@
         </div>
         <div class="panel-body">
           <h3>Create a new contact.</h3>
-          <p id="show-text">Click the button below to start creating a new contact, or use the search box on the left to find an existing contact.</p>
+          <p id="show-text" class="hidden-xs">Click the button below to start creating a new contact, or use the search box on the left to find an existing contact.</p>
+          <p id="show-text-xs" class="visible-xs">Click the button below to start creating a new contact.</p>
           <button type="button" class="btn btn-success" id="show-contact-form"><i class="fa fa-asterisk"></i> Create Contact</button>
           <form role="form" class="hidden" id="new-contact">
             <div class="alert alert-success mt20 <?=($data['show_success']?"":"hidden");?>" id="success-container">

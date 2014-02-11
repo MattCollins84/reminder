@@ -2,9 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60">
+      <div class="col-lg-12 centered mb60 hidden-xs">
         <h1>Tokens</b></h1>
         <h3>Manage your ScheduleSMS tokens.</h3>
+      </div>
+
+      <div class="col-lg-12 centered mt20 visible-xs">
+        <h3 class="mt40">Tokens</h3>
       </div>
 
     </div>

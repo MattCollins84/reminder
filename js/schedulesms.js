@@ -100,6 +100,7 @@ $(document).ready(function() {
   $("#show-contact-form").click(function(e) {
     $(this).addClass("hidden");
     $('#show-text').addClass("hidden");
+    $('#show-text-xs').addClass("hidden");
     $('#new-contact').removeClass("hidden")
   });
 
