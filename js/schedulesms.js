@@ -401,6 +401,29 @@ $(document).ready(function() {
 
     $('#schedule-tabs a[href="#schedule-custom"]').tab('show')
 
-  })
+  });
+
+  // unschedule button
+  $('.btn-unschedule').click(function(e) {
+
+    var id = $(this).attr("data-id");
+
+    $.ajax({
+      type: "POST",
+      url: "/message/"+id+"/unschedule"
+    }).done (function(res) {
+
+      res = JSON.parse(res);
+
+      if (res.success) {
+        document.location.href = document.location.href;
+      } else {
+        alert("There was a problem unscheduling this message");
+        console.log(res);
+      }
+
+    });
+
+  });
 
 });

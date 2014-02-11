@@ -13,13 +13,15 @@
         "custom": 80,
         "complimentary": 500
       },
+      "paypal_host": "www.sandbox.paypal.com",
       "plans": {
-        "uk": [  
+        "gb": [  
           {
             "name": "Economy",
             "price": 5,
             "tokens": 500,
-            "selected": false
+            "selected": false,
+            "paypal_id": "AN4CE8RS7P97G"
           },
           {
             "name": "Standard",
@@ -31,13 +33,15 @@
             "name": "Premium",
             "price": 20,
             "tokens": 2500,
-            "selected": true
+            "selected": true,
+            "paypal_id": "AN4CE8RS7P97G"
           },
           {
             "name": "Bumper",
             "price": 50,
             "tokens": 8000,
-            "selected": false
+            "selected": false,
+            "paypal_id": "AN4CE8RS7P97G"
           }
         ],
         "us": [  
@@ -45,25 +49,29 @@
             "name": "Economy",
             "price": 7,
             "tokens": 500,
-            "selected": false
+            "selected": false,
+            "paypal_id": "AN4CE8RS7P97G"
           },
           {
             "name": "Standard",
             "price": 14,
             "tokens": 1000,
-            "selected": false
+            "selected": false,
+            "paypal_id": "AN4CE8RS7P97G"
           },
           {
             "name": "Premium",
             "price": 28,
             "tokens": 2500,
-            "selected": true
+            "selected": true,
+            "paypal_id": "AN4CE8RS7P97G"
           },
           {
             "name": "Bumper",
             "price": 70,
             "tokens": 8000,
-            "selected": false
+            "selected": false,
+            "paypal_id": "AN4CE8RS7P97G"
           }
         ]  
       },

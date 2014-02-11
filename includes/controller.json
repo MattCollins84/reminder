@@ -67,6 +67,24 @@
         "authentication": "authCustomer" 
     },
     {
+        "regex": "^/dashboard/tokens$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardTokens",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/tokens/success$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardTokensSuccess",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/tokens/cancel$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardTokensCancel",
+        "authentication": "authCustomer" 
+    },
+    {
         "regex": "^/customer/auth$",
         "controllerClass": "AuthenticationController",
         "method": "doSignIn",
@@ -167,6 +185,12 @@
         "controllerClass": "MessagesController",
         "method": "sendMessage",
         "authentication": false 
+    },
+    {
+        "regex": "^/message/[0-9a-zA-z]+/unschedule",
+        "controllerClass": "MessagesController",
+        "method": "unscheduleMessage",
+        "authentication": "authCustomer" 
     }
   ]
 }

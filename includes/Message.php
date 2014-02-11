@@ -75,7 +75,7 @@ class Message  {
   }
 
   // get by customer id
-  static public function getMessageByCustomerId($customer_id, $year, $month, $day) {
+  static public function getMessageByCustomerId($customer_id, $year, $month, $day, $status="scheduled") {
 
     if ($year == "") {
       $year = date("Y");
@@ -87,7 +87,7 @@ class Message  {
       $day = date("j");
     }
 
-    $params = array("startkey" => '["'.$customer_id.'",'.$year.','.$month.','.$day.']', "endkey" => '["'.$customer_id.'",3014,'.$month.','.$day.']', "include_docs" => "true");
+    $params = array("startkey" => '["'.$customer_id.'","'.$status.'",'.$year.','.$month.','.$day.']', "endkey" => '["'.$customer_id.'","'.$status.'",3014,'.$month.','.$day.']', "include_docs" => "true");
 
     $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byCustomerId", array(), $params);
 
@@ -103,7 +103,7 @@ class Message  {
   }
 
   // get by contact id
-  static public function getMessageByContactId($contact_id, $year, $month, $day) {
+  static public function getMessageByContactId($contact_id, $year, $month, $day, $status="scheduled") {
 
     if ($year == "") {
       $year = date("Y");
@@ -115,7 +115,7 @@ class Message  {
       $day = date("j");
     }
 
-    $params = array("startkey" => '["'.$contact_id.'",'.$year.','.$month.','.$day.']', "endkey" => '["'.$contact_id.'",3014,'.$month.','.$day.']', "include_docs" => "true");
+    $params = array("startkey" => '["'.$contact_id.'","'.$status.'",'.$year.','.$month.','.$day.']', "endkey" => '["'.$contact_id.'","'.$status.'",3014,'.$month.','.$day.']', "include_docs" => "true");
 
     $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byContactId", array(), $params);
 

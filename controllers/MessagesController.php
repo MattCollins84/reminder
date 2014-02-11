@@ -64,7 +64,7 @@
         }
 
         // token check
-        if ($vars['tokens'] && is_numeric($vars['tokens']) && (int) $customer['available_tokens'] < (int) $vars['tokens']) {
+        if ($data['tokens'][$vars['type']] && (int) $customer['available_tokens'] < (int) $data['tokens'][$vars['type']]) {
 
           echo json_encode(array(
             "success" => false,
@@ -281,6 +281,44 @@
         exit;
 
       }
+
+    }
+
+    // unschedule message
+    static public function unscheduleMessage($rest) {
+
+      $data = array();
+      $data['active_customer'] = Customer::getActiveCustomer();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+      
+      $message = Message::getById($h[1]);
+
+      if (!$message) {
+        return array(
+          "success" => false,
+          "error" => "Cannot find message"
+        );
+      }
+
+      if ($message['customer_id'] != $data['active_customer']['_id']) {
+        return array(
+          "success" => false,
+          "error" => "Message does not belong to customer"
+        );
+      }
+
+      $message['status'] = "unscheduled";
+
+      $update = Message::update($message);
+
+      if ($update['success']) {
+        Customer::addTokens($data['active_customer'], $message['tokens']);
+        $_SESSION['customer'] = Customer::getById($data['active_customer']['_id']);
+      }
+
+      echo json_encode($update);
 
     }
 

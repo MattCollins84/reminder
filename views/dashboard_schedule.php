@@ -3,8 +3,8 @@
     <div class="row">
       
       <div class="col-lg-12 centered mb60">
-        <h1>Edit <?=$data['contact']['name'];?></b></h1>
-        <h3>Make any changes you require to this contact.</h3>
+        <h1>Your Schedule</h1>
+        <h3>View your upcoming shedule and make any changes you need</h3>
       </div>
 
     </div>
@@ -32,18 +32,18 @@
           <input type="text" class="form-control" id="schedule-search" name="schedule-search" data-toggle="tooltip" placeholder="Name or number..." />
         </div>
       </form>
-      
+
       <table class="table table-striped">
         <tr>
           <th>Date</th>
           <th>To</th>
-          <th>Message</th>
+          <th colspan="2">Message</th>
         </tr>
       <? foreach ($data['messages'] as $msg): ?>
         
         <? if ($msg['month']): ?>
         <tr class="warning">
-          <td colspan="3"><b><?=$msg['month'];?></b></td>
+          <td colspan="4"><b><?=$msg['month'];?></b></td>
         </tr>
         <? endif; ?>
 
@@ -54,6 +54,7 @@
             <?=$msg['number'];?>
           </td>
           <td><?=$msg['message'];?></td>
+          <td><a data-id="<?=$msg['_id'];?>" class="btn btn-warning btn-unschedule">Unschedule</a></td>
         </tr>
 
       <? endforeach; ?>

@@ -197,7 +197,7 @@
             </div>
 
             <div class="tab-pane" id="pricing-uk">
-              <? foreach ($data['plans']['uk'] as $key => $plan): ?>
+              <? foreach ($data['plans']['gb'] as $key => $plan): ?>
               
                 <div class="col-lg-3 col-md-3 col-xs-6">
                   <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">

@@ -247,6 +247,81 @@
           
     }
 
+    // Render the schedule
+    static public function renderDashboardTokens($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+      $data['phone_js'] = false;
+      $data['date_js'] = false;
+      $data['tokens'] = $config['tokens'];
+
+      $data['active_customer'] = Customer::getActiveCustomer();
+      $data['plans'] = $config['plans'][$data['active_customer']['country']];
+      $data['paypal_host'] = $config['paypal_host'];
+      
+      switch($data['active_customer']['country']) {
+
+        case "gb":
+          $data['currency'] = "&pound;";
+          break;
+
+        case "us":
+          $data['currency'] = "&dollar;";
+          break;
+
+      }
+
+      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 10000) * 100;
+
+      if ($data['token_bar'] >= 75) {
+        $data['token_class'] = "progress-bar-success";
+      }
+
+      else if ($data['token_bar'] >= 25 && $data['token_bar'] < 75) {
+        $data['token_class'] = "progress-bar-warning";
+      }
+
+      else {
+        $data['token_class'] = "progress-bar-danger";
+      }
+
+      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['fixed']);
+      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['custom']);
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      
+
+      echo View::renderView("dashboard_tokens", $data);
+          
+    }
+
+    // Render the schedule
+    static public function renderDashboardTokensSuccess($rest) {
+      
+      global $config;
+      $vars = $rest->getRequestVars();
+      $data = array();
+      
+      var_dump($vars);
+          
+    }
+
+    // Render the schedule
+    static public function renderDashboardTokensCancel($rest) {
+      
+      global $config;
+      $vars = $rest->getRequestVars();
+      $data = array();
+      
+      var_dump($vars);
+          
+    }
+
   }
 
 ?>

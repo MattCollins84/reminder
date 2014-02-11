@@ -47,10 +47,6 @@
     <? if ($data['phone_js']): ?>
     <script src="/js/phone.js"></script>
     <? endif; ?>
-    <? if ($data['date_js']): ?>
-    <script src="/js/zebra_datepicker.js"></script>
-    <link href="/date_css/bootstrap.css" rel="stylesheet">
-    <? endif; ?>
     
     <script src="/js/schedulesms.js"></script>
 

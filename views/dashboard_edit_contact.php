@@ -84,19 +84,20 @@
       <table class="table table-striped">
         <tr>
           <th>Date</th>
-          <th>Message</th>
+          <th colspan="2">Message</th>
         </tr>
       <? foreach ($data['messages'] as $msg): ?>
         
         <? if ($msg['month']): ?>
         <tr class="warning">
-          <td colspan="2"><b><?=$msg['month'];?></b></td>
+          <td colspan="3"><b><?=$msg['month'];?></b></td>
         </tr>
         <? endif; ?>
 
         <tr>
           <td><?=$msg['date'];?></td>
           <td><?=$msg['message'];?></td>
+          <td><a data-id="<?=$msg['_id'];?>" class="btn btn-warning btn-unschedule">Unschedule</a></td>
         </tr>
 
       <? endforeach; ?>
