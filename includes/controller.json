@@ -73,15 +73,21 @@
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/dashboard/tokens/success$",
-        "controllerClass": "DashboardController",
-        "method": "renderDashboardTokensSuccess",
+        "regex": "^/dashboard/tokens/[a-zA-Z]+/[0-9]+",
+        "controllerClass": "TokenController",
+        "method": "start",
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/dashboard/tokens/cancel$",
-        "controllerClass": "DashboardController",
-        "method": "renderDashboardTokensCancel",
+        "regex": "^/dashboard/tokens/success",
+        "controllerClass": "TokenController",
+        "method": "tokenSuccess",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/tokens/cancel",
+        "controllerClass": "TokenController",
+        "method": "tokenCancel",
         "authentication": "authCustomer" 
     },
     {

@@ -266,10 +266,12 @@
 
         case "gb":
           $data['currency'] = "&pound;";
+          $data['tax'] = "VAT";
           break;
 
         case "us":
           $data['currency'] = "&dollar;";
+          $data['tax'] = "Tax";
           break;
 
       }
@@ -297,28 +299,6 @@
       
 
       echo View::renderView("dashboard_tokens", $data);
-          
-    }
-
-    // Render the schedule
-    static public function renderDashboardTokensSuccess($rest) {
-      
-      global $config;
-      $vars = $rest->getRequestVars();
-      $data = array();
-      
-      var_dump($vars);
-          
-    }
-
-    // Render the schedule
-    static public function renderDashboardTokensCancel($rest) {
-      
-      global $config;
-      $vars = $rest->getRequestVars();
-      $data = array();
-      
-      var_dump($vars);
           
     }
 

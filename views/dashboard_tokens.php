@@ -51,7 +51,7 @@
                   <?=$plan['name'];?>
               </li>
               <li class="plan-price">
-                  <strong><?=$data['currency'];?><?=$plan['price'];?></strong>
+                  <strong><?=$data['currency'];?><?=$plan['price'];?></strong> exc. <?=$data['tax'];?>
               </li>
               <li>
                   <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
@@ -63,7 +63,7 @@
                   Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
               </li>
               <li>
-                  <? include("views/paypal_button.php"); ?>
+                  <a href="/dashboard/tokens/gb/<?=$key;?>"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
               </li>
             </ul>
           </div>

@@ -12,6 +12,13 @@
         "sid": "",
         "token": ""
       },
+      "paypal": {
+        "endpoint": "",
+        "redirect_url": "",
+        "username": "",
+        "password": "",
+        "signature": ""
+      },
       "tokens": {
         "fixed": 20,
         "custom": 80,
@@ -24,8 +31,7 @@
             "name": "Economy",
             "price": 5,
             "tokens": 500,
-            "selected": false,
-            "paypal_id": "AN4CE8RS7P97G"
+            "selected": false
           },
           {
             "name": "Standard",
@@ -37,15 +43,13 @@
             "name": "Premium",
             "price": 20,
             "tokens": 2500,
-            "selected": true,
-            "paypal_id": "AN4CE8RS7P97G"
+            "selected": true
           },
           {
             "name": "Bumper",
             "price": 50,
             "tokens": 8000,
-            "selected": false,
-            "paypal_id": "AN4CE8RS7P97G"
+            "selected": false
           }
         ],
         "us": [  
@@ -53,29 +57,25 @@
             "name": "Economy",
             "price": 7,
             "tokens": 500,
-            "selected": false,
-            "paypal_id": "AN4CE8RS7P97G"
+            "selected": false
           },
           {
             "name": "Standard",
             "price": 14,
             "tokens": 1000,
-            "selected": false,
-            "paypal_id": "AN4CE8RS7P97G"
+            "selected": false
           },
           {
             "name": "Premium",
             "price": 28,
             "tokens": 2500,
-            "selected": true,
-            "paypal_id": "AN4CE8RS7P97G"
+            "selected": true
           },
           {
             "name": "Bumper",
             "price": 70,
             "tokens": 8000,
-            "selected": false,
-            "paypal_id": "AN4CE8RS7P97G"
+            "selected": false
           }
         ]  
       },
