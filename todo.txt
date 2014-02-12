@@ -5,3 +5,4 @@
 * content re-write
 * images
 * affiliate scheme
+* More detailed examples
