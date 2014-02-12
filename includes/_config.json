@@ -13,8 +13,8 @@
         "token": ""
       },
       "paypal": {
-        "endpoint": "",
-        "redirect_url": "",
+        "endpoint": "https://api-3t.sandbox.paypal.com/nvp",
+        "redirect_url": "https://www.sandbox.paypal.com/webscr",
         "username": "",
         "password": "",
         "signature": ""
@@ -31,25 +31,33 @@
             "name": "Economy",
             "price": 5,
             "tokens": 500,
-            "selected": false
+            "selected": false,
+            "currency": "GBP",
+            "tax": 20
           },
           {
             "name": "Standard",
             "price": 10,
             "tokens": 1000,
-            "selected": false
+            "selected": false,
+            "currency": "GBP",
+            "tax": 20
           },
           {
             "name": "Premium",
             "price": 20,
             "tokens": 2500,
-            "selected": true
+            "selected": true,
+            "currency": "GBP",
+            "tax": 20
           },
           {
             "name": "Bumper",
             "price": 50,
             "tokens": 8000,
-            "selected": false
+            "selected": false,
+            "currency": "GBP",
+            "tax": 20
           }
         ],
         "us": [  
@@ -57,25 +65,33 @@
             "name": "Economy",
             "price": 7,
             "tokens": 500,
-            "selected": false
+            "selected": false,
+            "currency": "USD",
+            "tax": 20
           },
           {
             "name": "Standard",
             "price": 14,
             "tokens": 1000,
-            "selected": false
+            "selected": false,
+            "currency": "USD",
+            "tax": 20
           },
           {
             "name": "Premium",
             "price": 28,
             "tokens": 2500,
-            "selected": true
+            "selected": true,
+            "currency": "USD",
+            "tax": 20
           },
           {
             "name": "Bumper",
             "price": 70,
             "tokens": 8000,
-            "selected": false
+            "selected": false,
+            "currency": "USD",
+            "tax": 20
           }
         ]  
       },
