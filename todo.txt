@@ -6,3 +6,4 @@
 * images
 * affiliate scheme
 * More detailed examples
+* Support page

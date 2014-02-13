@@ -91,6 +91,18 @@
         "authentication": "authCustomer" 
     },
     {
+        "regex": "^/dashboard/transactions",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardTransactions",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/support",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardSupport",
+        "authentication": "authCustomer" 
+    },
+    {
         "regex": "^/customer/auth$",
         "controllerClass": "AuthenticationController",
         "method": "doSignIn",
@@ -196,6 +208,12 @@
         "regex": "^/message/[0-9a-zA-z]+/unschedule",
         "controllerClass": "MessagesController",
         "method": "unscheduleMessage",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/email/support",
+        "controllerClass": "EmailController",
+        "method": "emailSupport",
         "authentication": "authCustomer" 
     }
   ]

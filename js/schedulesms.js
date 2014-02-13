@@ -427,4 +427,35 @@ $(document).ready(function() {
 
   });
 
+  // send support email
+  $('#support').submit(function(e) {
+
+    e.preventDefault();
+
+    var data = {
+      subject: $('#subject').val(),
+      email: $('#email').val(),
+      message: $('#msg_body').val()
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "/email/support",
+      data: data
+    }).done (function(res) {
+
+      res = JSON.parse(res);
+
+      if (res.success) {
+        $('#support').addClass("hidden");
+        $("#success-container").removeClass("hidden");
+      } else {
+        $('#errors-support').html(res.error);
+        $("#error-container").removeClass("hidden");
+      }
+
+    });
+
+  });
+
 });

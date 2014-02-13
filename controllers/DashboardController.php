@@ -9,6 +9,7 @@
   require_once("includes/Customer.php");
   require_once("includes/Contact.php");
   require_once("includes/Message.php");
+  require_once("includes/Transaction.php");
   require_once("includes/Tools.php");
   require_once("controllers/Controller.php");
 
@@ -299,6 +300,62 @@
       
 
       echo View::renderView("dashboard_tokens", $data);
+          
+    }
+
+    // Render the schedule
+    static public function renderDashboardTransactions($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+      $data['phone_js'] = false;
+      $data['date_js'] = false;
+
+      $data['active_customer'] = Customer::getActiveCustomer();
+      $transactions = Transaction::getTransactionsByCustomerId($data['active_customer']['_id']);
+      $data['transactions'] = array();
+
+
+      foreach ($transactions as $trans) {
+
+        $trans['date'] = Tools::dateFormat($trans['date'], $data['active_customer']['country']);
+        switch($trans['plan']['currency']) {
+          case "GBP":
+            $trans['plan']['currency'] = "&pound;";
+            break;
+          case "USD":
+            $trans['plan']['currency'] = "&dollar;";
+            break;
+        }
+        $data['transactions'][] = $trans;
+
+      }
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("dashboard_transactions", $data);
+          
+    }
+
+    // Render the support page
+    static public function renderDashboardSupport($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+      $data['phone_js'] = false;
+      $data['date_js'] = false;
+
+      $data['active_customer'] = Customer::getActiveCustomer();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("dashboard_support", $data);
           
     }
 

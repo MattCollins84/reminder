@@ -36,11 +36,17 @@
     
     </div>
     
-    <div class="col-lg-9">
+    <div class="col-lg-6">
       <h1>Purchasing Tokens</h1>
       <p>We provide you with four different options when purchasing your tokens, each designed to offer the flexibility you require as a business.</p>
       <p>All of our transactions are handled via PayPal to ensure that you have all the security and peace of mind you need when buying online. If you do not have a PayPal account, you can still purchase via PayPal using your credit/debit card.</p>
-      
+    </div>
+
+    <div class="col-lg-3">
+      <!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_payments_by_pp_2line.png" border="0" alt="Payments by PayPal" /><br /><img src="/images/paypal_cards.png" alt="Payments by PayPal" class="mt20" /></a><div style="text-align:center"><a href="https://www.paypal.com/uk/webapps/mpp/how-paypal-works" target="_blank"><font size="2" face="Arial" color="#0079CD"><b>How PayPal Works</b></font></a></div></td></tr></table><!-- PayPal Logo -->
+    </div>
+
+    <div class="col-lg-9"> 
       <div class="flat mt40">
 
         <? foreach ($data['plans'] as $key => $plan): ?>
@@ -51,7 +57,7 @@
                   <?=$plan['name'];?>
               </li>
               <li class="plan-price">
-                  <strong><?=$data['currency'];?><?=$plan['price'];?></strong> exc. <?=$data['tax'];?>
+                  <strong><?=$data['currency'];?><?=$plan['price'];?></strong>
               </li>
               <li>
                   <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
@@ -63,7 +69,7 @@
                   Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
               </li>
               <li>
-                  <a href="/dashboard/tokens/gb/<?=$key;?>"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
+                  <a href="/dashboard/tokens/<?=$data['active_customer']['country'];?>/<?=$key;?>"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
               </li>
             </ul>
           </div>

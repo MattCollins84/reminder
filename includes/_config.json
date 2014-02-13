@@ -100,7 +100,9 @@
         "us": ""
       },
       "test_email": "",
-      "test_number": ""
+      "test_number": "",
+      "test_sender": "+441994342033",
+      "support_email": ""
     }
   ]
 }
