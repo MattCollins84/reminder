@@ -5,6 +5,7 @@
 * SEO
 * content re-write
 * images
+* affiliate page
 * More detailed examples
 * check emails work (signup, forgot password, support)
 * minimise js, css, etc (run speed test)
