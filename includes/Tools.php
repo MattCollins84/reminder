@@ -23,6 +23,14 @@ Class Tools {
 
   }
 
+  static public function randomString($length=8) {
+
+    $str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    return substr(str_shuffle($str), 0, $length);
+
+  }
+
 }
 
 ?>

@@ -44,6 +44,17 @@ class Email  {
 
   }
 
+  // forgot email
+  static public function forgotEmail($to, $password) {
+
+    global $config;
+
+    $message = "We have reset your password. Your new password is ".$password.". Use this to sign in and then change your password to something memorable in the account settings.";
+
+    return Email::sendEmail($to, "ScheduleSMS - PAssword reset", $message);
+
+  }
+
 }
 
 ?>

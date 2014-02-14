@@ -26,6 +26,33 @@ $(document).ready(function() {
 
   });
 
+  // sign up button
+  $("#forgot-btn").click(function() {
+
+    $.get("/customer/forgot-password", $("#forgot-form").serialize()).done(function(data) {
+      
+      $("#error-container").addClass("hidden");
+
+      try {
+        data = JSON.parse(data);
+      } catch(e) {
+        alert("There was a problem submitting the form, please try again later");
+      }
+
+      if (data.success === false) {
+        $("#errors-forgot").html(data.error);
+        $("#error-container").removeClass("hidden");
+      }
+
+      else {
+        $("#forgot-form").addClass("hidden");
+        $("#success-container").removeClass("hidden");
+      }
+
+    });
+
+  });
+
   // free trial button
   $("#start-btn").click(function() {
 
@@ -455,6 +482,48 @@ $(document).ready(function() {
       }
 
     });
+
+  });
+
+  // calculate fixed benefit
+  $('#calc_fixed_btn').click(function() {
+
+    var money = parseInt($('#booking_value').val(), 10);
+    var frequency = parseInt($('#booking_amount').val(), 10);
+    var sms_cost = parseFloat($('#avg_cost').val(), 10);
+
+    if (isNaN(money) || isNaN(frequency) || isNaN(sms_cost)) {
+      return alert("Please enter numbers only");
+    }
+
+    var total_cost = (frequency * sms_cost) / 100;
+    var num = 1;
+    var saved = (money - total_cost).toFixed(2);
+    var done = false;
+
+    while (!done) {
+
+      if (saved > 0) {
+        done = true;
+      }
+
+      else {
+        num++;
+        saved = ((money * num) - total_cost).toFixed(2);
+      }
+
+    }
+
+    if (num == 1) {
+      num += " no show";
+    } else {
+      num += " no shows";
+    }
+
+    var str = "ScheduleSMS would cost you just <strong>&dollar;"+total_cost+"</strong> per day*, meaning that preventing just "+num+" would save you <strong>&dollar;"+saved+"!</strong><br /><em>* prices calculated assuming tokens bought with the premium package";
+
+    $('#fixed-result').html(str);
+    $('#fixed-result').removeClass("hidden");
 
   });
 

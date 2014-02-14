@@ -32,32 +32,28 @@
             "price": 5,
             "tokens": 500,
             "selected": false,
-            "currency": "GBP",
-            "tax": 20
+            "currency": "GBP"
           },
           {
             "name": "Standard",
             "price": 10,
             "tokens": 1000,
             "selected": false,
-            "currency": "GBP",
-            "tax": 20
+            "currency": "GBP"
           },
           {
             "name": "Premium",
             "price": 20,
             "tokens": 2500,
             "selected": true,
-            "currency": "GBP",
-            "tax": 20
+            "currency": "GBP"
           },
           {
             "name": "Bumper",
             "price": 50,
             "tokens": 8000,
             "selected": false,
-            "currency": "GBP",
-            "tax": 20
+            "currency": "GBP"
           }
         ],
         "us": [  
@@ -66,32 +62,28 @@
             "price": 7,
             "tokens": 500,
             "selected": false,
-            "currency": "USD",
-            "tax": 20
+            "currency": "USD"
           },
           {
             "name": "Standard",
             "price": 14,
             "tokens": 1000,
             "selected": false,
-            "currency": "USD",
-            "tax": 20
+            "currency": "USD"
           },
           {
             "name": "Premium",
             "price": 28,
             "tokens": 2500,
             "selected": true,
-            "currency": "USD",
-            "tax": 20
+            "currency": "USD"
           },
           {
             "name": "Bumper",
             "price": 70,
             "tokens": 8000,
             "selected": false,
-            "currency": "USD",
-            "tax": 20
+            "currency": "USD"
           }
         ]  
       },

@@ -25,6 +25,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/forgot-password$",
+        "controllerClass": "MainController",
+        "method": "renderForgot",
+        "authentication": false 
+    },
+    {
         "regex": "^/confirmation/[0-9a-zA-Z]+$",
         "controllerClass": "CustomerController",
         "method": "renderConfirmation",
@@ -130,6 +136,12 @@
         "regex": "^/customer/get/byEmail$",
         "controllerClass": "CustomerController",
         "method": "getCustomerByEmail",
+        "authentication": false 
+    },
+    {
+        "regex": "^/customer/forgot-password$",
+        "controllerClass": "CustomerController",
+        "method": "forgotPassword",
         "authentication": false 
     },
     {

@@ -30,8 +30,8 @@
             <span id="errors-signin"></span>
           </div>
           <h3>Not a member?</h3>
-          <h4 class="strapline"><a href='/#signin'>Start your free trial now!</a></h4>
-          <h4 class="strapline white">...or <a href='#'>retrieve your password</a> if you have forgotten your details...</h4>
+          <h4 class="strapline"><a href='/#signup'>Start your free trial now!</a></h4>
+          <h4 class="strapline white">...or <a href='/forgot-password'>retrieve your password</a> if you have forgotten your details...</h4>
         </form>
       </div>
 

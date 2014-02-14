@@ -9,6 +9,7 @@
   require_once("includes/Customer.php");
   require_once("controllers/Controller.php");
   require_once("includes/Email.php");
+  require_once("includes/Tools.php");
 
   
   Class CustomerController extends Controller {
@@ -369,6 +370,66 @@
       }
 
       
+
+    }
+
+    static public function forgotPassword($rest) {
+
+      $data = array();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $errors = Validation::required(array("email"), $vars);
+
+      // do we have any errors
+      if (count($errors)) {
+
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Missing the following fields: ".implode($errors, ", ")
+        ));
+        exit;
+
+      }
+
+      $customer = Customer::getByEmail($vars['email']);
+
+      if (!$customer) {
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Email address is not in our system"
+        ));
+        exit;
+      }
+
+      $new = Tools::randomString();
+
+      $customer['password'] = sha1($new);
+
+      // update
+      $update = Customer::updateCustomer($customer);
+      
+      if ($update['success']) {
+
+        $email =Email::forgotEmail($vars['email'], $new);
+
+        echo json_encode(array(
+          "success" => true,
+          "password" => $new,
+          "email" => $email
+        ));
+        exit;
+
+      }
+      
+      else {
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Unable to reset customer password, please try again"
+        ));
+        exit;
+      }
 
     }
 

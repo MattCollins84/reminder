@@ -27,6 +27,8 @@
       $data['tokens'] = $config['tokens'];
       $data['plans'] = $config['plans'];
 
+      $data['avg_cost'] = (($data['plans']['us'][2]['price'] * 100) / $data['plans']['us'][2]['tokens']) * $data['tokens']['fixed'];
+
       echo View::renderView("homepage", $data);
           
     }
@@ -58,6 +60,21 @@
       $vars = $rest->getRequestVars();
 
       echo View::renderView("signin", $data);
+          
+    }
+
+    // Render the thankyou
+    static public function renderForgot($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("forgot_password", $data);
           
     }
 

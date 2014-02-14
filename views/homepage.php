@@ -86,12 +86,12 @@
         <div class="col-lg-4">
           <i class="fa fa-8x fa-comment icon-blue"></i>
           <h3>Business Intelligence</h3>
-          <p>We believe that no-one knows your customers better than you.&nbsp;&nbsp;We want to help you turn this relationship into <strong>high quality leads</strong> that will benefit both you &amp; your clients.</p>
+          <p>We believe that no-one knows your customers better than you.&nbsp;&nbsp;We want to help you turn this relationship into <strong>high quality leads</strong> that will benefit both you &amp; your customers.</p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-8x fa-calendar icon-red"></i>
           <h3>Targetted Messaging</h3>
-          <p>We will send SMS messages direct to your customers on <strong>key dates</strong> identified by you. Whether this is an appointment confirmation, call to action, or promotional messages - we will get your message there.</p>
+          <p>We will send SMS messages direct to your customers on <strong>key dates</strong> identified by you. Whether this is an appointment confirmation, call to action, or promotional material - we will get your message there.</p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-8x fa-check-circle icon-green"></i>
@@ -187,7 +187,7 @@
         <div class="col-lg-12 mb20">
           
           <h3>How to buy tokens</h3>
-          <p>Tokens can be bought in pre-defined bundles (shown below) for your convenience, simply sign in to your personalised dashboard &amp; select the bundle you require. All transactions are handled through PayPal to provide you with peace of mind - ScheduleSMS will NEVER ask for your personal details.</p>
+          <p>Tokens can be bought in one of four bundles, simply sign in to your personalised dashboard &amp; select the bundle you require. All transactions are handled through PayPal to provide you with peace of mind - ScheduleSMS will NEVER ask for your personal details.</p>
           <p>Once bought, a token will remain in your account until used - there are <strong>no expiry dates!</strong></p>
           <p>ScheduleSMS provides you with two ways to contact your customers, designed to offer you the flexibility you &amp; your business require.</p>
 
@@ -270,12 +270,16 @@
         <div class="col-lg-6">
           
           <h3>Fixed messages</h3>
-          <p>Fixed messages are non-customisable messages designed to be sent on a regular basis to customers. We currently offer fixed messages in the form of <strong>appointment reminders</strong>, &amp; they include the company name, appointment date &amp; a contact number.</p>
-          <p>A fixed message is priced at 20 ScheduleSMS tokens.</p>
+          <p>Fixed messages are designed to be sent as <strong>appointment reminders</strong>. They include the company name, appointment date &amp; a contact number. These messages are fixed text, with slight customisations available to suit the circumstances.</p>
+          <p>A fixed message is priced at <?=$data['tokens']['fixed'];?> ScheduleSMS tokens.</p>
+            
+          <p><strong>How can fixed messages help me?</strong></p>
+          <p>Enter the average value of a booking <strong>&dollar;</strong> <input class="form-control input-xsmall input-inline" maxlength="4" id="booking_value" size="4" /></p>
+          <p>Enter the average number of bookings in a day <input class="form-control input-xsmall input-inline" maxlength="4" id="booking_amount" size="4" /></p>
+          <p class="hidden" id="fixed-result"></p>
+          <p><button class="btn btn-success" id="calc_fixed_btn">Calculate</button>
+          <input type="hidden" id="avg_cost" value="<?=$data['avg_cost'];?>" />
 
-          <div class="alert alert-danger">
-            <p>This is a reminder of your appointment with Katys Hair Salon on 21/05/2014 @ 14:00. Call us now on 03069 990667.</p>
-          </div>
 
         </div>
 
@@ -283,15 +287,15 @@
           
           <h3>Custom messages</h3>
           <p>Custom messages can take any form you wish up to the length of 160 characters, &amp; are often used to offer services that are specific to this customer at this time of year.</p>
-          <p>A custom message is priced at 80 ScheduleSMS tokens.</p>
+          <p>A custom message is priced at <?=$data['tokens']['custom'];?> ScheduleSMS tokens.</p>
 
-          <div class="alert alert-danger">
-            <p>It has been almost a year since you last serviced your Ford Focus, arrange a service with SB Motors now on 0773130955 for a 10% discount.</p>
-          </div>
-
-          <div class="alert alert-danger">
-            <p>Katys Hair salon would like to offer you a 15% discount on a cut &amp; colour for your birthday. Call us now on 03069 990667.</p>
-          </div>
+          <p><strong>How can custom messages help me?</strong></p>
+          <p>SMS Marketing is not a new concept, however targetting your customers with relevant &amp; personal messages at key dates that are important to them will help you in many ways: </p>
+          <ul>
+            <li>Reduce your marketting costs by sending promotional messages only at key times</li>
+            <li>Improve your conversion rate by only sending relevant and personal messages</li>
+            <li>Drive repeat business and customer loyalty</li>
+          </ul>
 
         </div>
       </div>
@@ -353,7 +357,7 @@
 
       <div class="col-lg-5">
 
-        <h3>Complimentary tokens</h3>
+        <h3>Free tokens!</h3>
         <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free tokens to get you started.</p>
         <p>There are no recurring costs and no sign-up fee, so what have you got to lose?</p>
 

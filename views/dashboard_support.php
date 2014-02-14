@@ -34,7 +34,7 @@
         <span id="errors-signup"></span>
       </div>
       <form role="form" id="support">
-        <p>Complete the form below and we will strive to respond to you as soon as possible.</p>
+        <p>Complete the form below and we will respond to you as soon as possible.</p>
         <div class="form-group">
           <label for="subject">Subject *</label>
           <input type="text" class="form-control" id="subject" name="subject" placeholder="What is your query about?" value="" />

@@ -193,6 +193,14 @@ h4.strapline {
   width: 200px;
 }
 
+.input-xsmall {
+  width: 80px;
+}
+
+.input-inline {
+  display: inline-block;
+}
+
 .fixed-section {
   border-bottom: 1px solid whitesmoke;
   padding: 10px 0 10px 0;

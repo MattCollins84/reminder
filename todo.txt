@@ -6,4 +6,6 @@
 * content re-write
 * images
 * More detailed examples
-* Support page
+* check emails work (signup, forgot password, support)
+* minimise js, css, etc (run speed test)
+* sanity check front->back
