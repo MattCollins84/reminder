@@ -1,9 +1,9 @@
 * Forgotten password email
-* buy tokens
 * message cron
+* bulk messaging
+* import contacts
 * SEO
 * content re-write
 * images
-* affiliate scheme
 * More detailed examples
 * Support page
