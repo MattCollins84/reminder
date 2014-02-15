@@ -6,7 +6,7 @@ require_once("includes/Validation.php");
 class Customer  {
 
 	// create a customer
-	static public function createCustomer($name, $email, $password, $country, $contact_phone, $contact_name, $tokens=0) {
+	static public function createCustomer($name, $email, $password, $country, $contact_phone, $contact_name, $tokens=0, $timezone="New_York") {
 
 		if (Validation::email($email) === false) {
 			return array(
@@ -32,7 +32,8 @@ class Customer  {
 			"contact_phone" => $contact_phone,
 			"contact_name" => $contact_name,
 			"available_tokens" => $tokens,
-			"verified" => false
+			"verified" => false,
+			"timezone" => $timezone
 		);
 
 		if ($_SESSION['ref_code']) {

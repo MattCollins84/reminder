@@ -1,4 +1,20 @@
+var stripHTML = function(html) {
+  var tmp = document.createElement("DIV");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
+}
+
 $(document).ready(function() {
+
+  $('#country').change(function(e) {
+
+    if ($(this).val() == "us") {
+      $('#timezone-group').removeClass("hidden");
+    } else {
+      $('#timezone-group').addClass("hidden");
+    }
+
+  });
 
   // sign up button
   $("#btn-signup").click(function() {
@@ -141,6 +157,7 @@ $(document).ready(function() {
     if (getNumberType($("#mobile_phone").val(), $("#country").val()) !== 1 && getNumberType($("#mobile_phone").val(), $("#country").val()) !== 2) {
       $("#errors-newcontact").html("You have entered an invalid mobile number.<br />Please correct these errors and try again.");
       $("#error-container").removeClass("hidden");
+      return;
     }
 
     $.post("/contact/create", $(this).serialize()).done(function(data) {
@@ -479,6 +496,34 @@ $(document).ready(function() {
       } else {
         $('#errors-support').html(res.error);
         $("#error-container").removeClass("hidden");
+      }
+
+    });
+
+  });
+
+  // affiliate signup
+  $('#affiliate').submit(function(e) {
+
+    e.preventDefault();
+
+    $.post("/affiliate/create", $(this).serialize()).done(function(data) {
+      
+      $("#error-container").addClass("hidden");
+
+      try {
+        data = JSON.parse(data);
+      } catch(e) {
+        alert("There was a problem submitting the form, please try again later");
+      }
+
+      if (data.success === false) {
+        $("#errors-signup").html(data.error+"<br />Please correct these errors and try again.");
+        $("#error-container").removeClass("hidden");
+      }
+
+      else {
+        document.location.href = "/affiliate/welcome"
       }
 
     });

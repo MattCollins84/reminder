@@ -1,11 +1,17 @@
 * Forgotten password email
 * message cron
+** GB
+** EST
+** CST
+** MST
+** PST
 * bulk messaging
 * import contacts
 * SEO
 * content re-write
 * images
-* affiliate page
+* terms
+* privacy
 * More detailed examples
 * check emails work (signup, forgot password, support)
 * minimise js, css, etc (run speed test)

@@ -78,6 +78,51 @@
           
     }
 
+    // Render affiliates
+    static public function renderAffiliates($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("affiliates", $data);
+          
+    }
+
+    // Render terms
+    static public function renderTerms($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("terms", $data);
+          
+    }
+
+    // Render affiliates
+    static public function renderPrivacy($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("privacy", $data);
+          
+    }
+
   }
   
   

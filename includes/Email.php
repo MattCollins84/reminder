@@ -51,7 +51,18 @@ class Email  {
 
     $message = "We have reset your password. Your new password is ".$password.". Use this to sign in and then change your password to something memorable in the account settings.";
 
-    return Email::sendEmail($to, "ScheduleSMS - PAssword reset", $message);
+    return Email::sendEmail($to, "ScheduleSMS - Password reset", $message);
+
+  }
+
+  // affiliate email
+  static public function affiliateEmail($to, $id) {
+
+    global $config;
+
+    $message = "Thank you for joining the ScheduleSMS affiliate program.\n\nYour affiliate code is: ".$id."\n\nSimply direct your customers to http://".$_SERVER['HTTP_HOST']."/?r=".$id." to get started";
+
+    return Email::sendEmail($to, "ScheduleSMS - Affiliate code", $message);
 
   }
 

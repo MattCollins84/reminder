@@ -7,7 +7,7 @@ require_once("includes/Customer.php");
 class Message  {
 
   // create a message
-  static public function createMessage($contact, $message, $date, $tokens=0, $country="gb", $type="fixed") {
+  static public function createMessage($contact, $message, $date, $tokens=0, $country="gb", $type="fixed", $timezone="New_York") {
 
     if (!is_numeric($tokens)) {
       $tokens = 0;
@@ -25,7 +25,8 @@ class Message  {
       "tokens" => $tokens,
       "country" => $country,
       "type" => $type,
-      "status" => "scheduled"
+      "status" => "scheduled",
+      "timezone" => $timezone
     );
 
     $res = Cloudant::doCurl("POST", "messages", $message);
@@ -75,7 +76,7 @@ class Message  {
   }
 
   // get by customer id
-  static public function getMessageByCustomerId($customer_id, $year, $month, $day, $status="scheduled") {
+  static public function getMessageByCustomerId($customer_id, $year="", $month="", $day="", $status="scheduled") {
 
     if ($year == "") {
       $year = date("Y");
@@ -103,7 +104,7 @@ class Message  {
   }
 
   // get by contact id
-  static public function getMessageByContactId($contact_id, $year, $month, $day, $status="scheduled") {
+  static public function getMessageByContactId($contact_id, $year="", $month="", $day="", $status="scheduled") {
 
     if ($year == "") {
       $year = date("Y");
@@ -131,7 +132,7 @@ class Message  {
   }
 
   // get by contact id
-  static public function getMessageByCountry($country, $year, $month, $day, $status="scheduled") {
+  static public function getMessageByCountry($country, $year="", $month="", $day="", $status="scheduled") {
 
     if ($year == "") {
       $year = date("Y");

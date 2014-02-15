@@ -43,6 +43,10 @@
     <? if ($data['phone_js']): ?>
     <script src="/js/phone.js"></script>
     <? endif; ?>
+    <? if ($data['date_js']): ?>
+      <script src="/js/zebra_datepicker.js"></script>
+      <link href="/date_css/bootstrap.css" rel="stylesheet">
+    <? endif; ?>
     
     <script src="/js/schedulesms.js"></script>
 
@@ -94,6 +98,7 @@
               <? if (!$data['active_customer']): ?>
                 <li><a href="#signup" class="smoothScroll">Sign-up</a></li>
               <? endif; ?>
+              <li><a href="/affiliates">Affiliates</a></li>
             </ul>
           </div><!--/.nav-collapse -->
           <? endif;?>

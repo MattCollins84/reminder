@@ -20,6 +20,7 @@
   
   
   require_once("controllers/AuthenticationController.php");
+  require_once("includes/Validation.php");
 	
   class Rest {  
       
@@ -122,7 +123,14 @@
        * @return
        *   the query string, as an associative array
        */
-      public function getRequestVars() {  
+      public function getRequestVars($clean=true) {  
+        
+        if ($clean) {
+          foreach ($this->request_vars as $k => $v) {
+            $this->request_vars[$k] = Validation::clean($v);
+          }
+        }
+
         return $this->request_vars;  
       } 
       

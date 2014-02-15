@@ -17,8 +17,8 @@
 
   <li class="list-group-item contact-panel hidden" data-number="<?=preg_replace('/[^0-9]/', '', $contact['mobile_phone']);?>" data-name="<?=strtolower($contact['name']);?>">
     <div class="hidden-xs">
-      <a class="pull-right btn btn-success contact-btn" id="edit<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" data-toggle="tooltip" title="Manage this contact"><i class="fa fa-user"> </i> Manage this user</a>
-      <a class="pull-right btn btn-success contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/schedule/<?=$contact['_id'];?>" data-toggle="tooltip" title="Schedule message for this contact"><i class="fa fa-calendar"> </i> Schedule a message</a>
+      <a class="pull-right btn btn-success contact-btn" id="edit<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" title="Manage this contact"><i class="fa fa-user"> </i> Manage this user</a>
+      <a class="pull-right btn btn-success contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/schedule/<?=$contact['_id'];?>" title="Schedule message for this contact"><i class="fa fa-calendar"> </i> Schedule a message</a>
       <h3 class="panel-title"><?=$contact['name'];?></h3>
     </div>
     <div class="visible-xs">
@@ -44,16 +44,3 @@
 </ul>
 
 </div>
-
-<script>
-$(document).ready(function() {
-  var items = $('.contact-btn');
-  items.each(function(i) {
-    
-    var item = items[i];
-    var id = '#'+item.id;
-    $(id).tooltip({placement: "right"});
-
-  });
-});
-</script>

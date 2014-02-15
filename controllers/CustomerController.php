@@ -25,6 +25,11 @@
       
       $errors = Validation::required(array("country", "name", "email", "password"), $vars);
 
+      // timezone for USA
+      if ($vars['country'] == "us" && !$vars['timezone']) {
+        $errors[] = "timezone";
+      }
+
       // do we have any errors
       if (count($errors)) {
 
@@ -55,7 +60,7 @@
         }
 
         // create the customer
-        $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($vars['password']), $vars['country'], $vars['contact_phone'], $vars['contact_name'], 200);
+        $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($vars['password']), $vars['country'], $vars['contact_phone'], $vars['contact_name'], 200, $vars['timezone']);
 
         if ($res['success']) {
           $_SESSION['confirmation_email'] = $vars['email'];

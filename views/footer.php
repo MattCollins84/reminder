@@ -3,7 +3,7 @@
     <div class="container">
       
       <div class="col-lg-8">
-        <p>All content &copy; ScheduleSMS <?=date("Y");?> | <a href='#'>terms</a> | <a href='#'>privacy</a></p>
+        <p>All content &copy; ScheduleSMS <?=date("Y");?> | <a href='/terms'>terms</a> | <a href='/privacy'>privacy</a></p>
       </div>
 
       <div class="col-lg-4 right">

@@ -31,6 +31,24 @@
         "authentication": false 
     },
     {
+        "regex": "^/affiliates$",
+        "controllerClass": "MainController",
+        "method": "renderAffiliates",
+        "authentication": false 
+    },
+    {
+        "regex": "^/terms$",
+        "controllerClass": "MainController",
+        "method": "renderTerms",
+        "authentication": false 
+    },
+    {
+        "regex": "^/privacy$",
+        "controllerClass": "MainController",
+        "method": "renderPrivacy",
+        "authentication": false 
+    },
+    {
         "regex": "^/confirmation/[0-9a-zA-Z]+$",
         "controllerClass": "CustomerController",
         "method": "renderConfirmation",
@@ -227,6 +245,18 @@
         "controllerClass": "EmailController",
         "method": "emailSupport",
         "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/affiliate/create",
+        "controllerClass": "AffiliateController",
+        "method": "create",
+        "authentication": false 
+    },
+    {
+        "regex": "^/affiliate/welcome",
+        "controllerClass": "AffiliateController",
+        "method": "welcome",
+        "authentication": false 
     }
   ]
 }

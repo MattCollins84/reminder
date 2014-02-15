@@ -319,6 +319,16 @@
               <option value="uk">United Kingdom</option>
             </select>
           </div>
+          <div class="form-group hidden" id="timezone-group">
+            <label for="timezone">Timezone *</label>
+            <select id="timezone" name="timezone" class="form-control" >
+              <option value="">- Select Timezone -</option>
+              <option value="Los_Angeles">Pacific (PST)</option>
+              <option value="Denver">Mountain (MST)</option>
+              <option value="Chicago">Central (CST)</option>
+              <option value="New_York">Eastern (EST)</option>
+            </select>
+          </div>
           <div class="form-group">
             <label for="name">Company Name *</label>
             <input type="text" name="name" class="form-control" id="name" placeholder="Your company name" />

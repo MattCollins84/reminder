@@ -1,4 +1,13 @@
 <?
+  date_default_timezone_set("Europe/London");
+
+  $hour = (int) date("G");
+
+  if ($hour <= 9 || $hour > 17) {
+    echo "Out of hours";
+    exit;
+  }
+
   chdir(dirname($_SERVER['PHP_SELF']));
 
   require_once("includes/config.php");
