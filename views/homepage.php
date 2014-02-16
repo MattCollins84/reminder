@@ -1,4 +1,4 @@
-  <section id="home" name="home"></section>
+  <section id="home"></section>
   <div id="headerwrap">
     <div class="container">
       <div class="row centered">
@@ -6,7 +6,7 @@
         <div class="col-lg-12">
           <h1 class="hidden-xs">Welcome To <b>ScheduleSMS</b></h1>
           <h1 class="h1-sm visible-xs">ScheduleSMS</h1>
-          <h3>Turn customer &amp; business intelligence into high quality business leads.</h3>
+          <h3>Turn knowledge of your customers into targetted mobile leads, appointment reminders &amp; much more...</h3>
           <br>
         </div>
 
@@ -15,15 +15,15 @@
           <div class="col-lg-2">
             <h5 class="mt40">Amazing Results</h5>
             <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
-            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png">
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png" alt="Arrow" />
           </div>
 
           <div class="col-lg-8">
-            <form role="form" class="home-form" enctype="plain"> 
+            <form role="form" class="home-form"> 
               <div class="form-group">
-                <input type="email" name="start-email" class="form-control input-lg" id="start-email" placeholder="Your email address" />
+                <input type="email" name="start-email2" class="form-control input-lg" id="start-email2" placeholder="Your email address" />
               </div>
-              <button type="button" id='start-btn' class="btn btn-lg btn-success">Start Free Trial!</button>
+              <button type="button" id='start-btn2' class="btn btn-lg btn-success">Start Free Trial!</button>
               <br>
               <h3>No monthly fee or hidden costs, pay as you go!</h3>
               <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
@@ -32,7 +32,7 @@
 
           <div class="col-lg-2">
             <br>
-            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png">
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png" alt="Arrow" />
             <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
             <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
           </div>
@@ -47,7 +47,7 @@
           </div>
 
           <div class="col-sm-12">
-            <form role="form" class="home-form" enctype="plain"> 
+            <form role="form" class="home-form"> 
               <div class="form-group">
                 <input type="email" name="start-email" class="form-control input-lg" id="start-email" placeholder="Your email address" />
               </div>
@@ -75,7 +75,7 @@
   </div><!--/ #headerwrap -->
 
 
-  <section id="how" name="how"></section>
+  <section id="how"></section>
   <!-- INTRO WRAP -->
   <div id="intro">
     <div class="container">
@@ -102,7 +102,7 @@
     </div> <!--/ .container -->
   </div><!--/ #introwrap -->
   
-  <section id="usecase" name="usecase"></section>
+  <section id="usecase"></section>
   <div id="showcase">
     <div class="container">
       <div class="row">
@@ -168,7 +168,7 @@
     </div><!-- /container -->
   </div>
 
-  <section id="pricing" name="pricing"></section>
+  <section id="pricing" ></section>
   <!-- PRICING WRAP -->
   <div id="pricing-wrap">
     <div class="container">
@@ -291,10 +291,10 @@
 
           <p><strong>How can custom messages help me?</strong></p>
           <p>SMS Marketing is not a new concept, however targetting your customers with relevant &amp; personal messages at key dates that are important to them will help you in many ways: </p>
-          <ul>
-            <li>Reduce your marketting costs by sending promotional messages only at key times</li>
-            <li>Improve your conversion rate by only sending relevant and personal messages</li>
-            <li>Drive repeat business and customer loyalty</li>
+          <ul class="list-unstyled">
+            <li><i class="fa fa-star"> </i>&nbsp;&nbsp;&nbsp;Reduce your marketting costs by sending promotional messages only at key times</li>
+            <li><i class="fa fa-star"> </i>&nbsp;&nbsp;&nbsp;Improve your conversion rate by only sending relevant and personal messages</li>
+            <li><i class="fa fa-star"> </i>&nbsp;&nbsp;&nbsp;Drive repeat business and customer loyalty</li>
           </ul>
 
         </div>
@@ -303,20 +303,20 @@
   </div><!--/ #features -->
 
   <? if (!$data['active_customer']): ?>
-  <section id="signup" name="signup"></section>
+  <section id="signup"></section>
   <div id="footerwrap">
     <div class="container">
 
       <div class="col-lg-7">
         <h3>Start your free trial now!</h3>
         <br>
-        <form role="form" id="form-signup" enctype="plain"> 
+        <form role="form" id="form-signup"> 
           <div class="form-group">
             <label for="name">Country *</label>
             <select id="country" name="country" class="form-control" >
               <option value="">- Select Country -</option>
               <option value="us">United States</option>
-              <option value="uk">United Kingdom</option>
+              <option value="gb">United Kingdom</option>
             </select>
           </div>
           <div class="form-group hidden" id="timezone-group">

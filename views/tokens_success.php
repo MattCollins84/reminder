@@ -39,6 +39,7 @@
     <div class="col-lg-9">
       <h1>Thank you for your purchase</h1>
       <p>Your transaction is complete and your tokens should be added to your balance within the next few minutes.</p>
+      <p>You will receive an email from PayPal shortly containing confirmation and receipt of your purchase.</p>
       
       <h3>Transaction details</h3>
       <p>Your PayPal reference is: <strong><?=$data['paypal_ref'];?></strong>.</p>

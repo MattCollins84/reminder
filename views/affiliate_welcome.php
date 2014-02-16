@@ -26,6 +26,7 @@
       <p>We have also sent you an email with this information, in case you forget it!</p>
 
       <h2>What now?</h2>
+      <p>We will update you via email on how your referals are doing, showing quarterly statistics on signups, transactions and what that equates to in terms of rewards for you and your company.</p>
       <p>We will contact you in the near future to discuss how best you would like to receive your earnings. In the meantime, all successful referals will still count towards your reward - so get referring!</p>
 
     </div>

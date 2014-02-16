@@ -69,10 +69,19 @@ $(document).ready(function() {
 
   });
 
-  // free trial button
+  // free trial button (mobile)
   $("#start-btn").click(function() {
 
     $('#email').val($("#start-email").val());
+
+    document.location.href = "/#signup";
+
+  });
+
+  // free trial button (desktop)
+  $("#start-btn2").click(function() {
+
+    $('#email').val($("#start-email2").val());
 
     document.location.href = "/#signup";
 

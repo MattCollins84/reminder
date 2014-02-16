@@ -21,7 +21,7 @@
     <div class="col-lg-3">
       <? require_once("views/dashboard_menu.php"); ?>
 
-      <? require_once("views/dashboard_contact_search.php"); ?>
+      <? //require_once("views/dashboard_contact_search.php"); ?>
     
     </div>
     
@@ -70,6 +70,8 @@
           </form>
         </div>
       </div>
+
+      <? require_once("views/dashboard_contact_search_large.php"); ?>
 
     </div>
 

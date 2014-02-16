@@ -260,7 +260,6 @@
       $data['tokens'] = $config['tokens'];
 
       $data['active_customer'] = Customer::getActiveCustomer();
-      $data['plans'] = $config['plans'][$data['active_customer']['country']];
       $data['paypal_host'] = $config['paypal_host'];
       
       switch($data['active_customer']['country']) {
@@ -268,11 +267,13 @@
         case "gb":
           $data['currency'] = "&pound;";
           $data['tax'] = "VAT";
+          $data['plans'] = $config['plans']['gb'];
           break;
 
         case "us":
           $data['currency'] = "&dollar;";
           $data['tax'] = "Tax";
+          $data['plans'] = $config['plans']['us'];
           break;
 
       }

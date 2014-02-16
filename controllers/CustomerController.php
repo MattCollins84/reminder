@@ -18,6 +18,8 @@
     // create a customer
     static public function createCustomer($rest) {
       
+      global $config;
+
       $data = array();
       
       $h = $rest->getHierarchy();    
@@ -60,7 +62,7 @@
         }
 
         // create the customer
-        $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($vars['password']), $vars['country'], $vars['contact_phone'], $vars['contact_name'], 200, $vars['timezone']);
+        $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($vars['password']), $vars['country'], $vars['contact_phone'], $vars['contact_name'], $config['tokens']['complimentary'], $vars['timezone']);
 
         if ($res['success']) {
           $_SESSION['confirmation_email'] = $vars['email'];

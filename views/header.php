@@ -58,6 +58,16 @@
       <div id="navigation" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
+
+            <div class="visible-xs">
+            <? if ($data['active_customer']): ?>
+              <a href="/sign-out" class="pull-right mr10 btn btn-sm btn-warning mt10"><i class="fa fa-sign-out"></i></a>
+              <a href="/dashboard" class="pull-right mr10 btn btn-sm btn-success mt10"><i class="fa fa-user"></i> </a>
+            <? else: ?>  
+              <a href="/sign-in" class="pull-right mr10 btn btn-sm btn-success mt10"><i class="fa fa-sign-in"></i> Sign-in</a>
+            <? endif;?>
+            </div>
+
             <? if ($data['hide_menu'] !== true): ?>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="icon-bar"></span>
@@ -68,25 +78,37 @@
             <a class="navbar-brand" href="/"><b>ScheduleSMS</b></a>
           </div>
 
-          <form class="navbar-form navbar-right hidden-xs">
+          <form class="navbar-form navbar-right visible-lg">
             <? if ($data['active_customer']): ?>
-              <a href="/dashboard" class="btn btn-success mt10"><i class="fa fa-user"></i>&nbsp;&nbsp;<strong><?=$data['active_customer']['name'];?> Dashboard</strong> &nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-primary"><?=$data['active_customer']['available_tokens'];?> Tokens</span></a>
-              <a href="/sign-out" class="btn btn-warning mt10"><i class="fa fa-sign-out"></i> Sign out</a>
+              <a href="/dashboard" class="btn btn-success"><i class="fa fa-user"></i>&nbsp;&nbsp;<strong><?=$data['active_customer']['name'];?> Dashboard</strong> &nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-primary"><?=$data['active_customer']['available_tokens'];?> Tokens</span></a>
+              <a href="/sign-out" class="btn btn-warning"><i class="fa fa-sign-out"></i> Sign out</a>
             <? else: ?>  
-              <a href="/sign-in" class="btn btn-success mt10"><i class="fa fa-sign-in"></i> Sign-in</a>
+              <a href="/sign-in" class="btn btn-success"><i class="fa fa-sign-in"></i> Sign-in</a>
             <? endif;?>  
             
           </form>
 
-          <form class="navbar-form navbar-right visible-xs">
+          <form class="navbar-form navbar-right visible-sm">
             <? if ($data['active_customer']): ?>
-              <a href="/dashboard" class="btn btn-success mt10"><i class="fa fa-user"></i>&nbsp;&nbsp;<strong><?=$data['active_customer']['name'];?> Dashboard</strong></a>
-              <a href="/sign-out" class="btn btn-warning mt10"><i class="fa fa-sign-out"></i> Sign out</a>
+              <a href="/dashboard" class="btn btn-success"><i class="fa fa-user"></i></a>
+              <a href="/sign-out" class="btn btn-warning"><i class="fa fa-sign-out"></i></a>
             <? else: ?>  
-              <a href="/sign-in" class="btn btn-success mt10"><i class="fa fa-sign-in"></i> Sign-in</a>
+              <a href="/sign-in" class="btn btn-success"><i class="fa fa-sign-in"></i> </a>
             <? endif;?>  
             
           </form>
+
+          <form class="navbar-form navbar-right visible-md">
+            <? if ($data['active_customer']): ?>
+              <a href="/dashboard" class="btn btn-success"><i class="fa fa-user"></i> Dashboard</a>
+              <a href="/sign-out" class="btn btn-warning"><i class="fa fa-sign-out"></i> Sign-out</a>
+            <? else: ?>  
+              <a href="/sign-in" class="btn btn-success"><i class="fa fa-sign-in"></i> Sign-in</a>
+            <? endif;?>  
+            
+          </form>
+
+          
           
           <? if ($data['hide_menu'] !== true): ?>
           <div class="navbar-collapse collapse">

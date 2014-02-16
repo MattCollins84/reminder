@@ -33,7 +33,8 @@ class Customer  {
 			"contact_name" => $contact_name,
 			"available_tokens" => $tokens,
 			"verified" => false,
-			"timezone" => $timezone
+			"timezone" => $timezone,
+			"created" => date("Y-m-d")
 		);
 
 		if ($_SESSION['ref_code']) {

@@ -18,18 +18,21 @@
 <div class="container mt20">
   <div class="row">
     
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       
       <h2>What is this?</h2>
+      <p>This is the ScheduleSMS affiliate program. You can earn money by simply referring people to ScheduleSMS from your website or emails.</p>
       <p>By signing up to the ScheduleSMS Affiliate program you will be eligible to make <strong>10%</strong> of everything your referals spend with us!</p>
+      
+      <h2>Great! How do I start?</h2>
       <p>Upon registration you will be given a special referal URL that you can supply to your customers. This will allow us to track which of our customers were referred by you and what they have spent with us, we will then pass 10% on to you - it's that easy!</p>
       <p>Complete the form now to register!</p>
 
     </div>
 
-    <div class="col-lg-9">
+    <div class="col-lg-8">
       
-      <h1>Join the ScheduleSMS Affiliates program now!</h1>
+      <h1>Join the ScheduleSMS Affiliates program</h1>
       
       <form role="form" id="affiliate">
         <div class="form-group">
