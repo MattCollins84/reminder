@@ -9,6 +9,7 @@
 * import contacts
 * SEO
 * content re-write
+* analytics
 * images
 * terms
 * privacy
