@@ -50,6 +50,22 @@
     
     <script src="/js/schedulesms.js"></script>
 
+    <script>
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48149446-1', 'schedulesms.com');
+      ga('send', 'pageview');
+
+    </script>
+
+    <? if ($config['in_production'] == false): ?>
+      <META NAME="robots" CONTENT="noindex">
+    <? endif; ?>
+
   </head>
 
   <body data-spy="scroll" data-offset="100" data-target="#navigation">
