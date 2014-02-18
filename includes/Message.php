@@ -7,7 +7,7 @@ require_once("includes/Customer.php");
 class Message  {
 
   // create a message
-  static public function createMessage($contact, $message, $date, $tokens=0, $country="gb", $type="fixed", $timezone="New_York") {
+  static public function createMessage($contact, $message, $date, $tokens=0, $country="gb", $type="fixed", $timezone="") {
 
     if (!is_numeric($tokens)) {
       $tokens = 0;
@@ -147,6 +147,34 @@ class Message  {
     $params = array("startkey" => '["'.$country.'","'.$status.'",'.$year.','.$month.','.$day.']', "endkey" => '["'.$country.'","'.$status.'",2014,'.$month.','.$day.']', "include_docs" => "true", "limit" => 10);
 
     $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byCountry", array(), $params);
+
+    $arr = array();
+    foreach ($res['rows'] as $row) {
+
+      $arr[] = $row['doc'];
+
+    }
+
+    return $arr;
+
+  }
+
+  // get by contact id
+  static public function getMessageByUsTimezone($timezone, $year="", $month="", $day="", $status="scheduled") {
+
+    if ($year == "") {
+      $year = date("Y");
+    }
+    if ($month == "") {
+      $month = date("n");
+    }
+    if ($day == "") {
+      $day = date("j");
+    }
+
+    $params = array("startkey" => '["'.$timezone.'","'.$status.'",'.$year.','.$month.','.$day.']', "endkey" => '["'.$timezone.'","'.$status.'",2014,'.$month.','.$day.']', "include_docs" => "true", "limit" => 10);
+
+    $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byUsTimezone", array(), $params);
 
     $arr = array();
     foreach ($res['rows'] as $row) {

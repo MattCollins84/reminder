@@ -1,10 +1,10 @@
 * Forgotten password email
 * message cron
-** GB (tests set) 
-** EST (need timezone in view)
-** CST (need timezone in view)
-** MST (need timezone in view)
-** PST (need timezone in view)
+** GB (tests set) (put tokens back for failed message)
+** EST (need timezone in view) (put tokens back for failed message)
+** CST (need timezone in view) (put tokens back for failed message)
+** MST (need timezone in view) (put tokens back for failed message)
+** PST (need timezone in view) (put tokens back for failed message)
 * bulk messaging
 * import contacts
 * SEO
