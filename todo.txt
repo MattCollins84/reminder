@@ -1,6 +1,6 @@
 * Forgotten password email
 * message cron
-** GB (tests set)
+** GB (tests set) 
 ** EST (need timezone in view)
 ** CST (need timezone in view)
 ** MST (need timezone in view)
