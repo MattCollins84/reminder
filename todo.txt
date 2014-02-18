@@ -1,10 +1,10 @@
 * Forgotten password email
 * message cron
-** GB
-** EST
-** CST
-** MST
-** PST
+** GB (tests set)
+** EST (need timezone in view)
+** CST (need timezone in view)
+** MST (need timezone in view)
+** PST (need timezone in view)
 * bulk messaging
 * import contacts
 * SEO
@@ -14,4 +14,7 @@
 * More detailed examples
 * check emails work (signup, forgot password, support)
 * minimise js, css, etc (run speed test)
+* dont allow scheduling for today if it's late
+* explain that messages will get sent as soon as there's a chance to
+* show that we're working when clicking the submit button
 * sanity check front->back
