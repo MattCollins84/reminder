@@ -8,7 +8,7 @@
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Thank You</h3>
+        <h3>Thank You</h3>
       </div>
 
     </div>

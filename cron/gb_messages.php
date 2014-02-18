@@ -8,8 +8,6 @@
     exit;
   }
 
-  chdir(dirname($_SERVER['PHP_SELF']));
-
   require_once("includes/config.php");
   require_once("includes/Message.php");
   require_once("includes/SMS.php");
