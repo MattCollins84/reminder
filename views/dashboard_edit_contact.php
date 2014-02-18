@@ -71,18 +71,8 @@
       </div>
 
     </div>
-
-  </div>
-</div> <!--/ .container -->
-
-<div class="container">
-  <div class="row">
     
-    <div class="col-lg-3">
-      
-    </div>
-
-    <div class="col-lg-9">
+    <div class=".col-md-offset-3 col-lg-9">
 
       <h1>Scheduled messages</h1>
       <table class="table table-striped">
