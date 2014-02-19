@@ -19,4 +19,5 @@
 * show that we're working when clicking the submit button
 * sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
 * tweet for tokens
+* speed test
 * sanity check front->back

@@ -214,6 +214,10 @@
               <? foreach ($data['plans']['us'] as $key => $plan): ?>
               
                 <div class="col-lg-3 col-md-3 col-xs-6">
+                  <? if ($plan['selected']): ?>
+                    <img src="/images/most-popular-badge.png" class="most-popular-sm visible-xs" alt="Most popular price plan"/>
+                    <img src="/images/most-popular-badge.png" class="most-popular hidden-xs" alt="Most popular price plan"/>
+                  <? endif; ?>
                   <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
                     <li class="plan-name">
                         <?=$plan['name'];?>
@@ -239,7 +243,11 @@
             <div class="tab-pane" id="pricing-uk">
               <? foreach ($data['plans']['gb'] as $key => $plan): ?>
               
-                <div class="col-lg-3 col-md-3 col-xs-6">
+                <div class="col-lg-3 col-md-3 col-xs-6 mb20">
+                  <? if ($plan['selected']): ?>
+                    <img src="/images/most-popular-badge.png" class="most-popular-sm visible-xs" alt="Most popular price plan"/>
+                    <img src="/images/most-popular-badge.png" class="most-popular hidden-xs" alt="Most popular price plan"/>
+                  <? endif; ?>
                   <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
                     <li class="plan-name">
                         <?=$plan['name'];?>
