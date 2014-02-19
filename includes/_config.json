@@ -3,6 +3,7 @@
     {
       "hostnames": ["reminder.mattcollins.com"],
       "in_production": false,
+      "compress": true,
       "cloudant": {
       	"host": "https://username.cloudant.com/",
       	"username": "username",
