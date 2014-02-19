@@ -24,19 +24,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ScheduleSMS</title>
+    <title>ScheduleSMS - Automated SMS marketing for small businesses</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/css/pratt.css" rel="stylesheet">
-    <link href="/css/pricing.css" rel="stylesheet">
-    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     
+    <? if ($config['compress']): ?>
+      <!-- Compressed styles for this template -->
+      <link href="/css/schedulesms.css" rel="stylesheet">
+    <? else: ?>
+      <!-- Custom styles for this template -->
+      <link href="/css/pratt.css" rel="stylesheet">
+      <link href="/css/pricing.css" rel="stylesheet">
+      <link href="/css/custom.css" rel="stylesheet">
+      <link href="/date_css/bootstrap.css" rel="stylesheet">
+    <? endif; ?>
+    
+
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     
     <script src="/js/jquery.min.js"></script>
     <script src="/js/smoothscroll.js"></script>
@@ -45,7 +52,6 @@
     <? endif; ?>
     <? if ($data['date_js']): ?>
       <script src="/js/zebra_datepicker.js"></script>
-      <link href="/date_css/bootstrap.css" rel="stylesheet">
     <? endif; ?>
     
     <script src="/js/schedulesms.js"></script>
