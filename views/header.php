@@ -21,10 +21,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    
+    <? if ($data['meta_description']): ?>
+      <meta name="description" content="<?=$data['meta_description'];?>">
+    <? endif; ?>
     <meta name="author" content="">
 
-    <title>ScheduleSMS - Automated SMS marketing for small businesses</title>
+    <title>ScheduleSMS - SMS marketing for small businesses</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -135,12 +138,12 @@
           <? if ($data['hide_menu'] !== true): ?>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#home" class="smoothScroll">Home</a></li>
-              <li><a href="#how" class="smoothScroll">How it works</a></li>
-              <li><a href="#usecase" class="smoothScroll">Use cases</a></li>
-              <li><a href="#pricing" class="smoothScroll">Pricing</a></li>
+              <li class="<?=($data['nav_root']?"":"active");?>"><a href="<?=($data['nav_root']?"/":"");?>#home" class="smoothScroll">Home</a></li>
+              <li><a href="<?=($data['nav_root']?"/":"");?>#how" class="smoothScroll">How it works</a></li>
+              <li><a href="<?=($data['nav_root']?"/":"");?>#usecase" class="smoothScroll">Use cases</a></li>
+              <li><a href="<?=($data['nav_root']?"/":"");?>#pricing" class="smoothScroll">Pricing</a></li>
               <? if (!$data['active_customer']): ?>
-                <li><a href="#signup" class="smoothScroll">Sign-up</a></li>
+                <li><a href="<?=($data['nav_root']?"/":"");?>#signup" class="smoothScroll">Sign-up</a></li>
               <? endif; ?>
               <li><a href="/affiliates">Affiliates</a></li>
             </ul>

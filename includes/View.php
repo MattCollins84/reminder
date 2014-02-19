@@ -48,6 +48,8 @@
     //Render 404 - not found
     static public function render404($view="", $data=array()) {
       
+      header("HTTP/1.0 404 Not Found");
+
       if ($view) {
         $data['_view'] = $view;
       }

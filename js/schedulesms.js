@@ -17,7 +17,9 @@ $(document).ready(function() {
   });
 
   // sign up button
-  $("#btn-signup").click(function() {
+  $("#form-signup").submit(function(e) {
+
+    e.preventDefault();
 
     $.post("/customer/create", $("#form-signup").serialize()).done(function(data) {
       

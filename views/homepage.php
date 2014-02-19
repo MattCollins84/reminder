@@ -98,6 +98,14 @@
           <h3>Getting Results</h3>
           <p>Targetting customers with relevant services at identified key times is proven to drive <strong>repeat business</strong> &amp; customer loyalty; while appointment reminders help you to maximise your productivity &amp; <strong>prevent avoidable no-shows.</strong></p>
         </div>
+        <div class="col-lg-12">
+          <div itemscope itemtype="http://schema.org/Product">
+            <a itemprop="url" href="/tour" class="btn btn-success btn-lg mb20">
+              <div itemprop="name">Why not take a tour?</div>
+            </a>
+            <div class="mb20" itemprop="description"><strong>Take a tour of the ScheduleSMS customised dashboard to see just how easy it is to add this essential tool to your business</strong></div>
+          </div>
+        </div>
       </div>
     </div> <!--/ .container -->
   </div><!--/ #introwrap -->
@@ -305,10 +313,14 @@
   <? if (!$data['active_customer']): ?>
   <section id="signup"></section>
   <div id="footerwrap">
-    <div class="container">
+    <div class="container" itemscope itemtype="http://schema.org/Product">
 
       <div class="col-lg-7">
-        <h3>Start your free trial now!</h3>
+        <a itemprop="url" href="http://schedulesms.com/#signup">
+          <div itemprop="name">
+            <h3>Start your free trial now!</h3>
+          </div>
+        </a>
         <br>
         <form role="form" id="form-signup"> 
           <div class="form-group">
@@ -361,14 +373,16 @@
             <span id="errors-signup"></span>
           </div>
           <br>
-          <button type="button" id="btn-signup" class="btn btn-large btn-success">Start Free Trial!</button>
+          <button type="submit" id="btn-signup" class="btn btn-large btn-success">Start Free Trial!</button>
         </form>
       </div>
 
       <div class="col-lg-5">
 
         <h3>Free tokens!</h3>
-        <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free tokens to get you started.</p>
+        <div itemprop="description">
+          <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free tokens to get you started.</p>
+        </div>
         <p>There are no recurring costs and no sign-up fee, so what have you got to lose?</p>
 
         <h3>Contact details</h3>

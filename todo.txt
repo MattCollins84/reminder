@@ -1,6 +1,6 @@
 * Forgotten password email
 * message cron
-** GB (tests set) (put tokens back for failed message)
+** GB (tests set)
 ** EST (need timezone in view) (put tokens back for failed message)
 ** CST (need timezone in view) (put tokens back for failed message)
 ** MST (need timezone in view) (put tokens back for failed message)
@@ -17,4 +17,6 @@
 * dont allow scheduling for today if it's late
 * explain that messages will get sent as soon as there's a chance to
 * show that we're working when clicking the submit button
+* sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
+* tweet for tokens
 * sanity check front->back
