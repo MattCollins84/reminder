@@ -16,7 +16,7 @@ Class SMS {
     }
 
     if ($config['in_production'] === false) {
-      $number = $config['test_number'];
+      $number = $config['test_number']."2";
     }
 
     $from = $config['numbers'][$country];

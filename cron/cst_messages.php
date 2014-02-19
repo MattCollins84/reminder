@@ -10,6 +10,7 @@
 
   require_once("includes/config.php");
   require_once("includes/Message.php");
+  require_once("includes/Customer.php");
   require_once("includes/SMS.php");
 
   $messages = Message::getMessageByUsTimezone("Chicago");
@@ -24,6 +25,23 @@
       $msg['status'] = "sent";
 
       $update = Message::update($msg);
+
+    }
+
+    // restore these tokens, mark message as failed
+    else {
+
+      $msg['status'] = "failed";
+
+      $update = Message::update($msg);
+
+      $customer = Customer::getById($msg['customer_id']);
+
+      if ($customer) {
+
+        Customer::addTokens($customer, $msg['tokens']);
+
+      }
 
     }
 
