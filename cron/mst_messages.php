@@ -3,8 +3,8 @@
 
   $hour = (int) date("G");
 
-  if ($hour <= 9 || $hour > 17) {
-    echo "Out of hours";
+  if ($hour < 9 || $hour > 17) {
+    echo "MST - Out of hours";
     exit;
   }
 
