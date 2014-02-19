@@ -9,9 +9,9 @@ $(document).ready(function() {
   $('#country').change(function(e) {
 
     if ($(this).val() == "us") {
-      $('#timezone-group').removeClass("hidden");
+      $('#timezone').removeClass("hidden");
     } else {
-      $('#timezone-group').addClass("hidden");
+      $('#timezone').addClass("hidden");
     }
 
   });
@@ -297,8 +297,9 @@ $(document).ready(function() {
   var generateFixedPreview = function() {
 
     var time = ($('#fixed-variation-time').val()?" @ "+$('#fixed-variation-time').val():"");
+    var contact = ($('#company_contact').val()?" Contact:"+$('#company_contact').val():"");
 
-    var preview = "This is a "+$('#fixed-type').val()+" of your "+$('#fixed-variation').val()+" with "+$('#company_name').val()+" on "+$('#fixed-variation-date').val()+time+". Phone: "+$('#company_contact').val();
+    var preview = "This is a "+$('#fixed-type').val()+" of your "+$('#fixed-variation').val()+" with "+$('#company_name').val()+" on "+$('#fixed-variation-date').val()+time+"."+contact;
     $('#fixed-preview').text(preview);
 
     return preview;
