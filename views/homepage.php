@@ -6,7 +6,7 @@
         <div class="col-lg-12">
           <h1 class="hidden-xs">Welcome To <b>ScheduleSMS</b></h1>
           <h1 class="h1-sm visible-xs">ScheduleSMS</h1>
-          <h3>Turn knowledge of your customers into targetted mobile leads, appointment reminders &amp; much more...</h3>
+          <h3>Turn knowledge of your customers into targeted mobile leads, appointment reminders &amp; much more...</h3>
           <br>
         </div>
 
