@@ -355,19 +355,17 @@ $(document).ready(function() {
   // custom message
   $('#custom-message').keyup(function(e) {
 
-    var max = 160;
+    var len = this.value.length;
 
-    var remaining = max - this.value.length;
+    var optout = " reply STOP to unsubscribe";
 
-    $('#message-count').text(remaining);
+    $('#message-count').text(len);
 
-    if (remaining < 0) {
-      $('#message-count').css("color", "red");
-      $('#custom-btn').attr("disabled", true);
-    } else {
-      $('#message-count').css("color", "black");
-      $('#custom-btn').attr("disabled", false);
-    }
+    var max_len = (len + optout.length);
+
+    var total = (Math.ceil(max_len / 160) * parseInt($('#custom_cost').val(), 10));
+
+    $('#message-tokens').text(total);
 
   });
 
@@ -389,13 +387,15 @@ $(document).ready(function() {
 
     }
 
+    var optout = " reply STOP to unsubscribe";
+
     if ($("#custom-message-date").val().split("/").length != 3) {
       date = "";
     }
 
     var data = {
       contact_id: $('#contact_id').val(),
-      message: $('#custom-message').val(),
+      message: $('#custom-message').val()+optout,
       date: date,
       country: $('#country').val(),
       type: "custom",

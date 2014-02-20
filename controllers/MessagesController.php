@@ -74,12 +74,26 @@
 
         }
 
+        switch($vars['type']) {
+
+          case "fixed":
+            $tokens = $data['tokens']['fixed'];
+            break;
+
+          case "custom":
+            $tokens = $data['tokens']['custom'];
+            $len = strlen($vars['message']);
+            $tokens = ceil($len / 160) * $tokens;
+            break;
+
+        }
+
         // create the message
-        $message = Message::createMessage($contact, $vars['message'], $vars['date'], $data['tokens'][$vars['type']], $vars['country'], $vars['type'], $customer['timezone']);
+        $message = Message::createMessage($contact, $vars['message'], $vars['date'], $tokens, $vars['country'], $vars['type'], $customer['timezone']);
 
         // if we're successful, remove these tokens
         if ($message['success']) {
-          Customer::removeTokens($customer, $data['tokens'][$vars['type']]);
+          Customer::removeTokens($customer, $tokens);
           $_SESSION['customer'] = Customer::getById($customer['_id']);
           $_SESSION['message_scheduled'] = true;
         }

@@ -53,6 +53,30 @@ Class SMS {
 
   }
 
+  static public function getLogs() {
+
+    global $config;
+
+    $client = new Services_Twilio($config['twilio']['sid'], $config['twilio']['token']);
+
+    $messages = $client->account->messages->getIterator(0, 50, array('DateSent' => date("Y-m-d"))); 
+
+    $ret = array();
+    foreach ($messages as $message) {
+
+      if ($message->direction != "inbound") {
+        continue;
+      }
+
+      $x = array("body" => $message->body, "number" => $message->from);
+      $ret[] = $x;
+
+    }
+
+    return $ret;
+
+  }
+
 }
 
 ?>

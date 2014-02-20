@@ -99,5 +99,23 @@ class Contact  {
 
   }
 
+  // by number
+  static public function getByNumber($number) {
+
+    $params = array("startkey" => '"'.$number.'"', "endkey" => '"'.$number.'z"', "include_docs" => "true");
+
+    $res = Cloudant::doCurl("GET", "contacts/_design/find/_view/byNumber", array(), $params);
+
+    $arr = array();
+    foreach ($res['rows'] as $row) {
+
+      $arr[] = $row['doc'];
+
+    }
+
+    return $arr;
+
+  }
+
 }
 ?>

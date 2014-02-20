@@ -19,6 +19,7 @@
   <div class="row">
     
     <div class="col-lg-3">
+
       <? require_once("views/dashboard_menu.php"); ?>
 
       <a href="/dashboard/contacts/<?=$data['contact']['_id'];?>" class="btn btn-success btn-lg btn-block mb20"><i class="fa fa-user"></i> Manage contact</a>
@@ -40,6 +41,12 @@
             <h4>Message scheduled successfully.</h4>
           </div>
 
+          <? if ($data['contact']['stop']): ?>
+            <div class="alert alert-danger">
+              <h2>This customer has opted out</h2>
+              <p>This customer has opted out of receiving messages from you via ScheduleSMS.</p>
+            </div>
+          <? else: ?>
           <p>Set up a message for this contact.</p>
           
           <ul class="nav nav-tabs" id="schedule-tabs">
@@ -127,8 +134,8 @@
               <form role="form" id="custom-form">
                 
                 <p>Custom messages can be tailored to this specific customer, often containing a targetted &amp; promotional message. These messages can be saved and re-used with other customers at a later date.</p>
-                <p>Custom messages cost <strong><?=$data['tokens']['custom'];?></strong> tokens.</p>
-                
+                <p>Each custom message is charged at <?=$data['tokens']['custom'];?> tokens per 160 characters.<br /><em class="slight">A required unsubscribe instruction will be included, using 26 characters.</em></p>
+
                 <? if (!$data['can_created_custom']): ?>
                   <div class="alert alert-danger mt20" >
                     <h4><strong>You do not have enough tokens to schedule a message of this type.</strong></h4>
@@ -138,7 +145,7 @@
 
                 <div class="form-group">
 
-                  <label for="custom-message">Compose message (<span id="message-count">160</span> characters left)</label>
+                  <label for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens"><?=$data['tokens']['custom'];?></span> tokens)</label>
                   <textarea class="form-control mb10" id="custom-message" name="custom-message" rows="3"></textarea>
 
                 </div>
@@ -176,6 +183,7 @@
                   <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
                   <input type="hidden" name="company_contact" id="company_contact" value="<?=$data['active_customer']['contact_phone'];?>" />
                   <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
+                  <input type="hidden" name="custom_cost" id="custom_cost" value="<?=$data['tokens']['custom'];?>" />
                   <button type="submit" class="btn btn-success" id="custom-btn"><i class="fa fa-calendar-o"></i> Schedule Message</button>
                 </div>
 
@@ -206,6 +214,7 @@
             </div>
 
           </div>
+        <? endif; ?>
                 
         </div>
 
