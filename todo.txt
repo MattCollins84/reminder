@@ -1,25 +1,20 @@
 * Forgotten password email
-* message cron
-** GB (tests set)
-** EST (need timezone in view) (put tokens back for failed message)
-** CST (need timezone in view) (put tokens back for failed message)
-** MST (need timezone in view) (put tokens back for failed message)
-** PST (need timezone in view) (put tokens back for failed message)
-* bulk messaging
-* import contacts
+* TOUR
 * SEO
 * content re-write
 * images
 * fix config in emails
-* More detailed examples
 * check emails work (signup, forgot password, support)
 * minimise js, css, etc (run speed test)
 * dont allow scheduling for today if it's late
 * explain that messages will get sent as soon as there's a chance to
-* opt out
-* longer custom messages
 * show that we're working when clicking the submit button
 * sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
 * tweet for tokens
 * speed test
 * sanity check front->back
+
+
+Nice to haves:
+* bulk messaging
+* import contacts
