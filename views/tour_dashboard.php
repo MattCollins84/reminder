@@ -123,7 +123,7 @@
   <li class="list-group-item pull-left br0" id="dashboard-menu-transactions-mobile"><a href='/tour/transactions'><i class="fa fa-briefcase"></i></a></li>
 </ul>
 
-<a class="btn btn-danger btn-block btn-lg mb20" id="dashboard-support" href='/dashboard/support'>Support</a>
+<a class="btn btn-danger btn-block btn-lg mb20" id="dashboard-support" href='/tour/support'>Support</a>
       
     </div>
 

@@ -216,14 +216,14 @@ $(document).ready(function() {
                     <p>Set up a message for this contact.</p>
           
           <ul class="nav nav-tabs" id="schedule-tabs">
-            <li class="active"><a id="tab-fix" href="#schedule-fixed" data-toggle="tab"><strong><i class="fa fa-bookmark"> </i> Fixed Messages</strong></a></li>
+            <li><a id="tab-fix" href="#schedule-fixed" data-toggle="tab"><strong><i class="fa fa-bookmark"> </i> Fixed Messages</strong></a></li>
             <li><a id="tab-custom" href="#schedule-custom" data-toggle="tab"><strong><i class="fa fa-bookmark-o"> </i> Custom Messages</strong></a></li>
             <li><a id="tab-template" href="#schedule-templates" data-toggle="tab"><strong><i class="fa fa-archive"> </i> Template Messages</strong></a></li>
           </ul>
 
           <div class="tab-content pt20 pb20">
           
-            <div class="tab-pane active" id="schedule-fixed">
+            <div class="tab-pane" id="schedule-fixed">
               
               <form role="form">
                 
