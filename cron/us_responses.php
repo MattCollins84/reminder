@@ -13,9 +13,7 @@
       continue;
     }
 
-    $number = substr(preg_replace("/[^0-9]+/", '', $message['number']), -9);
-
-    $contacts = Contact::getByNumber($number);
+    $contacts = Contact::getByNumber($message['number']);
 
     foreach ($contacts as $contact) {
 

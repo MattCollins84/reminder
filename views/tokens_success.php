@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Thank You</h1>
         <h3>Your transaction is complete, your tokens will be added to your balance.</h3>
       </div>

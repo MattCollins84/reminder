@@ -56,7 +56,7 @@
     <? if ($data['date_js']): ?>
       <script src="/js/zebra_datepicker.js"></script>
     <? endif; ?>
-    
+
     <script src="/js/schedulesms.js"></script>
 
     <script>

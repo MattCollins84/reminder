@@ -1,14 +1,14 @@
-<div id="headerwrap">
+ <div id="headerwrap">
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Contacts</b></h1>
         <h3>Manage all of your contacts here.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Contacts</h3>
+        <h3 class="">Contacts</h3>
       </div>
 
     </div>
@@ -37,10 +37,7 @@
           <p id="show-text-xs" class="visible-xs">Click the button below to start creating a new contact.</p>
           <button type="button" class="btn btn-success" id="show-contact-form"><i class="fa fa-asterisk"></i> Create Contact</button>
           <form role="form" class="hidden" id="new-contact">
-            <div class="alert alert-success mt20 <?=($data['show_success']?"":"hidden");?>" id="success-container">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h4>Contact created successfully.</h4>
-            </div>
+            
             
             <p>Complete the form below to create a new contact. We require at least a name and a mobile phone number.</p>
             <div class="form-group">

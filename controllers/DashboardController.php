@@ -82,8 +82,6 @@
       $data['hide_menu'] = true;
       $data['phone_js'] = true;
       $data['active_customer'] = Customer::getActiveCustomer();
-      $data['show_success'] = ($_SESSION['contact_created'] === true?true:false);
-      $_SESSION['contact_created'] = false;
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
@@ -105,6 +103,9 @@
       $data['active_customer'] = Customer::getActiveCustomer();
       $data['show_success'] = ($_SESSION['contact_edited'] === true?true:false);
       $_SESSION['contact_edited'] = false;
+
+      $data['show_success_added'] = ($_SESSION['contact_created'] === true?true:false);
+      $_SESSION['contact_created'] = false;
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();

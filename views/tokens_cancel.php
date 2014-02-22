@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Transaction Failed</h1>
         <h3>Your transaction either failed, or was cancelled.</h3>
       </div>

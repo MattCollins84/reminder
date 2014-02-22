@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered">
+      <div class="col-lg-12 centered mt60">
         <h1><i class="fa fa-warning icon-red"></i> Account not found! </b></h1>
         <h3>We cannot find your account, please check the email you received.</h3>
         <br>

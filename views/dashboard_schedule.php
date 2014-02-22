@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Your Schedule</h1>
         <h3>View your upcoming shedule and make any changes you need</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Your Schedule</h3>
+        <h3 class="">Your Schedule</h3>
       </div>
 
     </div>

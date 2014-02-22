@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Tokens</b></h1>
         <h3>Manage your ScheduleSMS tokens.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Tokens</h3>
+        <h3 class="">Tokens</h3>
       </div>
 
     </div>
@@ -42,7 +42,7 @@
       <p>All of our transactions are handled via PayPal to ensure that you have all the security and peace of mind you need when buying online. If you do not have a PayPal account, you can still purchase via PayPal using your credit/debit card.</p>
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-3" id="dashboard-paypal">
       <!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_payments_by_pp_2line.png" border="0" alt="Payments by PayPal" /><br /><img src="/images/paypal_cards.png" alt="Payments by PayPal" class="mt20" /></a><div style="text-align:center"><a href="https://www.paypal.com/uk/webapps/mpp/how-paypal-works" target="_blank"><font size="2" face="Arial" color="#0079CD"><b>How PayPal Works</b></font></a></div></td></tr></table><!-- PayPal Logo -->
     </div>
 

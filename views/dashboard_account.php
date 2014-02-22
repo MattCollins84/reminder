@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Account Settings</b></h1>
         <h3>Change your account contact details here.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Account Settings</h3>
+        <h3 class="">Account Settings</h3>
       </div>
 
     </div>
@@ -40,7 +40,7 @@
           <form role="form" id="acount-settings">
             <h3>Update your settings.</h3>
             <p>You can change your account settings here, make sure you provide us with at least a name and a <strong>valid</strong> email address.</p>
-            <p><strong>Account ID</strong><br /><span class="label label-info"><?=$data['active_customer']['_id'];?></span></p>
+            <p><strong>Account ID</strong><br /><span id="dashboard-account-id" class="label label-info"><?=$data['active_customer']['_id'];?></span></p>
             <div class="form-group">
               <label for="name">Name *</label>
               <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<?=$data['active_customer']['name'];?>" />

@@ -171,6 +171,8 @@ $(document).ready(function() {
       return;
     }
 
+    $("#mobile_phone").val(formatE164($("#country").val(), $("#mobile_phone").val()));
+
     $.post("/contact/create", $(this).serialize()).done(function(data) {
 
       try {
@@ -197,9 +199,9 @@ $(document).ready(function() {
     
     // hide all panels
     $(".contact-panel").addClass("hidden");
-
+    
     // find matches on number
-    var items = $('.contact-panel[data-number*="'+this.value+'"], .contact-panel[data-name*="'+this.value.toLowerCase()+'"]');
+    var items = $('.contact-panel[data-number*="'+this.value.replace(/[^0-9]+/g, "")+'"], .contact-panel[data-name*="'+this.value.toLowerCase()+'"]');
     items.each(function(i) {
       $(items[i]).removeClass("hidden");
     });
@@ -235,11 +237,15 @@ $(document).ready(function() {
     $("#error-container").addClass("hidden");
 
     // check mobile number
+    console.log(getNumberType($("#mobile_phone").val(), $("#country").val()));
+    
     if (getNumberType($("#mobile_phone").val(), $("#country").val()) !== 1) {
       $("#errors-newcontact").html("You have entered an invalid mobile number.<br />Please correct these errors and try again.");
       $("#error-container").removeClass("hidden");
       return;
     }
+
+    $("#mobile_phone").val(formatE164($("#country").val(), $("#mobile_phone").val()));
 
     $.post("/contact/update", $(this).serialize()).done(function(data) {
 

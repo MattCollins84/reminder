@@ -4,6 +4,8 @@
 * content re-write
 * images
 * fix config in emails
+* US number formatting
+* contact search by number (search last 9 numbers only)
 * check emails work (signup, forgot password, support)
 * minimise js, css, etc (run speed test)
 * dont allow scheduling for today if it's late

@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mt60 mb60 hidden-xs">
         <h1>Welcome!</h1>
         <h3>Welcome to the ScheduleSMS affiliates program</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Welcome to ScheduleSMS Affiliates</h3>
+        <h3 class="">Welcome to ScheduleSMS Affiliates</h3>
       </div>
 
     </div>

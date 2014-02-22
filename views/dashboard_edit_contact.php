@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Edit <?=$data['contact']['name'];?></h1>
         <h3>Make any changes you require to this contact.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Edit <?=$data['contact']['name'];?></h3>
+        <h3 class="">Edit <?=$data['contact']['name'];?></h3>
       </div>
 
     </div>
@@ -36,6 +36,13 @@
         </div>
         <div class="panel-body">
           <form role="form" id="edit-contact">
+            
+
+            <div class="alert alert-success mt20 <?=($data['show_success_added']?"":"hidden");?>" id="success-container-created">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h4>Contact created successfully.</h4>
+            </div>
+
             <div class="alert alert-success mt20 <?=($data['show_success']?"":"hidden");?>" id="success-container">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <h4>Contact edited successfully.</h4>
@@ -75,7 +82,7 @@
     <div class=".col-md-offset-3 col-lg-9">
 
       <h1>Scheduled messages</h1>
-      <table class="table table-striped">
+      <table class="table table-striped" id="schedule-table">
         <tr>
           <th>Date</th>
           <th colspan="2">Message</th>

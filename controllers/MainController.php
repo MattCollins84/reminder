@@ -125,6 +125,21 @@
           
     }
 
+    // Render affiliates
+    static public function startTour($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      echo View::renderView("privacy", $data);
+          
+    }
+
   }
   
   

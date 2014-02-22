@@ -2,14 +2,14 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered hidden-xs">
+      <div class="col-lg-12 centered mt60 hidden-xs">
         <h1>Sign in below</h1>
         <h3>Enter your email address &amp; password to sign-in.</h3>
         <br>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Sign in below</h3>
+        <h3 class="">Sign in below</h3>
       </div>
 
       <div class="col-lg-2">

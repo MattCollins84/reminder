@@ -4,9 +4,9 @@
       <div class="row centered">
         
         <div class="col-lg-12">
-          <h1 class="hidden-xs">Welcome To <b>ScheduleSMS</b></h1>
+          <h1 class="hidden-xs mt60">Welcome To <b>ScheduleSMS</b></h1>
           <h1 class="h1-sm visible-xs">ScheduleSMS</h1>
-          <h3>Turn knowledge of your customers into targeted mobile leads, appointment reminders &amp; much more...</h3>
+          <h3>Unlocking the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more...</h3>
           <br>
         </div>
 
@@ -26,7 +26,7 @@
               <button type="button" id='start-btn2' class="btn btn-lg btn-success">Start Free Trial!</button>
               <br>
               <h3>No monthly fee or hidden costs, pay as you go!</h3>
-              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined key times to help drive repeat business and minimise no-shows.<br /><br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
             </form>
           </div>
 
@@ -34,7 +34,7 @@
             <br>
             <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png" alt="Arrow" />
             <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
-            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
+            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free tokens!</p>
           </div>
         </div>
         <div class="hidden-lg">
@@ -91,16 +91,16 @@
         <div class="col-lg-4">
           <i class="fa fa-8x fa-calendar icon-red"></i>
           <h3>Targetted Messaging</h3>
-          <p>We will send SMS messages direct to your customers on <strong>key dates</strong> identified by you. Whether this is an appointment confirmation, call to action, or promotional material - we will get your message there.</p>
+          <p>We will send SMS messages direct to your customers on <strong>key dates</strong> identified by you. Whether this is an appointment confirmation, call to action, or promotional material - we will get your message there when YOU think is best.</p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-8x fa-check-circle icon-green"></i>
           <h3>Getting Results</h3>
-          <p>Targetting customers with relevant services at identified key times is proven to drive <strong>repeat business</strong> &amp; customer loyalty; while appointment reminders help you to maximise your productivity &amp; <strong>prevent avoidable no-shows.</strong></p>
+          <p>Targetting customers with relevant services at identified key times is proven to drive <strong>repeat business &amp; customer loyalty</strong>, while appointment reminders help you to maximise your productivity &amp; <strong>prevent avoidable no-shows.</strong></p>
         </div>
         <div class="col-lg-12">
           <div itemscope itemtype="http://schema.org/Product">
-            <a itemprop="url" href="/tour" class="btn btn-success btn-lg mb20">
+            <a itemprop="url" href="/tour/start" class="btn btn-success btn-lg mb20">
               <div itemprop="name">Why not take a tour?</div>
             </a>
             <div class="mb20" itemprop="description"><strong>Take a tour of the ScheduleSMS customised dashboard to see just how easy it is to add this essential tool to your business</strong></div>

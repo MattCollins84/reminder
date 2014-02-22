@@ -2,14 +2,14 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered hidden-xs">
+      <div class="col-lg-12 centered mt60 hidden-xs">
         <h1>Forgotten your password?</h1>
         <h3>Enter your email address below, and we'll send you a new password.</h3>
         <br>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Forgotten your password?</h3>
+        <h3 class="">Forgotten your password?</h3>
       </div>
 
       <div class="col-lg-2">

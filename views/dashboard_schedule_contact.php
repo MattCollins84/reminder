@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered mb60 hidden-xs">
+      <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Schedule Message</h1>
         <h3>Schedule a message for <?=$data['contact']['name'];?>.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Schedule Message</h3>
+        <h3 class="">Schedule Message</h3>
       </div>
 
     </div>
@@ -50,16 +50,16 @@
           <p>Set up a message for this contact.</p>
           
           <ul class="nav nav-tabs" id="schedule-tabs">
-            <li class="active"><a href="#schedule-fixed" data-toggle="tab"><strong><i class="fa fa-bookmark"> </i> Fixed Messages</strong></a></li>
-            <li><a href="#schedule-custom" data-toggle="tab"><strong><i class="fa fa-bookmark-o"> </i> Custom Messages</strong></a></li>
-            <li><a href="#schedule-templates" data-toggle="tab"><strong><i class="fa fa-archive"> </i> Template Messages</strong></a></li>
+            <li class="active"><a id="tab-fix" href="#schedule-fixed" data-toggle="tab"><strong><i class="fa fa-bookmark"> </i> Fixed Messages</strong></a></li>
+            <li><a id="tab-custom" href="#schedule-custom" data-toggle="tab"><strong><i class="fa fa-bookmark-o"> </i> Custom Messages</strong></a></li>
+            <li><a id="tab-template" href="#schedule-templates" data-toggle="tab"><strong><i class="fa fa-archive"> </i> Template Messages</strong></a></li>
           </ul>
 
           <div class="tab-content pt20 pb20">
           
             <div class="tab-pane active" id="schedule-fixed">
               
-              <form role="form" id="fixed-form">
+              <form role="form">
                 
                 <p>Fixed messages are used for confirmations or reminders for appointments or meetings, and cost <strong><?=$data['tokens']['fixed'];?></strong> tokens.</p>
                 
@@ -70,7 +70,7 @@
                   </div>
                 <? else: ?>
                 <div class="form-group fixed-section">
-                  <h4><strong>Step One</strong> Is this a reminder, or a confirmation?</h4>
+                  <h4 id='fixedstep1'><strong>Step One</strong> Is this a reminder, or a confirmation?</h4>
                   <p>
                     <a class="btn btn-default fixed-btn" data-value="reminder" data-target="#fixed-type">Reminder</a> 
                     <a class="btn btn-default fixed-btn" data-value="confirmation" data-target="#fixed-type">Confirmation</a>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="form-group fixed-section hidden">
-                  <h4><strong>Step Two</strong> Is this a meeting, or an appointment?</h4>
+                  <h4 id='fixedstep2'><strong>Step Two</strong> Is this a meeting, or an appointment?</h4>
                   <p>
                     <a class="btn btn-default fixed-btn" data-value="meeting" data-target="#fixed-variation">Meeting</a>
                     <a class="btn btn-default fixed-btn" data-value="appointment" data-target="#fixed-variation">Appointment</a>
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="form-group fixed-section hidden">
-                  <h4><strong>Step Three</strong> When is the <span id="variation-placeholder"></span>?</h4>
+                  <h4 id='fixedstep3'><strong>Step Three</strong> When is the <span id="variation-placeholder"></span>?</h4>
                   <p>
                     <input type="text" class="datepicker form-control input-small" id="fixed-variation-date" />
                   </p>
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="form-group fixed-section hidden">
-                  <h4><strong>Step Four</strong> When should the reminder be sent?</h4>
+                  <h4 id='fixedstep4'><strong>Step Four</strong> When should the reminder be sent?</h4>
                   <p>
                     <input type="text" class="datepicker form-control input-small"  id="fixed-message-date"/>
                   </p>
@@ -122,7 +122,7 @@
                   <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
                   <input type="hidden" name="company_contact" id="company_contact" value="<?=$data['active_customer']['contact_phone'];?>" />
                   <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
-                  <button type="submit" class="btn btn-success"><i class="fa fa-calendar-o"></i> Schedule Message</button>
+                  <button type="button" class="btn btn-success"><i class="fa fa-calendar-o"></i> Schedule Message</button>
                 </div>
 
                 <? endif; ?>
@@ -145,7 +145,7 @@
 
                 <div class="form-group">
 
-                  <label for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens"><?=$data['tokens']['custom'];?></span> tokens)</label>
+                  <label  id='customcompose' for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens"><?=$data['tokens']['custom'];?></span> tokens)</label>
                   <textarea class="form-control mb10" id="custom-message" name="custom-message" rows="3"></textarea>
 
                 </div>

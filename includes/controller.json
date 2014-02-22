@@ -55,6 +55,60 @@
         "authentication": false 
     },
     {
+        "regex": "^/tour/start+$",
+        "controllerClass": "TourController",
+        "method": "startTour",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/account+$",
+        "controllerClass": "TourController",
+        "method": "tourAccount",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/tokens+$",
+        "controllerClass": "TourController",
+        "method": "tourTokens",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/contacts+$",
+        "controllerClass": "TourController",
+        "method": "tourContacts",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/contacts/edit+$",
+        "controllerClass": "TourController",
+        "method": "tourContactsEdit",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/contacts/schedule+$",
+        "controllerClass": "TourController",
+        "method": "tourContactsSchedule",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/schedule+$",
+        "controllerClass": "TourController",
+        "method": "tourSchedule",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/transactions+$",
+        "controllerClass": "TourController",
+        "method": "tourTrans",
+        "authentication": false 
+    },
+    {
+        "regex": "^/tour/support+$",
+        "controllerClass": "TourController",
+        "method": "tourSupport",
+        "authentication": false 
+    },
+    {
         "regex": "^/dashboard$",
         "controllerClass": "DashboardController",
         "method": "renderDashboardHome",

@@ -38,7 +38,7 @@
   <li class="list-group-item contact-panel hidden" id="contact-search-add">
     <div>
       <p>Not found what you are looking for?</p>
-      <a class="btn btn-success" href="/dashboard/contacts"><i class="fa fa-users"> </i> Create a new contact</a>
+      <a class="btn btn-success" id="contact-search-add-btn" href="/dashboard/contacts"><i class="fa fa-users"> </i> Create a new contact</a>
     </div>
   </li>
 </ul>

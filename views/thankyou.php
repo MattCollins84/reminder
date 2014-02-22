@@ -2,14 +2,14 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered hidden-xs">
+      <div class="col-lg-12 centered mt60 hidden-xs">
         <h1>Thanks for joining us!</b></h1>
         <h3>We have created your account and are just about ready to get started.</h3>
         <br>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">Thanks for joining us!</h3>
+        <h3 class="">Thanks for joining us!</h3>
       </div>
       
       <div class="col-lg-12 mb60">

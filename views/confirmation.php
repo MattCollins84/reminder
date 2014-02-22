@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-lg-12 centered">
+      <div class="col-lg-12 centered mt60">
         <h1><i class="fa fa-check-circle icon-green"></i> Account verified!</b></h1>
         <h3>Thank you for verifying your account.</h3>
         <br>
