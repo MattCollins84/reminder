@@ -175,7 +175,7 @@
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/tour/support",
+        "regex": "^/dashboard/support",
         "controllerClass": "DashboardController",
         "method": "renderDashboardSupport",
         "authentication": "authCustomer" 
