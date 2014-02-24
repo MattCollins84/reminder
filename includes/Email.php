@@ -28,8 +28,13 @@ class Email  {
   // confirmation email
   static public function confirmationEmail($to, $id) {
 
-    $message = "Thank you for starting your free trial with ScheduleSMS!\n\nWe just need to verify your email address, to do so please click this link:\nhttp://".$_SERVER['HTTP_HOST']."/confirmation/".$id;
-    return Email::sendEmail($to, "ScheduleSMS - confirm email address", $message);
+    $link = "http://".$_SERVER['HTTP_HOST']."/confirmation/".$id;
+    
+    $template = @file_get_contents("../emails/signup.html");
+
+    $message = str_replace("<%CONFIRM_LINK%>", $link, $template);
+
+    return Email::sendEmail($to, "ScheduleSMS - welcome! Please confirm your email address.", $message);
 
   }
 
