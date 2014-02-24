@@ -59,7 +59,7 @@
           
             <div class="tab-pane active" id="schedule-fixed">
               
-              <form role="form">
+              <form role="form" id="fixed-form">
                 
                 <p>Fixed messages are used for confirmations or reminders for appointments or meetings, and cost <strong><?=$data['tokens']['fixed'];?></strong> tokens.</p>
                 
@@ -122,7 +122,7 @@
                   <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
                   <input type="hidden" name="company_contact" id="company_contact" value="<?=$data['active_customer']['contact_phone'];?>" />
                   <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
-                  <button type="button" class="btn btn-success"><i class="fa fa-calendar-o"></i> Schedule Message</button>
+                  <button type="submit" class="btn btn-success"><i class="fa fa-calendar-o"></i> Schedule Message</button>
                 </div>
 
                 <? endif; ?>
