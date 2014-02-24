@@ -301,8 +301,7 @@ $(document).ready(function() {
   tour.init();
 
   // Start the tour
-      tour.restart();
-      tour.start();
+  setTimeout(function(){tour.start()}, 500);
 })
 
 

@@ -4,9 +4,9 @@
       <div class="row centered">
         
         <div class="col-lg-12">
-          <h1 class="hidden-xs mt60">Welcome To <b>ScheduleSMS</b></h1>
+          <h1 class="hidden-xs">Welcome To <b>ScheduleSMS</b></h1>
           <h1 class="h1-sm visible-xs">ScheduleSMS</h1>
-          <h3>Unlocking the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more...</h3>
+          <h3>Turn knowledge of your customers into targetted mobile leads, appointment reminders &amp; much more...</h3>
           <br>
         </div>
 
@@ -26,7 +26,7 @@
               <button type="button" id='start-btn2' class="btn btn-lg btn-success">Start Free Trial!</button>
               <br>
               <h3>No monthly fee or hidden costs, pay as you go!</h3>
-              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined key times to help drive repeat business and minimise no-shows.<br /><br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
             </form>
           </div>
 
@@ -34,7 +34,7 @@
             <br>
             <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png" alt="Arrow" />
             <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
-            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free tokens!</p>
+            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
           </div>
         </div>
         <div class="hidden-lg">
@@ -91,20 +91,12 @@
         <div class="col-lg-4">
           <i class="fa fa-8x fa-calendar icon-red"></i>
           <h3>Targetted Messaging</h3>
-          <p>We will send SMS messages direct to your customers on <strong>key dates</strong> identified by you. Whether this is an appointment confirmation, call to action, or promotional material - we will get your message there when YOU think is best.</p>
+          <p>We will send SMS messages direct to your customers on <strong>key dates</strong> identified by you. Whether this is an appointment confirmation, call to action, or promotional material - we will get your message there.</p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-8x fa-check-circle icon-green"></i>
           <h3>Getting Results</h3>
-          <p>Targetting customers with relevant services at identified key times is proven to drive <strong>repeat business &amp; customer loyalty</strong>, while appointment reminders help you to maximise your productivity &amp; <strong>prevent avoidable no-shows.</strong></p>
-        </div>
-        <div class="col-lg-12">
-          <div itemscope itemtype="http://schema.org/Product">
-            <a itemprop="url" href="/tour/start" class="btn btn-success btn-lg mb20">
-              <div itemprop="name">Why not take a tour?</div>
-            </a>
-            <div class="mb20" itemprop="description"><strong>Take a tour of the ScheduleSMS customised dashboard to see just how easy it is to add this essential tool to your business</strong></div>
-          </div>
+          <p>Targetting customers with relevant services at identified key times is proven to drive <strong>repeat business</strong> &amp; customer loyalty; while appointment reminders help you to maximise your productivity &amp; <strong>prevent avoidable no-shows.</strong></p>
         </div>
       </div>
     </div> <!--/ .container -->
@@ -214,10 +206,6 @@
               <? foreach ($data['plans']['us'] as $key => $plan): ?>
               
                 <div class="col-lg-3 col-md-3 col-xs-6">
-                  <? if ($plan['selected']): ?>
-                    <img src="/images/most-popular-badge.png" class="most-popular-sm visible-xs" alt="Most popular price plan"/>
-                    <img src="/images/most-popular-badge.png" class="most-popular hidden-xs" alt="Most popular price plan"/>
-                  <? endif; ?>
                   <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
                     <li class="plan-name">
                         <?=$plan['name'];?>
@@ -243,11 +231,7 @@
             <div class="tab-pane" id="pricing-uk">
               <? foreach ($data['plans']['gb'] as $key => $plan): ?>
               
-                <div class="col-lg-3 col-md-3 col-xs-6 mb20">
-                  <? if ($plan['selected']): ?>
-                    <img src="/images/most-popular-badge.png" class="most-popular-sm visible-xs" alt="Most popular price plan"/>
-                    <img src="/images/most-popular-badge.png" class="most-popular hidden-xs" alt="Most popular price plan"/>
-                  <? endif; ?>
+                <div class="col-lg-3 col-md-3 col-xs-6">
                   <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
                     <li class="plan-name">
                         <?=$plan['name'];?>
@@ -321,90 +305,70 @@
   <? if (!$data['active_customer']): ?>
   <section id="signup"></section>
   <div id="footerwrap">
-    <div class="container" itemscope itemtype="http://schema.org/Product">
+    <div class="container">
 
-      <div class="col-lg-6">
-        <a itemprop="url" href="http://schedulesms.com/#signup">
-          <div itemprop="name">
-            <h3>Start your free trial now!</h3>
-          </div>
-        </a>
+      <div class="col-lg-7">
+        <h3>Start your free trial now!</h3>
         <br>
         <form role="form" id="form-signup"> 
           <div class="form-group">
             <label for="name">Country *</label>
-            <div class="row">
-              <div class="col-lg-6 col-md-6 mb10">
-                <select id="country" name="country" class="form-control" >
-                  <option value="">- Select Country -</option>
-                  <option value="us">United States</option>
-                  <option value="gb">United Kingdom</option>
-                </select>
-              </div>
-              <div class="col-lg-6 col-md-6 mb10">
-                <select id="timezone" name="timezone" class="form-control hidden" >
-                  <option value="">- Select Timezone -</option>
-                  <option value="Los_Angeles">Pacific (PST)</option>
-                  <option value="Denver">Mountain (MST)</option>
-                  <option value="Chicago">Central (CST)</option>
-                  <option value="New_York">Eastern (EST)</option>
-                </select>
-              </div>
-            </div>   
+            <select id="country" name="country" class="form-control" >
+              <option value="">- Select Country -</option>
+              <option value="us">United States</option>
+              <option value="gb">United Kingdom</option>
+            </select>
           </div>
-          <div class="form-group">              
-            <div class="row">
-              <div class="col-lg-6 col-md-6 mb10">
-                <label for="name">Company Name *</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your company name" />
-              </div>
-              <div class="col-lg-6 col-md-6 mb10">
-                <label for="email">Email address *</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Your email address" />
-              </div>
-            </div>
+          <div class="form-group hidden" id="timezone-group">
+            <label for="timezone">Timezone *</label>
+            <select id="timezone" name="timezone" class="form-control" >
+              <option value="">- Select Timezone -</option>
+              <option value="Los_Angeles">Pacific (PST)</option>
+              <option value="Denver">Mountain (MST)</option>
+              <option value="Chicago">Central (CST)</option>
+              <option value="New_York">Eastern (EST)</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="contact_name">Contact Details</label>
-            <div class="row">
-              <div class="col-lg-6 col-md-6 mb10">
-                <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="A contact name" />
-              </div>
-              <div class="col-lg-6 col-md-6 mb10">
-                <input type="text" name="contact_phone" class="form-control" id="contact_phone" placeholder="A contact number" />
-              </div>
-            </div>
-            <span class="help-block">We may include your contact number when you send SMS to customers. We will never share your contact name.</span>
+            <label for="name">Company Name *</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your company name" />
           </div>
           <div class="form-group">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 mb10">
-                <label for="password">Your password *</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Your password" />
-              </div>
-              <div class="col-lg-6 col-md-6 mb10">
-                <label for="password">Confirm password *</label>
-                <input type="password" name="password2" class="form-control" id="password2" placeholder="Confirm password" />
-              </div>
-            </div>
+            <label for="email">Email address *</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Your email address" />
+            <span class="help-block">We will send a confirmation email to this address.</span>
+          </div>
+          <div class="form-group">
+            <label for="contact_name">Contact name</label>
+            <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="A contact name" />
+          </div>
+          <div class="form-group">
+            <label for="contact_phone">Contact number</label>
+            <input type="text" name="contact_phone" class="form-control" id="contact_phone" placeholder="A contact number" />
+          </div>
+          <div class="form-group">
+            <label for="password">Your password *</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="" />
             <span class="help-block">Password should be at least 8 characters long.</span>
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm password *</label>
+            <input type="password" name="password2" class="form-control" id="password2" placeholder="" />
           </div>
           <div class="alert alert-danger mt20 hidden" id="error-container">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4>There was a problem when submitting the form</h4>
             <span id="errors-signup"></span>
           </div>
-          <button type="submit" id="btn-signup" class="btn btn-large btn-success hidden-xs">Start Free Trial!</button>
-          <button type="submit" id="btn-signup" class="btn btn-large btn-success btn-block visible-xs">Start Free Trial!</button>
+          <br>
+          <button type="button" id="btn-signup" class="btn btn-large btn-success">Start Free Trial!</button>
         </form>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-5">
 
         <h3>Free tokens!</h3>
-        <div itemprop="description">
-          <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free tokens to get you started.</p>
-        </div>
+        <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free tokens to get you started.</p>
         <p>There are no recurring costs and no sign-up fee, so what have you got to lose?</p>
 
         <h3>Contact details</h3>
