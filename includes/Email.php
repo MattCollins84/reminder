@@ -5,13 +5,18 @@ require_once("includes/config.php");
 class Email  {
 
   // send an email
-  static public function sendEmail($to, $subject, $message, $from="no-reply@schedulesms.com") {
+  static public function sendEmail($to, $subject, $message, $from="no-reply@schedulesms.com", $html=true) {
 
     global $config;
 
     $headers = 'From: '.$from . "\r\n" .
     'Reply-To: '.$from . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
+
+    if ($html) {
+      $headers .= "\r\nMIME-Version: 1.0" . "\r\n";
+      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    }
 
     if ($config['in_production'] === false) {
       $to = $config['test_email'];
@@ -29,8 +34,8 @@ class Email  {
   static public function confirmationEmail($to, $id) {
 
     $link = "http://".$_SERVER['HTTP_HOST']."/confirmation/".$id;
-    
-    $template = @file_get_contents("../emails/signup.html");
+
+    $template = file_get_contents("../emails/signup.html");
 
     $message = str_replace("<%CONFIRM_LINK%>", $link, $template);
 
