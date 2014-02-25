@@ -396,7 +396,7 @@
             <span id="errors-signup"></span>
           </div>
           <button type="submit" id="btn-signup" class="btn btn-large btn-success hidden-xs">Start Free Trial!</button>
-          <button type="submit" id="btn-signup" class="btn btn-large btn-success btn-block visible-xs">Start Free Trial!</button>
+          <button type="submit" id="btn-signup2" class="btn btn-large btn-success btn-block visible-xs">Start Free Trial!</button>
         </form>
       </div>
 

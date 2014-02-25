@@ -21,6 +21,8 @@ $(document).ready(function() {
 
     e.preventDefault();
 
+    $('#btn-signup, #btn-signup').attr("disabled", "disabled").text("Please wait...");
+
     $.post("/customer/create", $("#form-signup").serialize()).done(function(data) {
       
       $("#error-container").addClass("hidden");
@@ -34,6 +36,7 @@ $(document).ready(function() {
       if (data.success === false) {
         $("#errors-signup").html(data.error+"<br />Please correct these errors and try again.");
         $("#error-container").removeClass("hidden");
+        $('#btn-signup, #btn-signup').attr("disabled", false).text("Start Free Trial!");
       }
 
       else {
@@ -45,7 +48,9 @@ $(document).ready(function() {
   });
 
   // sign up button
-  $("#forgot-btn").click(function() {
+  $("#forgot-form").submit(function(e) {
+
+    e.preventDefault();
 
     $.get("/customer/forgot-password", $("#forgot-form").serialize()).done(function(data) {
       
@@ -91,13 +96,9 @@ $(document).ready(function() {
   });
 
   // sign in
-  $('#signin-form input').keyup(function(e) {
-    if (e.keyCode == 13) {
-      $("#signin-btn").click();
-    }
-  });
+  $("#signin-form").submit(function(e) {
 
-  $("#signin-btn").click(function() {
+    e.preventDefault();
 
     var data = {
       email : $("#signin-email").val(),

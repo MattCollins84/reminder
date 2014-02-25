@@ -22,7 +22,7 @@
           </div>
           <button type="button" id='forgot-btn' class="btn btn-lg btn-success">Get password</button>
           <div class="alert alert-danger mt20 hidden" id="error-container">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <button type="submit" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4>There was a retrieving your details</h4>
             <span id="errors-forgot"></span>
           </div>
