@@ -72,7 +72,7 @@
             </div>
             <input type="hidden" name="contact_id" id="contact_id" value="<?=$data['contact']['_id'];?>" />
             <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
-            <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> Edit Contact</button>
+            <button type="submit" class="btn btn-success" id="edit-btn"><i class="fa fa-edit"></i> Edit Contact</button>
           </form>
         </div>
       </div>

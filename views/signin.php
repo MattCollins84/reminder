@@ -23,7 +23,7 @@
           <div class="form-group">
             <input type="password" name="signin-password" class="form-control input-lg" id="signin-password" placeholder="Your password" />
           </div>
-          <button type="button" id='signin-btn' class="btn btn-lg btn-success">Sign-in</button>
+          <button type="submit" id='signin-btn' class="btn btn-lg btn-success">Sign-in</button>
           <div class="alert alert-danger mt20 hidden" id="error-container">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4>There was a problem signing you in</h4>

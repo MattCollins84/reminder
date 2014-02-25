@@ -20,7 +20,7 @@
           <div class="form-group">
             <input type="email" name="email" class="form-control input-lg" id="email" placeholder="Your email address" />
           </div>
-          <button type="button" id='forgot-btn' class="btn btn-lg btn-success">Get password</button>
+          <button type="submit" id='forgot-btn' class="btn btn-lg btn-success">Get password</button>
           <div class="alert alert-danger mt20 hidden" id="error-container">
             <button type="submit" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4>There was a retrieving your details</h4>

@@ -122,7 +122,7 @@
                   <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
                   <input type="hidden" name="company_contact" id="company_contact" value="<?=$data['active_customer']['contact_phone'];?>" />
                   <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
-                  <button type="submit" class="btn btn-success"><i class="fa fa-calendar-o"></i> Schedule Message</button>
+                  <button type="submit" class="btn btn-success" id="fixed-btn"><i class="fa fa-calendar-o"></i> Schedule Message</button>
                 </div>
 
                 <? endif; ?>

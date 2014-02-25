@@ -37,7 +37,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4>Account Settings successfully updated.</h4>
           </div>
-          <form role="form" id="acount-settings">
+          <form role="form" id="account-settings">
             <h3>Update your settings.</h3>
             <p>You can change your account settings here, make sure you provide us with at least a name and a <strong>valid</strong> email address.</p>
             <p><strong>Account ID</strong><br /><span id="dashboard-account-id" class="label label-info"><?=$data['active_customer']['_id'];?></span></p>
@@ -74,7 +74,7 @@
               <h4>There was a problem when updating your details</h4>
               <span id="errors-signup"></span>
             </div>
-            <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
+            <button type="submit" id="account-btn" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
           </form>
 
         </div>

@@ -52,6 +52,8 @@ $(document).ready(function() {
 
     e.preventDefault();
 
+    $('#forgot-btn').attr("disabled", "disabled").text("Please wait...");
+
     $.get("/customer/forgot-password", $("#forgot-form").serialize()).done(function(data) {
       
       $("#error-container").addClass("hidden");
@@ -65,6 +67,7 @@ $(document).ready(function() {
       if (data.success === false) {
         $("#errors-forgot").html(data.error);
         $("#error-container").removeClass("hidden");
+        $('#forgot-btn').attr("disabled", false).text("Get password");
       }
 
       else {
@@ -105,6 +108,8 @@ $(document).ready(function() {
       password: $("#signin-password").val()
     }
 
+    $('#signin-btn').attr("disabled", "disabled").text("Please wait...");
+
     $.ajax({
       type: "POST",
       url: "/customer/auth",
@@ -118,6 +123,7 @@ $(document).ready(function() {
       } else {
         $('#errors-signin').html(res.error);
         $("#error-container").removeClass("hidden");
+        $('#signin-btn').attr("disabled", false).text("Sign-in");
       }
 
     });
@@ -125,9 +131,11 @@ $(document).ready(function() {
   });
 
   // account settings
-  $('#acount-settings').submit(function(e) {
+  $('#account-settings').submit(function(e) {
     
     e.preventDefault();
+
+    $('#account-btn').attr("disabled", "disabled").text("Please wait...");
 
     $.post("/customer/update", $(this).serialize()).done(function(data) {
       
@@ -142,6 +150,7 @@ $(document).ready(function() {
       if (data.success === false) {
         $("#errors-signup").html(data.error+"<br />Please correct these errors and try again.");
         $("#error-container").removeClass("hidden");
+        $('#account-btn').attr("disabled", false).html('<i class="fa fa-edit"></i> Update');
       }
 
       else {
@@ -164,12 +173,15 @@ $(document).ready(function() {
     
     e.preventDefault();
 
+    $('#contact-btn').attr("disabled", "disabled").text("Please wait...");
+
     $("#error-container").addClass("hidden");
 
     // check mobile number
     if (getNumberType($("#mobile_phone").val(), $("#country").val()) !== 1 && getNumberType($("#mobile_phone").val(), $("#country").val()) !== 2) {
       $("#errors-newcontact").html("You have entered an invalid mobile number.<br />Please correct these errors and try again.");
       $("#error-container").removeClass("hidden");
+      $('#contact-btn').attr("disabled", false).html('<i class="fa fa-asterisk"></i> Create Contact</button>');
       return;
     }
 
@@ -186,6 +198,7 @@ $(document).ready(function() {
       if (data.success === false) {
         $("#errors-newcontact").html(data.error+"<br />Please correct these errors and try again.");
         $("#error-container").removeClass("hidden");
+        $('#contact-btn').attr("disabled", false).html('<i class="fa fa-asterisk"></i> Create Contact</button>');
       }
 
       else {
@@ -238,12 +251,13 @@ $(document).ready(function() {
 
     $("#error-container").addClass("hidden");
 
+    $('#edit-btn').attr("disabled", "disabled").text("Please wait...");
+
     // check mobile number
-    console.log(getNumberType($("#mobile_phone").val(), $("#country").val()));
-    
     if (getNumberType($("#mobile_phone").val(), $("#country").val()) !== 1) {
       $("#errors-newcontact").html("You have entered an invalid mobile number.<br />Please correct these errors and try again.");
       $("#error-container").removeClass("hidden");
+      $('#edit-btn').attr("disabled", false).html('<i class="fa fa-edit"></i> Edit Contact');
       return;
     }
 
@@ -260,6 +274,7 @@ $(document).ready(function() {
       if (data.success === false) {
         $("#errors-newcontact").html(data.error+"<br />Please correct these errors and try again.");
         $("#error-container").removeClass("hidden");
+        $('#edit-btn').attr("disabled", false).html('<i class="fa fa-edit"></i> Edit Contact');
       }
 
       else {
@@ -319,6 +334,8 @@ $(document).ready(function() {
 
     e.preventDefault();
 
+    $('#fixed-btn').attr("disabled", "disabled").text("Please wait...");
+
     var date = $("#fixed-message-date").val().split("/");
 
     switch ($('#country').val()) {
@@ -354,6 +371,7 @@ $(document).ready(function() {
       } else {
         $('#fixed-error').html(res.error);
         $("#fixed-failure").removeClass("hidden");
+        $('#fixed-btn').attr("disabled", false).html('<i class="fa fa-calendar-o"></i> Schedule Message');
       }
 
     });

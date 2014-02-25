@@ -63,12 +63,12 @@
             </div>
             <input type="hidden" name="customer_id" id="customer_id" value="<?=$data['active_customer']['_id'];?>" />
             <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
-            <button type="submit" class="btn btn-success"><i class="fa fa-asterisk"></i> Create Contact</button>
+            <button type="submit" class="btn btn-success" id="contact-btn"><i class="fa fa-asterisk"></i> Create Contact</button>
           </form>
         </div>
-      </div>
 
-      <? require_once("views/dashboard_contact_search_large.php"); ?>
+        <? require_once("views/dashboard_contact_search_large.php"); ?>
+      </div>
 
     </div>
 
