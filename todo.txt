@@ -29,17 +29,18 @@ TEST PLAN
 * sign in
 * change account details
 * change account password
-* purchase tokens
-* add contact
-** phone number storage
-* edit contact
-** phone number storage
-* schedule fixed message
-* schedule custom message
+* purchase tokens (gb) (us)
+* add contact (gb) (us)
+** phone number storage (gb) (us)
+* edit contact (gb) (us)
+** phone number storage (gb) (us)
+* schedule fixed message (gb) (us)
+* schedule custom message (gb) (us)
 * save custom message as template (no date)
 * save custom message as template (with date)
 * use custom template (date and no date)
-* opt out
+* opt out (gb) (us)
 * view schedule
 ** unschedule
 * view transactions
+* support email
