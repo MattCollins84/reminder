@@ -44,3 +44,4 @@ TEST PLAN
 ** unschedule
 * view transactions
 * support email
+* TOUR
