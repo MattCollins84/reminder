@@ -72,6 +72,8 @@
     //Render 403 - Forbidden
     static public function render403($view="", $data=array()) {
       
+      header("HTTP/1.0 403 Forbidden");
+
       if ($view) {
         $data['_view'] = $view;
       }

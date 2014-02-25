@@ -4,7 +4,6 @@
 * content re-write
 * images
 * make sure refreshing success page doesn't add more tokens
-* fix config in emails
 * US number formatting
 * contact search by number (search last 9 numbers only)
 * check emails work (signup, forgot password, support)

@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>403 : CI Admin</title>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/css/bootstrap.css" />
-	<link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
-</head>
-<body>
-	
-
-
-
-<div id="main">
-    <div class="container">
-      <div class="hero-unit">
-      	<h1>403 - Not Authorised</h1>
-		<p>You need to be an authorised user to access this section of the Central Index.</p>
-		
-		<a href="javascript:history.go(-1);" class="btn btn-primary">Go Back</a>
-		
+<div id="headerwrap">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-12 centered mb60 hidden-xs">
+        <h1>403 - Not authorised</h1>
+        <h3>Oops, it seems like you're trying to view a page that you shouldn't!</h3>
       </div>
-    </div>
-    </div>
 
-</body>
-</html>
+      <div class="col-lg-12 centered mt20 visible-xs">
+        <h3 class="mt40">403 - Not authorised</h3>
+      </div>
+
+    </div>
+  </div> <!--/ .container -->
+</div><!--/ #headerwrap -->

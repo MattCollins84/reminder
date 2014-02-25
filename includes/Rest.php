@@ -21,6 +21,7 @@
   
   require_once("controllers/AuthenticationController.php");
   require_once("includes/Validation.php");
+  require_once("includes/View.php");
 	
   class Rest {  
       
@@ -243,8 +244,7 @@
       public function checkAuthentication($method)   {  
         
         if (call_user_func("AuthenticationController::".$method, $this) === false) {
-          $_SESSION['ref'] = $_SERVER['REQUEST_URI'];
-          header("Location: /sign-in");
+          View::render403();
           exit;
         }
         

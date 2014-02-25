@@ -8,7 +8,7 @@
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="mt40">ScheduleSMS Affiliates</h3>
+        <h3 class="mt40">404 - Page not found</h3>
       </div>
 
     </div>
