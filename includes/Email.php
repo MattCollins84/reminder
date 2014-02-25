@@ -35,7 +35,7 @@ class Email  {
 
     $link = "http://".$_SERVER['HTTP_HOST']."/confirmation/".$id;
 
-    $template = file_get_contents("../emails/signup.html");
+    $template = file_get_contents("emails/signup.html");
 
     $message = str_replace("<%CONFIRM_LINK%>", $link, $template);
 

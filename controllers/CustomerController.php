@@ -440,6 +440,33 @@
 
     }
 
+    static public function sendVerificationEmail($rest) {
+
+      $data = array();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $errors = Validation::required(array("email", "id"), $vars);
+
+      // do we have any errors
+      if (count($errors)) {
+
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Missing the following fields: ".implode($errors, ", ")
+        ));
+        exit;
+
+      }
+
+      $email = Email::confirmationEmail($vars['email'], $vars['id']);
+
+      echo json_encode(array("success" => $email));
+      exit;
+
+    }
+
   }
   
   

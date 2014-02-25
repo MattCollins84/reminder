@@ -223,6 +223,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/customer/sendVerificationEmail$",
+        "controllerClass": "CustomerController",
+        "method": "sendVerificationEmail",
+        "authentication": false 
+    },
+    {
         "regex": "^/customer/removeTokens$",
         "controllerClass": "CustomerController",
         "method": "removeTokens",
