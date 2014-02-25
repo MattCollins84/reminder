@@ -52,7 +52,7 @@
           <h4>There was a problem when attempting to send your message</h4>
           <span id="errors-support"></span>
         </div>
-        <button type="submit" class="btn btn-success mb20"><i class="fa fa-share"></i> Send</button>
+        <button type="submit" class="btn btn-success mb20" id="support-btn"><i class="fa fa-share"></i> Send</button>
       </form>
       
     </div>

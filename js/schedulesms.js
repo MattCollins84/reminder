@@ -399,6 +399,8 @@ $(document).ready(function() {
 
     e.preventDefault();
 
+    $('#custom-btn').attr("disabled", "disabled").text('Please wait...');
+
     var date = $("#custom-message-date").val().split("/");
 
     switch ($('#country').val()) {
@@ -443,6 +445,7 @@ $(document).ready(function() {
       } else {
         $('#custom-error').html(res.error);
         $("#custom-failure").removeClass("hidden");
+        $('#custom-btn').attr("disabled", false).html('<i class="fa fa-calendar-o"></i> Schedule Message');
       }
 
     });
@@ -514,6 +517,8 @@ $(document).ready(function() {
 
     e.preventDefault();
 
+    $('#support-btn').attr("disabled", "disabled").text('Please wait...');
+
     var data = {
       subject: $('#subject').val(),
       email: $('#email').val(),
@@ -534,6 +539,7 @@ $(document).ready(function() {
       } else {
         $('#errors-support').html(res.error);
         $("#error-container").removeClass("hidden");
+        $('#support-btn').attr("disabled", false).html('<i class="fa fa-share"></i> Send');
       }
 
     });
