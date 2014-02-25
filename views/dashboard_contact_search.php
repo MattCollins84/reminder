@@ -14,8 +14,26 @@
 
 <ul class="list-group">
 <? foreach($data['contacts'] as $contact): ?>
+<?
+  
+  // uk numbers
+  if (strpos($contact['mobile_phone'], "+44") === 0) {
+    $number = str_replace('+44', '0', $contact['mobile_phone']);
+  }
 
-  <li class="list-group-item contact-panel hidden" data-number="<?=preg_replace('/[^0-9]/', '', $contact['mobile_phone']);?>" data-name="<?=strtolower($contact['name']);?>">
+  // us numbers
+  else if (strpos($contact['mobile_phone'], "+1") === 0) {
+    $number = str_replace('+1', '', $contact['mobile_phone']);
+  }
+
+  // default
+  else {
+    $number = $contact['mobile_phone'];
+  }
+  
+  $number2 = $contact['mobile_phone'];
+?>
+  <li class="list-group-item contact-panel hidden" data-number="<?=$number;?>" data-altnumber="<?=$number2;?>" data-name="<?=strtolower($contact['name']);?>">
     <div>
       <a class="pull-right contact-btn" id="edit<?=$contact['_id'];?>" href="/dashboard/contacts/<?=$contact['_id'];?>" data-toggle="tooltip" title="Manage this contact"><i class="fa fa-user"></i></a>
       <a class="pull-right contact-btn mr10" id="schedule<?=$contact['_id'];?>" href="/dashboard/schedule/<?=$contact['_id'];?>" data-toggle="tooltip" title="Schedule message for this contact"><i class="fa fa-calendar"></i></a>

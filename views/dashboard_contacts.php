@@ -66,9 +66,10 @@
             <button type="submit" class="btn btn-success" id="contact-btn"><i class="fa fa-asterisk"></i> Create Contact</button>
           </form>
         </div>
-
-        <? require_once("views/dashboard_contact_search_large.php"); ?>
+  
       </div>
+      
+      <? require_once("views/dashboard_contact_search_large.php"); ?>
 
     </div>
 

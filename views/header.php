@@ -15,6 +15,13 @@
     $_SESSION['ref_code'] = $_GET['r'];
   }
 
+  if ($data['active_customer']) {
+    $data['active_customer']['timezone'] = ($data['active_customer']['timezone']?$data['active_customer']['timezone']:"London");
+
+    date_default_timezone_set("America/".$data['active_customer']['timezone']);
+  }
+  
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +33,11 @@
       <meta name="description" content="<?=$data['meta_description'];?>">
     <? endif; ?>
     <meta name="author" content="">
-
+    
+    <link rel="icon" 
+      type="ico" 
+      href="/favicon.ico">
+      
     <title>ScheduleSMS - SMS marketing for small businesses</title>
 
     <!-- Bootstrap core CSS -->

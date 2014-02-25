@@ -103,6 +103,7 @@
                   <p>
                     <input type="text" class="datepicker form-control input-small"  id="fixed-message-date"/>
                   </p>
+                  <p>The message will be sent in the first available slot between 9am &amp; 5pm on the date selected.</p>
                 </div>
 
                 <div class="hidden fixed-section">
@@ -153,6 +154,8 @@
                 <div class="form-group">
                   <label for="custom-message-date">When should we send this message?</label>
                   <input type="text" class="datepicker form-control input-small" id="custom-message-date" />
+                  <p>The message will be sent in the first available slot between 9am &amp; 5pm on the date selected.</p>
+
                 </div>
 
                 <div class="form-group">
@@ -219,6 +222,9 @@
         </div>
 
         <script>
+
+          var direction = (<?=date('H');?>>=16?1:true);
+
           $('input.datepicker').Zebra_DatePicker({
             format: '<?=$data['date_format'];?>',
             direction: true,

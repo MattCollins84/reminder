@@ -1,16 +1,10 @@
-* favicon
 * TOUR
 * SEO
 * content re-write
 * images
-* make sure refreshing success page doesn't add more tokens
 * US number formatting
-* contact search by number (search last 9 numbers only)
 * check emails work (signup, forgot password, support)
 * minimise js, css, etc (run speed test)
-* dont allow scheduling for today if it's late
-* explain that messages will get sent as soon as there's a chance to
-* show that we're working when clicking the submit button
 * sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
 * tweet for tokens
 * speed test
@@ -20,3 +14,32 @@
 Nice to haves:
 * bulk messaging
 * import contacts
+
+============================
+TEST PLAN
+============================
+* all navigation links
+* affiliate sign-up
+* sign-up (gb) (us)
+* verification email
+* Sign in
+* Sign out
+* forgot password
+* forgot password email
+* sign in
+* change account details
+* change account password
+* purchase tokens
+* add contact
+** phone number storage
+* edit contact
+** phone number storage
+* schedule fixed message
+* schedule custom message
+* save custom message as template (no date)
+* save custom message as template (with date)
+* use custom template (date and no date)
+* opt out
+* view schedule
+** unschedule
+* view transactions

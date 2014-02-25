@@ -216,7 +216,7 @@ $(document).ready(function() {
     $(".contact-panel").addClass("hidden");
     
     // find matches on number
-    var items = $('.contact-panel[data-number*="'+this.value.replace(/[^0-9]+/g, "")+'"], .contact-panel[data-name*="'+this.value.toLowerCase()+'"]');
+    var items = $('.contact-panel[data-number*="'+this.value+'"], .contact-panel[data-altnumber*="'+this.value+'"], .contact-panel[data-name*="'+this.value.toLowerCase()+'"]');
     items.each(function(i) {
       $(items[i]).removeClass("hidden");
     });
