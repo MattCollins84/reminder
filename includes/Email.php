@@ -59,7 +59,9 @@ class Email  {
 
     global $config;
 
-    $message = "We have reset your password. Your new password is ".$password.". Use this to sign in and then change your password to something memorable in the account settings.";
+    $template = file_get_contents("emails/forgot.html");
+
+    $message = str_replace("<%PASSWORD%>", $password, $template);
 
     return Email::sendEmail($to, "ScheduleSMS - Password reset", $message);
 
@@ -70,9 +72,13 @@ class Email  {
 
     global $config;
 
-    $message = "Thank you for joining the ScheduleSMS affiliate program.\n\nYour affiliate code is: ".$id."\n\nSimply direct your customers to http://".$_SERVER['HTTP_HOST']."/?r=".$id." to get started";
+    $link = "http://".$_SERVER['HTTP_HOST']."/?r=".$id;
+    $template = file_get_contents("emails/affiliate.html");
 
-    return Email::sendEmail($to, "ScheduleSMS - Affiliate code", $message);
+    $message = str_replace("<%CODE%>", $id, $template);
+    $message = str_replace("<%LINK%>", $link, $message);
+
+    return Email::sendEmail($to, "ScheduleSMS - Welcome to the affiliate program", $message);
 
   }
 

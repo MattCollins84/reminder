@@ -1,4 +1,4 @@
-* Forgotten password email
+* favicon
 * TOUR
 * SEO
 * content re-write

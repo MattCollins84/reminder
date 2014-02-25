@@ -65,6 +65,7 @@ $(document).ready(function() {
       else {
         $("#forgot-form").addClass("hidden");
         $("#success-container").removeClass("hidden");
+        $("#success-email").text($('#email').val());
       }
 
     });
