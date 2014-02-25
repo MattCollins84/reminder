@@ -359,19 +359,20 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your company name" />
               </div>
               <div class="col-lg-6 col-md-6 mb10">
-                <label for="email">Email address *</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Your email address" />
+                <label for="contact_name">Company Phone</label>
+                <input type="text" name="contact_phone" class="form-control" id="contact_phone" placeholder="A contact number" />
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="contact_name">Contact Details</label>
             <div class="row">
               <div class="col-lg-6 col-md-6 mb10">
-                <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="A contact name" />
+                <label for="email">Email address *</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Your email address" />
               </div>
               <div class="col-lg-6 col-md-6 mb10">
-                <input type="text" name="contact_phone" class="form-control" id="contact_phone" placeholder="A contact number" />
+                <label for="email">Contact name</label>
+                <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="A contact name" />
               </div>
             </div>
             <span class="help-block">We may include your contact number when you send SMS to customers. We will never share your contact name.</span>
