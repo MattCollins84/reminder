@@ -4,8 +4,8 @@
       <div class="row centered">
         
         <div class="col-lg-12">
-          <h1 class="hidden-xs mt60">Welcome To <b>ScheduleSMS</b></h1>
-          <h1 class="h1-sm visible-xs">ScheduleSMS</h1>
+          <h1 class="hidden-xs mt60">Welcome To <img src="/images/ScheduleSMSWhite-400.png" alt="ScheduleSMS" /></h1>
+          <h1 class="h1-sm visible-xs"><img src="/images/ScheduleSMSWhite-280.png" alt="ScheduleSMS" /></h1>
           <h3>Unlocking the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more...</h3>
           <br>
         </div>

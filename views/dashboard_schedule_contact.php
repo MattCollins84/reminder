@@ -134,7 +134,7 @@
             <div class="tab-pane" id="schedule-custom">
               <form role="form" id="custom-form">
                 
-                <p>Custom messages can be tailored to this specific customer, often containing a targetted &amp; promotional message. These messages can be saved and re-used with other customers at a later date.</p>
+                <p>Custom messages can be tailored to this specific customer, often containing a targeted &amp; promotional message. These messages can be saved and re-used with other customers at a later date.</p>
                 <p>Each custom message is charged at <?=$data['tokens']['custom'];?> tokens per 160 characters.<br /><em class="slight">A required unsubscribe instruction will be included, using 26 characters.</em></p>
 
                 <? if (!$data['can_created_custom']): ?>
