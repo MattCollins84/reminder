@@ -1,12 +1,9 @@
 * TOUR
 * SEO
 * content re-write
-* images
 * US number formatting
-* minimise js, css, etc (run speed test)
+* specify image size
 * sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
-* tweet for tokens
-** landing-page
 * speed test
 * sanity check front->back
 
@@ -44,4 +41,6 @@ TEST PLAN
 ** unschedule
 * view transactions
 * support email
+* connect to twitter
+* post tweet
 * TOUR
