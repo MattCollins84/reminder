@@ -49,6 +49,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/tweets-for-tokens$",
+        "controllerClass": "MainController",
+        "method": "renderTFT",
+        "authentication": false 
+    },
+    {
         "regex": "^/confirmation/[0-9a-zA-Z]+$",
         "controllerClass": "CustomerController",
         "method": "renderConfirmation",
@@ -151,33 +157,51 @@
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/dashboard/tokens/[a-zA-Z]+/[0-9]+",
+        "regex": "^/dashboard/tokens/[a-zA-Z]+/[0-9]+$",
         "controllerClass": "TokenController",
         "method": "start",
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/dashboard/tokens/success",
+        "regex": "^/dashboard/tokens/success$",
         "controllerClass": "TokenController",
         "method": "tokenSuccess",
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/dashboard/tokens/cancel",
+        "regex": "^/dashboard/tokens/cancel$",
         "controllerClass": "TokenController",
         "method": "tokenCancel",
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/dashboard/transactions",
+        "regex": "^/dashboard/transactions$",
         "controllerClass": "DashboardController",
         "method": "renderDashboardTransactions",
         "authentication": "authCustomer" 
     },
     {
-        "regex": "^/dashboard/support",
+        "regex": "^/dashboard/support$",
         "controllerClass": "DashboardController",
         "method": "renderDashboardSupport",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/twitter$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardTwitter",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/twitter/auth$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardTwitterAuth",
+        "authentication": "authCustomer" 
+    },
+    {
+        "regex": "^/dashboard/twitter/tweet$",
+        "controllerClass": "DashboardController",
+        "method": "renderDashboardTwitterTweet",
         "authentication": "authCustomer" 
     },
     {

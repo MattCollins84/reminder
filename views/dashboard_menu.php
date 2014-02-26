@@ -17,3 +17,11 @@
 </ul>
 
 <a class="btn btn-danger btn-block btn-lg mb20" id="dashboard-support" href='/dashboard/support'>Support</a>
+
+<? if (!$data['active_customer']['twitter_claim']): ?>
+  <div class="alert alert-info">
+    <h4 class="mt0"><i class="fa fa-twitter"></i> <b>Tweets for Tokens</b></h4>
+    <p>If you have a twitter account you can get free ScheduleSMS tokens!</p>
+    <p><a href='/dashboard/twitter' class="btn btn-success btn-block">Find out more</a></p>
+  </div>
+<? endif; ?>

@@ -6,6 +6,7 @@
 * minimise js, css, etc (run speed test)
 * sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
 * tweet for tokens
+** landing-page
 * speed test
 * sanity check front->back
 

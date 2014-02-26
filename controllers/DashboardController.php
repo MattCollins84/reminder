@@ -11,6 +11,7 @@
   require_once("includes/Message.php");
   require_once("includes/Transaction.php");
   require_once("includes/Tools.php");
+  require_once("includes/twitteroauth/twitteroauth/twitteroauth.php");
   require_once("controllers/Controller.php");
 
   
@@ -359,6 +360,109 @@
 
       echo View::renderView("dashboard_support", $data);
           
+    }
+
+    // Render the support page
+    static public function renderDashboardTwitter($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+      $data['phone_js'] = false;
+      $data['date_js'] = false;
+
+      $data['active_customer'] = Customer::getActiveCustomer();
+      $data['tokens'] = $config['tokens'];
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+
+
+      // coming back from twitter
+      if ($_SESSION['twitter_auth_step'] == 1) {
+        
+        unset($_SESSION['twitter_auth_step']);
+
+        $connection = new TwitterOAuth($config['twitter']['CONSUMER_KEY'], $config['twitter']['CONSUMER_SECRET'], $_SESSION['temporary_credentials']['oauth_token'], $_SESSION['temporary_credentials']['oauth_token_secret']);
+
+        $token_credentials = $connection->getAccessToken($_REQUEST['oauth_verifier']);
+
+        $data['active_customer']['twitter_auth'] = $token_credentials;
+
+        Customer::updateCustomer($data['active_customer']);
+        $_SESSION['customer'] = Customer::getById($data['active_customer']['_id']);
+
+      }
+
+      echo View::renderView("dashboard_twitter", $data);
+          
+    }
+
+    // Render the support page
+    static public function renderDashboardTwitterAuth($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['active_customer'] = Customer::getActiveCustomer();
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      // is this the initial request?
+      if (!$_SESSION['twitter_auth_step']) {
+        
+        $connection = new TwitterOAuth($config['twitter']['CONSUMER_KEY'], $config['twitter']['CONSUMER_SECRET']);
+      
+        $_SESSION['temporary_credentials'] = $connection->getRequestToken("http://".$_SERVER['HTTP_HOST']."/dashboard/twitter");
+
+        $redirect_url = $connection->getAuthorizeURL($_SESSION['temporary_credentials']);
+
+        $_SESSION['twitter_auth_step'] = 1;
+
+        echo json_encode(array("redirect_url" => $redirect_url));
+        
+        exit;
+      }
+
+    }
+
+    // Render the support page
+    static public function renderDashboardTwitterTweet($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['active_customer'] = Customer::getActiveCustomer();
+      $data['tokens'] = $config['tokens'];
+      
+      if ($data['active_customer']['twitter_claim']) {
+        exit;
+      }
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $connection = new TwitterOAuth($config['twitter']['CONSUMER_KEY'], $config['twitter']['CONSUMER_SECRET'], $data['active_customer']['twitter_auth']['oauth_token'], $data['active_customer']['twitter_auth']['oauth_token_secret']);
+
+      // tweet
+      $status = $connection->post('statuses/update', array('status' => $vars['msg']));
+      
+      // follow
+      $follow = $connection->post('friendships/create', array('user_id' => "2352168494"));
+
+      // show this customer has claimed free tokens
+      $data['active_customer']['twitter_claim'] = true;
+
+      // add tokens and update customer
+      Customer::addTokens($data['active_customer'], $data['tokens']['complimentary']);
+      $_SESSION['customer'] = Customer::getById($data['active_customer']['_id']);
+
+      // add transaction
+      Transaction::createTransaction($data['active_customer']['_id'], array("price" => "FREE", "tokens" => $data['tokens']['complimentary']), "", "TWEET");
+
     }
 
   }

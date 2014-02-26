@@ -13,6 +13,10 @@
         "sid": "",
         "token": ""
       },
+      "twitter": {
+        "CONSUMER_KEY": "",
+        "CONSUMER_SECRET": ""
+      },
       "paypal": {
         "endpoint": "https://api-3t.sandbox.paypal.com/nvp",
         "redirect_url": "https://www.sandbox.paypal.com/webscr",

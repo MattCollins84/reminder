@@ -585,7 +585,7 @@ $(document).ready(function() {
       return alert("Please enter numbers only");
     }
 
-    var total_cost = (frequency * sms_cost) / 100;
+    var total_cost = ((frequency * sms_cost) / 100).toFixed(2);
     var num = 1;
     var saved = (money - total_cost).toFixed(2);
     var done = false;
@@ -609,11 +609,50 @@ $(document).ready(function() {
       num += " no shows";
     }
 
-    var str = "ScheduleSMS would cost you just <strong>&dollar;"+total_cost+"</strong> per day*, meaning that preventing just "+num+" would save you <strong>&dollar;"+saved+"!</strong><br /><em>* prices calculated assuming tokens bought with the premium package";
+    var str = "ScheduleSMS would cost you just <strong>"+total_cost+"</strong> per day*, meaning that preventing just "+num+" would save you <strong>"+saved+"!</strong><br /><em>* prices calculated assuming tokens bought with the premium package";
 
     $('#fixed-result').html(str);
     $('#fixed-result').removeClass("hidden");
 
   });
+
+  //twitter auth
+  $('#twitter-auth').click(function(e) {
+
+    $('#twitter-auth').attr("disabled", "disabled").text("Connecting to Twitter...");
+    $('#fail').addClass('hidden');
+
+    $.get('/dashboard/twitter/auth', {}, function(data) {
+
+      data = JSON.parse(data);
+
+      // redirect
+      if (data.redirect_url) {
+        document.location.href=data.redirect_url;
+      }
+
+      else {
+        $('#twitter-auth').attr("disabled", false).html('<i class="fa fa-twitter"> </i> Connect');
+        $('#fail').removeClass('hidden');
+      }
+
+    });
+
+  });
+
+  // tweet
+  $('.btn-tweet').click(function(e) {
+
+    $(this).attr("disabled", "disabled").text("Connecting to Twitter...");
+
+    var msg = $(this).attr("data-msg");
+
+    $.get('/dashboard/twitter/tweet', {msg: msg}, function(data) {
+
+      document.location.href="/dashboard";
+
+    });
+
+  })
 
 });
