@@ -2,7 +2,6 @@
 * SEO
 * content re-write
 * US number formatting
-* specify image size
 * sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
 * speed test
 * sanity check front->back
