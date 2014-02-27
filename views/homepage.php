@@ -4,8 +4,8 @@
       <div class="row centered">
         
         <div class="col-lg-12">
-          <h1 class="hidden-xs mt60">Welcome To <img src="/images/ScheduleSMSWhite-400.png" alt="ScheduleSMS" /></h1>
-          <h1 class="h1-sm visible-xs"><img src="/images/ScheduleSMSWhite-280.png" alt="ScheduleSMS" /></h1>
+          <h1 class="hidden-xs mt60">Welcome To <img src="/images/ScheduleSMSWhite-400.png" width="400" height="130" alt="ScheduleSMS" /></h1>
+          <h1 class="h1-sm visible-xs"><img src="/images/ScheduleSMSWhite-280.png" width="280" height="91" alt="ScheduleSMS" /></h1>
           <h3>Unlocking the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more...</h3>
           <br>
         </div>
@@ -15,7 +15,7 @@
           <div class="col-lg-2">
             <h5 class="mt40">Amazing Results</h5>
             <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
-            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png" alt="Arrow" />
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow1.png" width="114" height="123" alt="Arrow" />
           </div>
 
           <div class="col-lg-8">
@@ -32,7 +32,7 @@
 
           <div class="col-lg-2">
             <br>
-            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png" alt="Arrow" />
+            <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png" width="114" height="123" alt="Arrow" />
             <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
             <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free tokens!</p>
           </div>

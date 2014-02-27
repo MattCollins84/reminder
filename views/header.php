@@ -111,7 +111,7 @@
               <span class="icon-bar"></span>
             </button>
             <? endif;?>
-            <a class="navbar-brand" href="/"><img src="/images/phone_trans40.png" alt="ScheduleSMS" /></a>
+            <a class="navbar-brand" href="/"><img src="/images/phone_trans40.png" width="47" height="40" alt="ScheduleSMS" /></a>
           </div>
 
           <form class="navbar-form navbar-right visible-lg">
