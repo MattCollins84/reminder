@@ -1,10 +1,9 @@
 * TOUR
 * SEO
+* Blog
 * content re-write
-* US number formatting
-* sitemap (robots.txt: http://blog.woorank.com/2013/04/robots-txt-a-beginners-guide/)
-* speed test
 * sanity check front->back
+* webmaster tools
 
 
 Nice to haves:
