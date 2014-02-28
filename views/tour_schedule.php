@@ -47,43 +47,19 @@
   <body data-spy="scroll" data-offset="100" data-target="#navigation">
 
     <!-- Fixed navbar -->
-      <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div id="navigation" class="navbar navbar-default navbar-fixed-top navbar-tour">
         <div class="container">
           <div class="navbar-header">
 
-            <div class="visible-xs">
-                          <a href="#" class="pull-right mr10 btn btn-sm btn-warning mt10"><i class="fa fa-sign-out"></i></a>
-              <a href="/tour/start" class="pull-right mr10 btn btn-sm btn-success mt10"><i class="fa fa-user"></i> </a>
-                        </div>
+            <h2 class="hidden-xs">Welcome to the tour, click any link to see the tour for that page...</h2>
+            <h4 class="visible-xs">Welcome to the tour, click any link to see the tour for that page...</h4>
 
-                        <a class="navbar-brand" href="/">...back to <b>ScheduleSMS</b></a>
           </div>
-
-          <form class="navbar-form navbar-right visible-lg">
-                          <a href="/tour/start" class="btn btn-success"><i class="fa fa-user"></i>&nbsp;&nbsp;<strong>Tour Co. Dashboard</strong> &nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-primary">440 Tokens</span></a>
-              <a href="#" class="btn btn-warning"><i class="fa fa-sign-out"></i> Sign out</a>
-              
-            
-          </form>
-
-          <form class="navbar-form navbar-right visible-sm">
-                          <a href="/tour/start" class="btn btn-success"><i class="fa fa-user"></i></a>
-              <a href="#" class="btn btn-warning"><i class="fa fa-sign-out"></i></a>
-              
-            
-          </form>
-
-          <form class="navbar-form navbar-right visible-md">
-                          <a href="/tour/start" class="btn btn-success"><i class="fa fa-user"></i> Dashboard</a>
-              <a href="#" class="btn btn-warning"><i class="fa fa-sign-out"></i> Sign-out</a>
-              
-            
-          </form>
-
           
-          
-                  </div>
-      </div><div id="headerwrap">
+          </div>
+      </div>
+
+      <div id="headerwrap">
   <div class="container">
     <div class="row">
       

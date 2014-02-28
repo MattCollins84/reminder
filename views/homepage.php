@@ -100,7 +100,7 @@
         </div>
         <div class="col-lg-12">
           <div itemscope itemtype="http://schema.org/Product">
-            <a itemprop="url" href="/tour/start" class="btn btn-success btn-lg mb20">
+            <a target="_blank" itemprop="url" href="/tour/start" class="btn btn-success btn-lg mb20">
               <div itemprop="name">Why not take a tour?</div>
             </a>
             <div class="mb20" itemprop="description"><strong>Take a tour of the ScheduleSMS customised dashboard to see just how easy it is to add this essential tool to your business</strong></div>
