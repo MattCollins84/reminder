@@ -3,7 +3,7 @@
     <div class="container">
       
       <div class="col-lg-8">
-        <p>All content &copy; ScheduleSMS <?=date("Y");?> | <a href='/terms'>terms</a> | <a href='/privacy'>privacy</a> | <a href='https://twitter.com/schedulesms' target="_blank"><i class="fa fa-twitter"></i></a></p>
+        <p>All content &copy; ScheduleSMS <?=date("Y");?> | <a href='/terms'>terms</a> | <a href='/privacy'>privacy</a> | <a href='http://blog.schedulesms.com/' target="_blank">blog</a> | <a href='https://twitter.com/schedulesms' target="_blank"><i class="fa fa-twitter"></i></a></p>
       </div>
 
       <div class="col-lg-4 right">
