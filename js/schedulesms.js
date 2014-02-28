@@ -485,7 +485,9 @@ $(document).ready(function() {
     $('#custom-message').val(message);
     $("#custom-message-date").val(date);
 
-    $('#schedule-tabs a[href="#schedule-custom"]').tab('show')
+    $('#schedule-tabs a[href="#schedule-custom"]').tab('show');
+
+    $('#custom-message').keyup();
 
   });
 
