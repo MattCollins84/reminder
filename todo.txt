@@ -12,24 +12,23 @@ Nice to haves:
 ============================
 TEST PLAN
 ============================
-* all navigation links
+* all navigation links * 
 * affiliate sign-up
-* sign-up (gb) (us)
-* verification email
-* Sign in
-* Sign out
-* forgot password
-* forgot password email
-* sign in
-* change account details
-* change account password
+* sign-up (us)
+* verification email *
+* Sign in *
+* Sign out *
+* forgot password *
+* forgot password email *
+* sign in *
+* change account details *
+* change account password *
 * purchase tokens (gb) (us)
 * add contact (gb) (us)
-** phone number storage (gb) (us)
-* edit contact (gb) (us)
-** phone number storage (gb) (us)
-* schedule fixed message (gb) (us)
-* schedule custom message (gb) (us)
+** phone number storage (us)
+* edit contact (us)
+* schedule fixed message (us)
+* schedule custom message (us)
 * save custom message as template (no date)
 * save custom message as template (with date)
 * use custom template (date and no date)

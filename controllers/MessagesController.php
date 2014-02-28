@@ -98,12 +98,14 @@
           $_SESSION['message_scheduled'] = true;
         }
 
+        $optout = "reply STOP to unsubscribe";
+
         // create a template?
         if ($vars['template'] == "true") {
 
           $storeDate = ($vars['template_date']!="false"?$vars['template_date']:false);
 
-          $template = Message::createTemplate($customer['_id'], $vars['template_name'], $vars['message'], $storeDate);
+          $template = Message::createTemplate($customer['_id'], $vars['template_name'], trim(str_replace($optout, "", $vars['message'])), $storeDate);
 
         }
 
