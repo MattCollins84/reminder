@@ -29,9 +29,9 @@ TEST PLAN
 * edit contact (us)
 * schedule fixed message (us)
 * schedule custom message (us)
-* save custom message as template (no date)
-* save custom message as template (with date)
-* use custom template (date and no date)
+* save custom message as template
+* save custom message as template
+* use custom template
 * opt out (gb) (us)
 * view schedule
 ** unschedule
