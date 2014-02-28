@@ -1,4 +1,3 @@
-* TOUR
 * SEO
 * Blog
 * content re-write
