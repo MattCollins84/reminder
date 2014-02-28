@@ -7,6 +7,10 @@ class Transaction  {
   // create a trans
   static public function createTransaction($customer_id, $plan, $ref, $partner="") {
 
+    if (!$plan) {
+      return;
+    }
+
     $transaction = array(
       "customer_id" => $customer_id,
       "plan" => $plan,

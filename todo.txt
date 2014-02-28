@@ -32,7 +32,7 @@ TEST PLAN
 * save custom message as template
 * save custom message as template
 * use custom template
-* opt out (gb) (us)
+* opt out (us)
 * view schedule
 ** unschedule
 * view transactions
