@@ -147,6 +147,7 @@
                 <div class="form-group">
 
                   <label  id='customcompose' for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens"><?=$data['tokens']['custom'];?></span> tokens)</label>
+                  <p><em>Remember to include your company name and contact details!</em></p>
                   <textarea class="form-control mb10" id="custom-message" name="custom-message" rows="3"></textarea>
 
                 </div>
