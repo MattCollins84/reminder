@@ -52,7 +52,7 @@
   </li>
 
 <? endforeach; ?>
-  <li class="list-group-item contact-panel hidden" id="contact-search-add">
+  <li class="list-group-item contact-panel" id="contact-search-add">
     <div>
       <p>Not found what you are looking for?</p>
       <a class="btn btn-success" id="contact-search-add-btn" href="/dashboard/contacts"><i class="fa fa-users"> </i> Create a new contact</a>

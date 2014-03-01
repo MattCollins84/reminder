@@ -4,6 +4,8 @@
 * sanity check front->back
 * webmaster tools
 
+** FIX TWITTER THING WHEN NOT SIGNING IN **
+
 
 Nice to haves:
 * bulk messaging
