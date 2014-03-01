@@ -51,18 +51,18 @@
             <p>Make changes to this contact below. We still require at least a valid name and mobile phone number.</p>
             <div class="form-group">
               <label for="name">Name *</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<?=$data['contact']['name'];?>" />
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter contacts name" value="<?=$data['contact']['name'];?>" />
             </div>
             <div class="form-group">
               <label for="mobile_phone">Mobile Phone *</label>
-              <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" placeholder="Enter a contact phone number" value="<?=$data['contact']['mobile_phone'];?>" />
+              <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" placeholder="Enter your contacts phone number" value="<?=$data['contact']['mobile_phone'];?>" />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" value="<?=$data['contact']['email'];?>" />
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter contacts email address" value="<?=$data['contact']['email'];?>" />
             </div>
             <div class="form-group">
-              <label for="notes">Notes</label>
+              <label for="notes">Notes about contact</label>
               <textarea class="form-control" id="notes" name="notes" rows="3"><?=$data['contact']['notes'];?></textarea>
             </div>
             <div class="alert alert-danger mt20 hidden" id="error-container">

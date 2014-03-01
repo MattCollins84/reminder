@@ -92,7 +92,7 @@
                   <p>
                     <input type="text" class="datepicker form-control input-small" id="fixed-variation-date" />
                   </p>
-                  <span class="help-inline">Optionally enter a time e.g. 2pm, 14:00 or 2 o'clock</span>
+                  <span class="help-inline">Enter a time e.g. 2pm, 14:00 or 2 o'clock (optional)</span>
                   <p>
                     <input type="text" class="form-control input-small" maxlength="10" id="fixed-variation-time" />
                   </p>
@@ -103,7 +103,7 @@
                   <p>
                     <input type="text" class="datepicker form-control input-small"  id="fixed-message-date"/>
                   </p>
-                  <p>The message will be sent in the first available slot between 9am &amp; 5pm on the date selected.</p>
+                  <p>The message will automatically be sent in the first available slot between 9am &amp; 5pm on the date selected.</p>
                 </div>
 
                 <div class="hidden fixed-section">

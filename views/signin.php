@@ -10,6 +10,7 @@
 
       <div class="col-lg-12 centered mt20 visible-xs">
         <h3 class="">Sign in below</h3>
+        <h4 class="white">Enter your email address &amp; password to sign-in.</h4>
       </div>
 
       <div class="col-lg-2">

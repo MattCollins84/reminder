@@ -42,18 +42,18 @@
             <p>Complete the form below to create a new contact. We require at least a name and a mobile phone number.</p>
             <div class="form-group">
               <label for="name">Name *</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter contacts name" />
             </div>
             <div class="form-group">
               <label for="mobile_phone">Mobile Phone *</label>
-              <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" placeholder="Enter a contact phone number" />
+              <input type="text" class="form-control" id="mobile_phone" name="mobile_phone" placeholder="Enter your contacts phone number" />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" />
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter contacts email address" />
             </div>
             <div class="form-group">
-              <label for="notes">Notes</label>
+              <label for="notes">Notes about contact</label>
               <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
             </div>
             <div class="alert alert-danger mt20 hidden" id="error-container">
