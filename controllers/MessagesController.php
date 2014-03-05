@@ -89,7 +89,7 @@
         }
 
         // create the message
-        $message = Message::createMessage($contact, $vars['message'], $vars['date'], $tokens, $vars['country'], $vars['type'], $customer['timezone']);
+        $message = Message::createMessage($contact, $vars['message'], $vars['date'], $vars['time'], $tokens, $vars['country'], $vars['type'], $customer['timezone']);
 
         // if we're successful, remove these tokens
         if ($message['success']) {

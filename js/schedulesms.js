@@ -312,6 +312,17 @@ $(document).ready(function() {
     generateFixedPreview();
   });
 
+  $('#fixed-time').change(function(e) {
+
+    var time = parseInt(this.value);
+
+    $('#fixed-unsociable').addClass('hidden');
+    if (time < 900 || time > 1800) {
+      $('#fixed-unsociable').removeClass('hidden');
+    }
+
+  });
+
   $('.datepicker').change(function(e) {
     generateFixedPreview();
     $(this).parent().parent().parent().next().removeClass("hidden");
@@ -354,6 +365,7 @@ $(document).ready(function() {
       contact_id: $('#contact_id').val(),
       message: generateFixedPreview(),
       date: date,
+      time: parseInt($('#fixed-time').val()),
       country: $('#country').val(),
       type: "fixed"
     }
@@ -395,6 +407,17 @@ $(document).ready(function() {
 
   });
 
+  $('#custom-time').change(function(e) {
+
+    var time = parseInt(this.value);
+
+    $('#custom-unsociable').addClass('hidden');
+    if (time < 900 || time > 1800) {
+      $('#custom-unsociable').removeClass('hidden');
+    }
+
+  });
+
   $('#custom-form').submit(function(e) {
 
     e.preventDefault();
@@ -425,6 +448,7 @@ $(document).ready(function() {
       contact_id: $('#contact_id').val(),
       message: $('#custom-message').val()+optout,
       date: date,
+      time: parseInt($('#custom-time').val()),
       country: $('#country').val(),
       type: "custom",
       template: ($('#custom-save').val()=="yes"?true:false),

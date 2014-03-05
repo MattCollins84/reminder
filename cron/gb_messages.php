@@ -3,17 +3,13 @@
 
   $hour = (int) date("G");
 
-  if ($hour < 9 || $hour > 17) {
-    echo "GMT - Out of hours";
-    exit;
-  }
-
   require_once("includes/config.php");
   require_once("includes/Message.php");
   require_once("includes/Customer.php");
   require_once("includes/SMS.php");
 
   $messages = Message::getMessageByCountry("gb");
+
   $result = array();
   foreach ($messages as $msg) {
 

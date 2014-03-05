@@ -171,6 +171,8 @@
       $data['can_created_fixed'] = (bool) ($data['tokens']['fixed'] <= $data['active_customer']['available_tokens']);
       $data['can_created_custom'] = (bool) ($data['tokens']['custom'] <= $data['active_customer']['available_tokens']);
 
+      $data['hour'] = (int) date('G');
+
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 

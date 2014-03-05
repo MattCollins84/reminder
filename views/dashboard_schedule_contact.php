@@ -101,9 +101,36 @@
                 <div class="form-group fixed-section hidden">
                   <h4 id='fixedstep4'><strong>Step Four</strong> When should the reminder be sent?</h4>
                   <p>
-                    <input type="text" class="datepicker form-control input-small"  id="fixed-message-date"/>
+                    <input type="text" class="datepicker form-control input-small"  id="fixed-message-date"/><br />
+                    <strong>Select a time</strong>
+                    <select id="fixed-time" name="fixed-time" class="form-control input-small">
+                      <option value="100">01:00</option>
+                      <option value="200">02:00</option>
+                      <option value="300">03:00</option>
+                      <option value="400">04:00</option>
+                      <option value="500">05:00</option>
+                      <option value="600">06:00</option>
+                      <option value="700">07:00</option>
+                      <option value="800">08:00</option>
+                      <option value="900" selected="selected">09:00</option>
+                      <option value="1000">10:00</option>
+                      <option value="1100">11:00</option>
+                      <option value="1200">12:00</option>
+                      <option value="1300">13:00</option>
+                      <option value="1400">14:00</option>
+                      <option value="1500">15:00</option>
+                      <option value="1600">16:00</option>
+                      <option value="1700">17:00</option>
+                      <option value="1800">18:00</option>
+                      <option value="1900">19:00</option>
+                      <option value="2000">20:00</option>
+                      <option value="2100">21:00</option>
+                      <option value="2200">22:00</option>
+                      <option value="2300">23:00</option>
+                    </select>
                   </p>
-                  <p>The message will automatically be sent in the first available slot between 9am &amp; 5pm on the date selected.</p>
+                  <p id="fixed-unsociable" class="text-danger hidden">The time you have selected may be considered unsociable hours. Please double check that this is the time you wish to use.</p>
+                  <p>Please note that we will never send your message earlier than you say, however there may be a delay in times of high demand.</p>
                 </div>
 
                 <div class="hidden fixed-section">
@@ -154,9 +181,35 @@
 
                 <div class="form-group">
                   <label for="custom-message-date">When should we send this message?</label>
-                  <input type="text" class="datepicker form-control input-small" id="custom-message-date" />
-                  <p>The message will be sent in the first available slot between 9am &amp; 5pm on the date selected.</p>
-
+                  <input type="text" class="datepicker form-control input-small" id="custom-message-date" /><br />
+                  <strong>Select a time</strong>
+                  <select id="custom-time" name="custom-time" class="form-control input-small">
+                    <option value="100">01:00</option>
+                    <option value="200">02:00</option>
+                    <option value="300">03:00</option>
+                    <option value="400">04:00</option>
+                    <option value="500">05:00</option>
+                    <option value="600">06:00</option>
+                    <option value="700">07:00</option>
+                    <option value="800">08:00</option>
+                    <option value="900" selected="selected">09:00</option>
+                    <option value="1000">10:00</option>
+                    <option value="1100">11:00</option>
+                    <option value="1200">12:00</option>
+                    <option value="1300">13:00</option>
+                    <option value="1400">14:00</option>
+                    <option value="1500">15:00</option>
+                    <option value="1600">16:00</option>
+                    <option value="1700">17:00</option>
+                    <option value="1800">18:00</option>
+                    <option value="1900">19:00</option>
+                    <option value="2000">20:00</option>
+                    <option value="2100">21:00</option>
+                    <option value="2200">22:00</option>
+                    <option value="2300">23:00</option>
+                  </select>
+                  <p id="custom-unsociable" class="text-danger hidden">The time you have selected may be considered unsociable hours. Please double check that this is the time you wish to use.</p>
+                  <p>Please note that we will never send your message earlier than you say, however there may be a delay in times of high demand.</p>
                 </div>
 
                 <div class="form-group">
