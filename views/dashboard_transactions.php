@@ -33,7 +33,7 @@
         <tr>
           <th>Date</th>
           <th>Amount</th>
-          <th>Tokens</th>
+          <th>Messages</th>
           <th>PayPal Ref#</th>
           <th>ScheduleSMS Ref#</th>
         </tr>

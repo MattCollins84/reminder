@@ -85,7 +85,7 @@
       <ul class="list-group dash-nav hidden-xs">
   <li class="list-group-item" id="dashboard-menu-home"><a href='/tour/start'><i class="fa fa-home"></i>&nbsp;&nbsp;Dashboard Home</a></li>
   <li class="list-group-item" id="dashboard-menu-account"><a href='/tour/account'><i class="fa fa-cog"></i>&nbsp;&nbsp;Account Settings</a></li>
-  <li class="list-group-item" id="dashboard-menu-tokens"><a href='/tour/tokens'><i class="fa fa-phone"></i>&nbsp;&nbsp;Purchase Tokens</a></li>
+  <li class="list-group-item" id="dashboard-menu-tokens"><a href='/tour/tokens'><i class="fa fa-phone"></i>&nbsp;&nbsp;Purchase Messages</a></li>
   <li class="list-group-item" id="dashboard-menu-contacts"><a href='/tour/contacts'><i class="fa fa-users"></i>&nbsp;&nbsp;Contacts</a></li>
   <li class="list-group-item" id="dashboard-menu-schedule"><a href='/tour/schedule'><i class="fa fa-calendar"></i>&nbsp;&nbsp;Schedule</a></li>
   <li class="list-group-item" id="dashboard-menu-transactions"><a href='/tour/transactions'><i class="fa fa-briefcase"></i>&nbsp;&nbsp;Transactions</a></li>
@@ -203,7 +203,7 @@ $(document).ready(function() {
               
               <form role="form">
                 
-                <p>Fixed messages are used for confirmations or reminders for appointments or meetings, and cost <strong>15</strong> tokens.</p>
+                <p>Use our simple mesage wizard to quickly create appointment reminders or confirmations.</p>
                 
                                 <div class="form-group fixed-section">
                   <h4 id='fixedstep1'><strong>Step One</strong> Is this a reminder, or a confirmation?</h4>
@@ -269,12 +269,12 @@ $(document).ready(function() {
               <form role="form">
                 
                 <p>Custom messages can be tailored to this specific customer, often containing a targetted &amp; promotional message. These messages can be saved and re-used with other customers at a later date.</p>
-                <p>Each custom message is charged at 60 tokens per 160 characters.<br /><em class="slight">A required unsubscribe instruction will be included, using 26 characters.</em></p>
+                <p>Each custom message is charged at 1 message credit per 160 characters.<br /><em class="slight">A required unsubscribe instruction will be included, using 26 characters.</em></p>
 
                 
                 <div class="form-group">
 
-                  <label  id='customcompose' for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens">60</span> tokens)</label>
+                  <label  id='customcompose' for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens">1</span> messages)</label>
                   <textarea class="form-control mb10" id="custom-message" name="custom-message" rows="3"></textarea>
 
                 </div>

@@ -33,8 +33,8 @@
           <div class="col-lg-2">
             <br>
             <img class="hidden-xs hidden-sm hidden-md" src="/img/arrow2.png" width="114" height="123" alt="Arrow" />
-            <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
-            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free tokens!</p>
+            <h5>Get <?=$data['tokens']['complimentary'];?> free messages!</h5>
+            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free messages!</p>
           </div>
         </div>
         <div class="hidden-lg">
@@ -42,8 +42,8 @@
           <div class="col-sm-12">
             <h5 class="">Amazing Results</h5>
             <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
-            <h5>Get <?=$data['tokens']['complimentary'];?> free tokens!</h5>
-            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> complimentary tokens!</p>
+            <h5>Get <?=$data['tokens']['complimentary'];?> free messages!</h5>
+            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free messages!</p>
           </div>
 
           <div class="col-sm-12">
@@ -181,36 +181,26 @@
   <div id="pricing-wrap">
     <div class="container">
       <div class="row">
-        <h1 class="centered mt20">Pricing &amp; Tokens</h1>
+        <h1 class="centered mt20">Pricing &amp; Messages</h1>
 
         <div class="col-lg-12">
           
           <h3>No monthly fees, just pay for what you use!</h3>
           <p>With ScheduleSMS you will always know just how much you are spending, there are no sign-up fees &amp; no hidden costs!</p>
-          <p>Simply sign-up for your <strong>free, no obligation</strong> account &amp; use your complimentary ScheduleSMS tokens to get started instantly. Simply purchase more tokens as &amp; when you need them - it's that easy!</p>          
-          <p>Each SMS costs ScheduleSMS tokens to send, with tokens being purchased via your personalised dashboard - don't worry, we will give you some <strong>free tokens</strong> to get the hang of it!</p>
+          <p>Simply sign-up for your <strong>free, no obligation</strong> account &amp; use your <?=$data['tokens']['complimentary'];?> free messages to get started instantly. Simply purchase more messages as &amp; when you need them - it's that easy!</p>
         
-        </div>
-
-        <div class="col-lg-12 mb20">
-          
-          <h3>How to buy tokens</h3>
-          <p>Tokens can be bought in one of four bundles, simply sign in to your personalised dashboard &amp; select the bundle you require. All transactions are handled through PayPal to provide you with peace of mind - ScheduleSMS will NEVER ask for your personal details.</p>
-          <p>Once bought, a token will remain in your account until used - there are <strong>no expiry dates!</strong></p>
-          <p>ScheduleSMS provides you with two ways to contact your customers, designed to offer you the flexibility you &amp; your business require.</p>
-
         </div>
 
         <div class="row flat">
           
           <ul class="nav nav-tabs" id="price-tabs">
-            <li class="active"><a href="#pricing-us" data-toggle="tab">US Pricing</a></li>
-            <li><a href="#pricing-uk" data-toggle="tab">UK Pricing</a></li>
+            <li class="active"><a href="#pricing-uk" data-toggle="tab">UK Pricing</a></li>
+            <li><a href="#pricing-us" data-toggle="tab">US Pricing</a></li>     
           </ul>
           
           <div class="tab-content pt20 pb20">
             
-            <div class="tab-pane active" id="pricing-us">
+            <div class="tab-pane" id="pricing-us">
               <? foreach ($data['plans']['us'] as $key => $plan): ?>
               
                 <div class="col-lg-3 col-md-3 col-xs-6">
@@ -226,13 +216,7 @@
                         <strong>&dollar;<?=$plan['price'];?></strong>
                     </li>
                     <li>
-                        <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
-                    </li>
-                    <li>
-                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['custom']);?></strong> custom messages
-                    </li>
-                    <li>
-                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
+                        <strong><?=$plan['tokens'];?></strong> Messages
                     </li>
                   </ul>
                 </div>
@@ -240,7 +224,7 @@
               <? endforeach; ?>
             </div>
 
-            <div class="tab-pane" id="pricing-uk">
+            <div class="tab-pane active" id="pricing-uk">
               <? foreach ($data['plans']['gb'] as $key => $plan): ?>
               
                 <div class="col-lg-3 col-md-3 col-xs-6 mb20">
@@ -256,13 +240,7 @@
                         <strong>&pound;<?=$plan['price'];?></strong>
                     </li>
                     <li>
-                        <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
-                    </li>
-                    <li>
-                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['custom']);?></strong> custom messages
-                    </li>
-                    <li>
-                        Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
+                        <strong><?=$plan['tokens'];?></strong> Messages
                     </li>
                   </ul>
                 </div>
@@ -283,14 +261,23 @@
 
         </script>
 
+        <div class="col-lg-12">
+          
+          <h3>How to send your messages</h3>
+          
+          <p>We provide you with two simple ways to manage and schedule your messages. 
+
+
+        </div>
+
         <div class="col-lg-6">
           
           <h3>Fixed messages</h3>
-          <p>Fixed messages are designed to be sent as <strong>appointment reminders</strong>. They include the company name, appointment date &amp; a contact number. These messages are fixed text, with slight customisations available to suit the circumstances.</p>
-          <p>A fixed message is priced at <?=$data['tokens']['fixed'];?> ScheduleSMS tokens.</p>
+          <p>Fixed messages are used for <strong>appointment reminders or confirmations</strong>.</p>
+          <p>They include your company name, the appointment date &amp; a contact number. These messages are created via our quick &amp; simple message wizard, meaning your back to work almost immediately.</p>
             
           <p><strong>How can fixed messages help me?</strong></p>
-          <p>Enter the average value of a booking (e.g. 30) <input class="form-control input-xsmall input-inline" maxlength="4" id="booking_value" size="4" /></p>
+          <p>Enter the average value of a booking (e.g. 30) <strong>&pound;</strong><input class="form-control input-xsmall input-inline" maxlength="4" id="booking_value" size="4" /></p>
           <p>Enter the average number of bookings in a day <input class="form-control input-xsmall input-inline" maxlength="4" id="booking_amount" size="4" /></p>
           <p class="hidden" id="fixed-result"></p>
           <p><button class="btn btn-success" id="calc_fixed_btn">Calculate</button>
@@ -302,11 +289,10 @@
         <div class="col-lg-6">
           
           <h3>Custom messages</h3>
-          <p>Custom messages can take any form you wish up to the length of 160 characters, &amp; are often used to offer services that are specific to this customer at this time of year.</p>
-          <p>A custom message is priced at <?=$data['tokens']['custom'];?> ScheduleSMS tokens.</p>
+          <p>Custom messages can take any form you wish &amp; are often used to target specific customers on on specific dates. Cut down on your outgoings by only contacting customers when they are most likely to buy!</p>
 
           <p><strong>How can custom messages help me?</strong></p>
-          <p>SMS Marketing is not a new concept, however targetting your customers with relevant &amp; personal messages at key dates that are important to them will help you in many ways: </p>
+          <p>Targetting your customers with relevant &amp; personal messages at key dates that are important to them will help you in many ways: </p>
           <ul class="list-unstyled">
             <li><i class="fa fa-star"> </i>&nbsp;&nbsp;&nbsp;Reduce your marketting costs by sending promotional messages only at key times</li>
             <li><i class="fa fa-star"> </i>&nbsp;&nbsp;&nbsp;Improve your conversion rate by only sending relevant and personal messages</li>
@@ -335,16 +321,16 @@
 
       <div class="col-lg-6">
 
-        <h3>Free tokens!</h3>
+        <h3>Free Messages!</h3>
         <div itemprop="description">
-          <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free tokens to get you started.</p>
+          <p>When you sign-up with ScheduleSMS we will give you <?=$data['tokens']['complimentary'];?> free messages to get you started.</p>
         </div>
         <p>There are no recurring costs and no sign-up fee, so what have you got to lose?</p>
 
         <div class="alert alert-success">
-          <h4 class="mt0"><i class="fa fa-twitter"></i> <b>Tweets for Tokens</b></h4>
-          <p class="green"><b>If you have a twitter account you can get free ScheduleSMS tokens!</b></p>
-          <p><a href='/tweets-for-tokens' class="btn btn-success btn-block">Find out more</a></p>
+          <h4 class="mt0"><i class="fa fa-twitter"></i> <b>Tweets for Messages</b></h4>
+          <p class="green"><b>If you have a twitter account you can get free messages!</b></p>
+          <p><a href='/tweets-for-messages' class="btn btn-success btn-block">Find out more</a></p>
         </div>
 
         <h3>Contact details</h3>

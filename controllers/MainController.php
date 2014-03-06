@@ -28,7 +28,7 @@
       $data['tokens'] = $config['tokens'];
       $data['plans'] = $config['plans'];
 
-      $data['avg_cost'] = (($data['plans']['us'][2]['price'] * 100) / $data['plans']['us'][2]['tokens']) * $data['tokens']['fixed'];
+      $data['avg_cost'] = (($data['plans']['gb'][2]['price'] * 100) / $data['plans']['gb'][2]['tokens']) * $data['tokens']['cost'];
 
       echo View::renderView("homepage", $data);
           
@@ -102,7 +102,7 @@
 
       $data = array();
       $data['nav_root'] = true;
-      $data['meta_description'] = "Earn free ScheduleSMS tokens simply by tweeting on our behalf! Sign up now to get started, and extend your free trial today!";
+      $data['meta_description'] = "Earn free ScheduleSMS message credits simply by tweeting on our behalf! Sign up now to get started, and extend your free trial today!";
       $data['tokens'] = $config['tokens'];
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();

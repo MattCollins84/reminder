@@ -64,11 +64,11 @@
         }
 
         // token check
-        if ($data['tokens'][$vars['type']] && (int) $customer['available_tokens'] < (int) $data['tokens'][$vars['type']]) {
+        if ((int) $customer['available_tokens'] < (int) $data['tokens']['cost']) {
 
           echo json_encode(array(
             "success" => false,
-            "error" => "Not enough available tokens"
+            "error" => "Not enough available credits"
           ));
           exit;
 
@@ -77,11 +77,11 @@
         switch($vars['type']) {
 
           case "fixed":
-            $tokens = $data['tokens']['fixed'];
+            $tokens = $data['tokens']['cost'];
             break;
 
           case "custom":
-            $tokens = $data['tokens']['custom'];
+            $tokens = $data['tokens']['cost'];
             $len = strlen($vars['message']);
             $tokens = ceil($len / 160) * $tokens;
             break;

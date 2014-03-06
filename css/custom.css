@@ -226,14 +226,14 @@ h4.strapline {
 .most-popular {
   position: absolute;
   right: 3px;
-  top: -13px;
+  top: -8px;
   z-index: 1000;
 }
 
 .most-popular-sm {
   position: absolute;
   right: 3px;
-  top: -14px;
+  top: -8px;
   z-index: 1000;
 }
 

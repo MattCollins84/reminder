@@ -64,12 +64,12 @@
     <div class="row">
       
       <div class="col-lg-12 centered mb60 mt60 hidden-xs">
-        <h1>Tokens</b></h1>
-        <h3>Manage your ScheduleSMS tokens.</h3>
+        <h1>Purchase Messages</b></h1>
+        <h3>Manage your ScheduleSMS messages.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="">Tokens</h3>
+        <h3 class="">Purchase Messages</h3>
       </div>
 
     </div>
@@ -84,7 +84,7 @@
       <ul class="list-group dash-nav hidden-xs">
   <li class="list-group-item" id="dashboard-menu-home"><a href='/tour/start'><i class="fa fa-home"></i>&nbsp;&nbsp;Dashboard Home</a></li>
   <li class="list-group-item" id="dashboard-menu-account"><a href='/tour/account'><i class="fa fa-cog"></i>&nbsp;&nbsp;Account Settings</a></li>
-  <li class="list-group-item" id="dashboard-menu-tokens"><a href='/tour/tokens'><i class="fa fa-phone"></i>&nbsp;&nbsp;Purchase Tokens</a></li>
+  <li class="list-group-item" id="dashboard-menu-tokens"><a href='/tour/tokens'><i class="fa fa-phone"></i>&nbsp;&nbsp;Purchase Messages</a></li>
   <li class="list-group-item" id="dashboard-menu-contacts"><a href='/tour/contacts'><i class="fa fa-users"></i>&nbsp;&nbsp;Contacts</a></li>
   <li class="list-group-item" id="dashboard-menu-schedule"><a href='/tour/schedule'><i class="fa fa-calendar"></i>&nbsp;&nbsp;Schedule</a></li>
   <li class="list-group-item" id="dashboard-menu-transactions"><a href='/tour/transactions'><i class="fa fa-briefcase"></i>&nbsp;&nbsp;Transactions</a></li>
@@ -102,11 +102,10 @@
 <a class="btn btn-danger btn-block btn-lg mb20" id="dashboard-support" href='/tour/support'>Support</a>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Available Tokens</h3>
+          <h3 class="panel-title">Message Remaining</h3>
         </div>
         <div class="panel-body">
-          <p><strong>500</strong> Tokens available.</p>
-          <p>This is enough for <strong>33</strong> fixed messages, or <strong>8</strong> custom messages.</p>
+          <p><strong>50</strong> messages remaining.</p>
           <div class="progress">
             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%;"></div>          </div>
         </div>
@@ -115,8 +114,8 @@
     </div>
     
     <div class="col-lg-6">
-      <h1>Purchasing Tokens</h1>
-      <p>We provide you with four different options when purchasing your tokens, each designed to offer the flexibility you require as a business.</p>
+      <h1>Purchasing Messages</h1>
+      <p>We provide you with four different options when purchasing your messages, each designed to offer the flexibility you require as a business.</p>
       <p>All of our transactions are handled via PayPal to ensure that you have all the security and peace of mind you need when buying online. If you do not have a PayPal account, you can still purchase via PayPal using your credit/debit card.</p>
     </div>
 
@@ -136,13 +135,7 @@
                   <strong>&pound;5</strong>
               </li>
               <li>
-                  <strong>500</strong> ScheduleSMS Tokens
-              </li>
-              <li>
-                  Up to <strong>8</strong> custom messages
-              </li>
-              <li>
-                  Up to <strong>33</strong> fixed messages
+                  <strong>35</strong> Messages
               </li>
               <li>
                   <a href="#"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
@@ -159,13 +152,7 @@
                   <strong>&pound;10</strong>
               </li>
               <li>
-                  <strong>1000</strong> ScheduleSMS Tokens
-              </li>
-              <li>
-                  Up to <strong>16</strong> custom messages
-              </li>
-              <li>
-                  Up to <strong>66</strong> fixed messages
+                  <strong>70</strong> Messages
               </li>
               <li>
                   <a href="#"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
@@ -182,13 +169,7 @@
                   <strong>&pound;20</strong>
               </li>
               <li>
-                  <strong>2500</strong> ScheduleSMS Tokens
-              </li>
-              <li>
-                  Up to <strong>41</strong> custom messages
-              </li>
-              <li>
-                  Up to <strong>166</strong> fixed messages
+                  <strong>160</strong> Messages
               </li>
               <li>
                   <a id="dashboard-buy" href="#"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
@@ -205,13 +186,7 @@
                   <strong>&pound;50</strong>
               </li>
               <li>
-                  <strong>8000</strong> ScheduleSMS Tokens
-              </li>
-              <li>
-                  Up to <strong>133</strong> custom messages
-              </li>
-              <li>
-                  Up to <strong>533</strong> fixed messages
+                  <strong>500</strong> Messages
               </li>
               <li>
                   <a href="#"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>

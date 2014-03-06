@@ -46,6 +46,11 @@
               <h2>This customer has opted out</h2>
               <p>This customer has opted out of receiving messages from you via ScheduleSMS.</p>
             </div>
+          <? elseif (!$data['can_created_fixed'] || !$data['can_created_custom']): ?>
+            <div class="alert alert-danger mt20" >
+              <h4><strong>You do not have enough credit to schedule a message.</strong></h4>
+              <p><a href="/dashboard/tokens" class="btn btn-success"><i class="fa fa-shopping-cart"> </i> Purchase more messages</a></p>
+            </div>
           <? else: ?>
           <p>Set up a message for this contact.</p>
           
@@ -61,14 +66,8 @@
               
               <form role="form" id="fixed-form">
                 
-                <p>Fixed messages are used for confirmations or reminders for appointments or meetings, and cost <strong><?=$data['tokens']['fixed'];?></strong> tokens.</p>
+                <p>Use our simple mesage wizard to quickly create appointment reminders or confirmations.</p>
                 
-                <? if (!$data['can_created_fixed']): ?>
-                  <div class="alert alert-danger mt20" >
-                    <h4><strong>You do not have enough tokens to schedule a message of this type.</strong></h4>
-                    <p><a href="/dashboard/tokens" class="btn btn-success"><i class="fa fa-shopping-cart"> </i> Purchase tokens</a></p>
-                  </div>
-                <? else: ?>
                 <div class="form-group fixed-section">
                   <h4 id='fixedstep1'><strong>Step One</strong> Is this a reminder, or a confirmation?</h4>
                   <p>
@@ -152,8 +151,6 @@
                   <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
                   <button type="submit" class="btn btn-success" id="fixed-btn"><i class="fa fa-calendar-o"></i> Schedule Message</button>
                 </div>
-
-                <? endif; ?>
               </form>
 
             </div>
@@ -162,18 +159,11 @@
               <form role="form" id="custom-form">
                 
                 <p>Custom messages can be tailored to this specific customer, often containing a targeted &amp; promotional message. These messages can be saved and re-used with other customers at a later date.</p>
-                <p>Each custom message is charged at <?=$data['tokens']['custom'];?> tokens per 160 characters.<br /><em class="slight">A required unsubscribe instruction will be included, using 26 characters.</em></p>
-
-                <? if (!$data['can_created_custom']): ?>
-                  <div class="alert alert-danger mt20" >
-                    <h4><strong>You do not have enough tokens to schedule a message of this type.</strong></h4>
-                    <p><a href="/dashboard/tokens" class="btn btn-success"><i class="fa fa-shopping-cart"> </i> Purchase tokens</a></p>
-                  </div>
-                <? else: ?>
+                <p>Each custom message is charged at <?=$data['tokens']['cost'];?> message credit per 160 characters.<br /><em class="slight">A required unsubscribe instruction will be included, using 26 characters.</em></p>
 
                 <div class="form-group">
 
-                  <label  id='customcompose' for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens"><?=$data['tokens']['custom'];?></span> tokens)</label>
+                  <label  id='customcompose' for="custom-message">Compose message (<span id="message-count">0</span> characters - <span id="message-tokens"><?=$data['tokens']['cost'];?></span> messages)</label>
                   <p><em>Remember to include your company name and contact details!</em></p>
                   <textarea class="form-control mb10" id="custom-message" name="custom-message" rows="3"></textarea>
 
@@ -240,11 +230,9 @@
                   <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
                   <input type="hidden" name="company_contact" id="company_contact" value="<?=$data['active_customer']['contact_phone'];?>" />
                   <input type="hidden" name="country" id="country" value="<?=$data['active_customer']['country'];?>" />
-                  <input type="hidden" name="custom_cost" id="custom_cost" value="<?=$data['tokens']['custom'];?>" />
+                  <input type="hidden" name="custom_cost" id="custom_cost" value="<?=$data['tokens']['cost'];?>" />
                   <button type="submit" class="btn btn-success" id="custom-btn"><i class="fa fa-calendar-o"></i> Schedule Message</button>
                 </div>
-
-                <? endif; ?>
               </form>
             </div>
 

@@ -35,11 +35,10 @@
       
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Available Tokens</h3>
+          <h3 class="panel-title">Messages Remaining</h3>
         </div>
         <div class="panel-body">
-          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> Tokens available.</p>
-          <p class="hidden-xs">This is enough for <strong><?=$data['token_fixed'];?></strong> fixed messages, or <strong><?=$data['token_custom'];?></strong> custom messages.</p>
+          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> messages remaining.</p>
           <div class="progress" id="dashboard-token-bar">
             <div class="progress-bar <?=$data['token_class'];?>" role="progressbar" aria-valuenow="<?=$data['token_bar'];?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$data['token_bar'];?>%;"></div>          </div>
         </div>

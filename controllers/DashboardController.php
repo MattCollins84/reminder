@@ -31,7 +31,7 @@
       $vars = $rest->getRequestVars();
 
       $data['tokens'] = $config['tokens'];
-      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 10000) * 100;
+      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 1000) * 100;
 
       if ($data['token_bar'] >= 75) {
         $data['token_class'] = "progress-bar-success";
@@ -45,8 +45,8 @@
         $data['token_class'] = "progress-bar-danger";
       }
 
-      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['fixed']);
-      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['custom']);
+      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
+      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
 
       $data['messages_today'] = Message::getMessageByCustomerDate($data['active_customer']['_id'], date("Y-n-j"));
 
@@ -168,8 +168,8 @@
       $data['show_success'] = ($_SESSION['message_scheduled'] === true?true:false);
       $_SESSION['message_scheduled'] = false;
 
-      $data['can_created_fixed'] = (bool) ($data['tokens']['fixed'] <= $data['active_customer']['available_tokens']);
-      $data['can_created_custom'] = (bool) ($data['tokens']['custom'] <= $data['active_customer']['available_tokens']);
+      $data['can_created_fixed'] = (bool) ($data['tokens']['cost'] <= $data['active_customer']['available_tokens']);
+      $data['can_created_custom'] = (bool) ($data['tokens']['cost'] <= $data['active_customer']['available_tokens']);
 
       $data['hour'] = (int) date('G');
 
@@ -282,7 +282,7 @@
 
       }
 
-      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 10000) * 100;
+      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 1000) * 100;
 
       if ($data['token_bar'] >= 75) {
         $data['token_class'] = "progress-bar-success";
@@ -296,8 +296,8 @@
         $data['token_class'] = "progress-bar-danger";
       }
 
-      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['fixed']);
-      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['custom']);
+      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
+      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
 
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();

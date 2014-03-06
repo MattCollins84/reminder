@@ -635,7 +635,7 @@ $(document).ready(function() {
       num += " no shows";
     }
 
-    var str = "ScheduleSMS would cost you just <strong>"+total_cost+"</strong> per day*, meaning that preventing just "+num+" would save you <strong>"+saved+"!</strong><br /><em>* prices calculated assuming tokens bought with the premium package";
+    var str = "ScheduleSMS would cost you just <strong>"+total_cost+"</strong> per day*, meaning that preventing just "+num+" would save you <strong>"+saved+"!</strong><br /><em>* prices calculated assuming messages bought with the premium package";
 
     $('#fixed-result').html(str);
     $('#fixed-result').removeClass("hidden");

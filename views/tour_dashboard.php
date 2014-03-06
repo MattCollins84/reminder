@@ -82,7 +82,7 @@
       <ul class="list-group dash-nav hidden-xs">
   <li class="list-group-item" id="dashboard-menu-home"><a href='/tour/start'><i class="fa fa-home"></i>&nbsp;&nbsp;Dashboard Home</a></li>
   <li class="list-group-item" id="dashboard-menu-account"><a href='/tour/account'><i class="fa fa-cog"></i>&nbsp;&nbsp;Account Settings</a></li>
-  <li class="list-group-item" id="dashboard-menu-tokens"><a href='/tour/tokens'><i class="fa fa-phone"></i>&nbsp;&nbsp;Purchase Tokens</a></li>
+  <li class="list-group-item" id="dashboard-menu-tokens"><a href='/tour/tokens'><i class="fa fa-phone"></i>&nbsp;&nbsp;Purchase Messages</a></li>
   <li class="list-group-item" id="dashboard-menu-contacts"><a href='/tour/contacts'><i class="fa fa-users"></i>&nbsp;&nbsp;Contacts</a></li>
   <li class="list-group-item" id="dashboard-menu-schedule"><a href='/tour/schedule'><i class="fa fa-calendar"></i>&nbsp;&nbsp;Schedule</a></li>
   <li class="list-group-item" id="dashboard-menu-transactions"><a href='/tour/transactions'><i class="fa fa-briefcase"></i>&nbsp;&nbsp;Transactions</a></li>
@@ -105,11 +105,10 @@
       
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Available Tokens</h3>
+          <h3 class="panel-title">Messages Remaining</h3>
         </div>
         <div class="panel-body">
-          <p><strong>500</strong> Tokens available.</p>
-          <p class="hidden-xs">This is enough for <strong>33</strong> fixed messages, or <strong>8</strong> custom messages.</p>
+          <p><strong>50</strong> Messages remaining.</p>
           <div class="progress" id="dashboard-token-bar">
             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%;"></div>          </div>
         </div>

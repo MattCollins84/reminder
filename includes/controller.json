@@ -55,6 +55,12 @@
         "authentication": false 
     },
     {
+        "regex": "^/tweets-for-messages$",
+        "controllerClass": "MainController",
+        "method": "renderTFT",
+        "authentication": false 
+    },
+    {
         "regex": "^/confirmation/[0-9a-zA-Z]+$",
         "controllerClass": "CustomerController",
         "method": "renderConfirmation",

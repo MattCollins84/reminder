@@ -26,8 +26,8 @@ var TourSteps = function(mobile) {
       },
       {
         element: "#dashboard-menu-tokens"+mobile,
-        title: "Purchase Tokens",
-        content: "When you're running low on tokens, top up here",
+        title: "Purchase Messages",
+        content: "When you're running low on message credits, top up here",
         placement: placement
       },
       {
@@ -51,13 +51,13 @@ var TourSteps = function(mobile) {
       {
         element: "#dashboard-support",
         title: "Support",
-        content: "If you're struggling with anyting, or just want to ask a question, this is the place to go.",
+        content: "If you're struggling with anything, or just want to ask a question, this is the place to go.",
         placement: placement
       },
       {
         element: "#dashboard-token-bar",
-        title: "Remaining tokens",
-        content: "If you're struggling with anyting, or just want to ask a question, this is the place to go.",
+        title: "Messages remaining",
+        content: "Your remaining credits, keep an eye on this to avoid running out.",
         placement: "bottom"
       },
       {
@@ -105,8 +105,8 @@ var TourSteps = function(mobile) {
     dashboardTokens: [
       {
         orphan: true,
-        title: "Purchase Tokens",
-        content: "On this page you can top up your tokens or check out the pricing information for the future"
+        title: "Purchase Messages",
+        content: "On this page you can top up your message credits or check out the pricing information for the future"
       },
       {
         element: "#dashboard-paypal",
@@ -117,7 +117,7 @@ var TourSteps = function(mobile) {
       {
         element: "#dashboard-buy",
         title: "Purchase",
-        content: "Once you have selected your package, click the buy button to proceed. Most of our customers prefer the premium package as it offers the best balance between cost and tokens received.",
+        content: "Once you have selected your package, click the buy button to proceed. Most of our customers prefer the premium package as it offers the best balance between cost and messages received.",
         placement: "top"
       }
     ],
@@ -138,7 +138,7 @@ var TourSteps = function(mobile) {
       {
         element: "#dashboard-buy",
         title: "Purchase",
-        content: "Once you have selected your package, click the buy button to proceed. Most of our customers prefer the premium package as it offers the best balance between cost and tokens received.",
+        content: "Once you have selected your package, click the buy button to proceed. Most of our customers prefer the premium package as it offers the best balance between cost and messages received.",
         placement: "top"
       },
       {

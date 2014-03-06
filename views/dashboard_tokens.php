@@ -3,12 +3,12 @@
     <div class="row">
       
       <div class="col-lg-12 centered mb60 mt60 hidden-xs">
-        <h1>Tokens</b></h1>
-        <h3>Manage your ScheduleSMS tokens.</h3>
+        <h1>Purchase Messages</b></h1>
+        <h3>Manage your ScheduleSMS messages.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
-        <h3 class="">Tokens</h3>
+        <h3 class="">Purchase Messages</h3>
       </div>
 
     </div>
@@ -24,11 +24,10 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Available Tokens</h3>
+          <h3 class="panel-title">Messages Remaining</h3>
         </div>
         <div class="panel-body">
-          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> Tokens available.</p>
-          <p>This is enough for <strong><?=$data['token_fixed'];?></strong> fixed messages, or <strong><?=$data['token_custom'];?></strong> custom messages.</p>
+          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> messages remaining.</p>
           <div class="progress">
             <div class="progress-bar <?=$data['token_class'];?>" role="progressbar" aria-valuenow="<?=$data['token_bar'];?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$data['token_bar'];?>%;"></div>          </div>
         </div>
@@ -37,8 +36,8 @@
     </div>
     
     <div class="col-lg-6">
-      <h1>Purchasing Tokens</h1>
-      <p>We provide you with four different options when purchasing your tokens, each designed to offer the flexibility you require as a business.</p>
+      <h1>Purchasing Messages</h1>
+      <p>We provide you with four different options when purchasing messages, each designed to offer the flexibility you require as a business.</p>
       <p>All of our transactions are handled via PayPal to ensure that you have all the security and peace of mind you need when buying online. If you do not have a PayPal account, you can still purchase via PayPal using your credit/debit card.</p>
     </div>
 
@@ -60,13 +59,7 @@
                   <strong><?=$data['currency'];?><?=$plan['price'];?></strong>
               </li>
               <li>
-                  <strong><?=$plan['tokens'];?></strong> ScheduleSMS Tokens
-              </li>
-              <li>
-                  Up to <strong><?=floor($plan['tokens'] / $data['tokens']['custom']);?></strong> custom messages
-              </li>
-              <li>
-                  Up to <strong><?=floor($plan['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
+                  <strong><?=$plan['tokens'];?></strong> Messages
               </li>
               <li>
                   <a href="/dashboard/tokens/<?=$data['active_customer']['country'];?>/<?=$key;?>"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>

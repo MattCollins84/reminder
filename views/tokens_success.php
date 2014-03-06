@@ -4,7 +4,7 @@
       
       <div class="col-lg-12 centered mb60 mt60 hidden-xs">
         <h1>Thank You</h1>
-        <h3>Your transaction is complete, your tokens will be added to your balance.</h3>
+        <h3>Your transaction is complete, your messages will be added to your balance.</h3>
       </div>
 
       <div class="col-lg-12 centered mt20 visible-xs">
@@ -24,11 +24,10 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Available Tokens</h3>
+          <h3 class="panel-title">Messages Remaining</h3>
         </div>
         <div class="panel-body">
-          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> Tokens available.</p>
-          <p>This is enough for <strong><?=$data['token_fixed'];?></strong> fixed messages, or <strong><?=$data['token_custom'];?></strong> custom messages.</p>
+          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> messages remaining.</p>
           <div class="progress">
             <div class="progress-bar <?=$data['token_class'];?>" role="progressbar" aria-valuenow="<?=$data['token_bar'];?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$data['token_bar'];?>%;"></div>          </div>
         </div>
@@ -38,7 +37,7 @@
     
     <div class="col-lg-9">
       <h1>Thank you for your purchase</h1>
-      <p>Your transaction is complete and your tokens should be added to your balance within the next few minutes.</p>
+      <p>Your transaction is complete and your messages should be added to your balance within the next few minutes.</p>
       <p>You will receive an email from PayPal shortly containing confirmation and receipt of your purchase.</p>
       
       <h3>Transaction details</h3>

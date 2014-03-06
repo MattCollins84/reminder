@@ -24,11 +24,10 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Available Tokens</h3>
+          <h3 class="panel-title">Messages Remaining</h3>
         </div>
         <div class="panel-body">
-          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> Tokens available.</p>
-          <p>This is enough for <strong><?=$data['token_fixed'];?></strong> fixed messages, or <strong><?=$data['token_custom'];?></strong> custom messages.</p>
+          <p><strong><?=$data['active_customer']['available_tokens'];?></strong> messages remaining.</p>
           <div class="progress">
             <div class="progress-bar <?=$data['token_class'];?>" role="progressbar" aria-valuenow="<?=$data['token_bar'];?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$data['token_bar'];?>%;"></div>          </div>
         </div>
@@ -37,9 +36,9 @@
     </div>
     
     <div class="col-lg-9">
-      <h1>Purchasing additional tokens</h1>
-      <p>You either cancelled your transaction or there was an with your PayPal account.</p>
-      <p>You have not been billed by ScheduleSMS for any tokens.</p>
+      <h1>Purchasing additional messages</h1>
+      <p>You either cancelled your transaction or there was a problem with your PayPal transaction.</p>
+      <p>You have not been billed by ScheduleSMS for any message credits.</p>
       
       <h3>Retry your purchase</h3>
       <p>If you wish to retry your purchase, review the selected plan below and click the <strong>Buy Now</strong> button.</p>
@@ -54,13 +53,7 @@
                 <strong><?=$data['currency'];?><?=$data['plan']['price'];?></strong>
             </li>
             <li>
-                <strong><?=$data['plan']['tokens'];?></strong> ScheduleSMS Tokens
-            </li>
-            <li>
-                Up to <strong><?=floor($data['plan']['tokens'] / $data['tokens']['custom']);?></strong> custom messages
-            </li>
-            <li>
-                Up to <strong><?=floor($data['plan']['tokens'] / $data['tokens']['fixed']);?></strong> fixed messages
+                <strong><?=$data['plan']['tokens'];?></strong> Messages
             </li>
             <li>
                 <a href="/dashboard/tokens/<?=$data['active_customer']['country'];?>/<?=$data['item_key'];?>"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>

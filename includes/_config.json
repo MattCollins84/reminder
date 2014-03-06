@@ -25,9 +25,8 @@
         "signature": ""
       },
       "tokens": {
-        "fixed": 20,
-        "custom": 80,
-        "complimentary": 500
+        "cost": 1,
+        "complimentary": 30
       },
       "paypal_host": "www.sandbox.paypal.com",
       "plans": {
@@ -35,28 +34,28 @@
           {
             "name": "Economy",
             "price": 5,
-            "tokens": 500,
+            "tokens": 35,
             "selected": false,
             "currency": "GBP"
           },
           {
             "name": "Standard",
             "price": 10,
-            "tokens": 1000,
+            "tokens": 70,
             "selected": false,
             "currency": "GBP"
           },
           {
             "name": "Premium",
             "price": 20,
-            "tokens": 2500,
+            "tokens": 160,
             "selected": true,
             "currency": "GBP"
           },
           {
             "name": "Bumper",
             "price": 50,
-            "tokens": 8000,
+            "tokens": 500,
             "selected": false,
             "currency": "GBP"
           }
@@ -65,28 +64,28 @@
           {
             "name": "Economy",
             "price": 7,
-            "tokens": 500,
+            "tokens": 35,
             "selected": false,
             "currency": "USD"
           },
           {
             "name": "Standard",
             "price": 14,
-            "tokens": 1000,
+            "tokens": 70,
             "selected": false,
             "currency": "USD"
           },
           {
             "name": "Premium",
             "price": 28,
-            "tokens": 2500,
+            "tokens": 160,
             "selected": true,
             "currency": "USD"
           },
           {
             "name": "Bumper",
             "price": 70,
-            "tokens": 8000,
+            "tokens": 500,
             "selected": false,
             "currency": "USD"
           }

@@ -50,7 +50,7 @@
       $returnUrl = 'http://'.$_SERVER['HTTP_HOST'].'/dashboard/tokens/success';
       $cancelUrl = 'http://'.$_SERVER['HTTP_HOST'].'/dashboard/tokens/cancel';
 
-      $paypalTrans = PayPal::SetExpressCheckout("ScheduleSMS - ".$plan['name']." (".$plan['tokens']." tokens @ ".$data['currency'].$plan['price'].")", $plan['price'] , $plan['currency'], $returnUrl, $cancelUrl);
+      $paypalTrans = PayPal::SetExpressCheckout("ScheduleSMS - ".$plan['name']." (".$plan['tokens']." messages @ ".$data['currency'].$plan['price'].")", $plan['price'] , $plan['currency'], $returnUrl, $cancelUrl);
 
       // Redirect user back to i dunno
       PayPal::redirect($paypalTrans['TOKEN']);
@@ -79,7 +79,7 @@
       $vars = $rest->getRequestVars();
 
       $data['tokens'] = $config['tokens'];
-      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 10000) * 100;
+      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 1000) * 100;
 
       if ($data['token_bar'] >= 75) {
         $data['token_class'] = "progress-bar-success";
@@ -105,8 +105,8 @@
 
       }
 
-      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['fixed']);
-      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['custom']);
+      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
+      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
       $data['plan'] = $_SESSION['purchase_plan'];
       $data['item_key'] = $_SESSION['item_key'];
 
@@ -138,7 +138,7 @@
       $vars = $rest->getRequestVars();
 
       $data['tokens'] = $config['tokens'];
-      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 10000) * 100;
+      $data['token_bar'] = ($data['active_customer']['available_tokens'] / 1000) * 100;
 
       if ($data['token_bar'] >= 75) {
         $data['token_class'] = "progress-bar-success";
@@ -164,8 +164,8 @@
 
       }
 
-      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['fixed']);
-      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['custom']);
+      $data['token_fixed'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
+      $data['token_custom'] = floor($data['active_customer']['available_tokens'] / $data['tokens']['cost']);
       $data['plan'] = $_SESSION['purchase_plan'];
       $data['item_key'] = $_SESSION['item_key'];
 
