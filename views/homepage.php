@@ -6,8 +6,8 @@
         <div class="col-lg-12">
           <h1 class="hidden-xs mt60">Welcome To <img src="/images/ScheduleSMSWhite-400.png" width="400" height="130" alt="ScheduleSMS" /></h1>
           <h1 class="h1-sm visible-xs"><img src="/images/ScheduleSMSWhite-280.png" width="280" height="91" alt="ScheduleSMS" /></h1>
-          <h3 class="hidden-xs">Unlock the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more. Start your <a href='#signup'>free trial</a> now!</h3>
-          <h3 class="visible-xs">A cheap, no-obligation, pay as you go SMS marketing service for small businesses. Start your <a href='#signup'>free trial</a> now!</h3>
+          <!--<h3 class="hidden-xs">Unlock the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more. Start your <a href='#signup'>free trial</a> now!</h3>-->
+          <h3>A cheap, no-obligation, pay as you go SMS marketing service for small businesses. Start your <a href='#signup'>free trial</a> now!</h3>
           <br>
         </div>
 
