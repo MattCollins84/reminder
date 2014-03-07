@@ -27,7 +27,7 @@
               <button type="button" id='start-btn2' class="btn btn-lg btn-success">Start Free Trial!</button>
               <br>
               <h3>No monthly fee or hidden costs, pay as you go!</h3>
-              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined key dates &amp; times to help drive repeat business and minimise no-shows.<br /><br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined dates &amp; times to help drive repeat business and minimise no-shows.<br /><br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
             </form>
           </div>
 
@@ -40,20 +40,6 @@
         </div>
 
         <div class="hidden-lg">
-          
-          <!--
-          <div class="row">
-            <div class="col-sm-6 col-xs-12">
-              <h5 class="">Amazing Results</h5>
-              <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
-            </div>
-
-            <div class="col-sm-6 col-xs-12">
-              <h5>Get <?=$data['tokens']['complimentary'];?> free messages!</h5>
-              <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free messages!</p>
-            </div>
-          </div>
-          -->
 
           <div class="col-sm-12">
             <form role="form" class="home-form"> 
@@ -66,7 +52,6 @@
               <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined dates &amp; times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
             </form>
           </div>
-
           
         </div>
           <? else: ?>
@@ -200,79 +185,35 @@
         
         </div>
 
-        <div class="row flat">
-          
-          <!--
-          <ul class="nav nav-tabs" id="price-tabs">
-            <li class="active"><a href="#pricing-uk" data-toggle="tab">UK Pricing</a></li>
-            <li><a href="#pricing-us" data-toggle="tab">US Pricing</a></li>     
+      </div>
+
+      <div class="row flat">
+
+      <? foreach ($data['plans']['gb'] as $key => $plan): ?>
+      
+        <div class="col-lg-3 col-md-3 col-xs-6 mb20">
+          <? if ($plan['selected']): ?>
+            <img src="/images/most-popular-badge.png" width="144" height="145" class="most-popular-sm visible-xs" alt="Most popular price plan"/>
+            <img src="/images/most-popular-badge.png" width="144" height="145" class="most-popular hidden-xs" alt="Most popular price plan"/>
+          <? endif; ?>
+          <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
+            <li class="plan-name">
+                <?=$plan['name'];?>
+            </li>
+            <li class="plan-price">
+                <strong>&pound;<?=$plan['price'];?></strong>
+            </li>
+            <li>
+                <strong><?=$plan['tokens'];?></strong> Messages
+            </li>
           </ul>
-          -->
-          <div class="tab-content pt20 pb20">
-            
-            <!--
-            <div class="tab-pane" id="pricing-us">
-              <? foreach ($data['plans']['us'] as $key => $plan): ?>
-              
-                <div class="col-lg-3 col-md-3 col-xs-6">
-                  <? if ($plan['selected']): ?>
-                    <img src="/images/most-popular-badge.png" width="144" height="145" class="most-popular-sm visible-xs" alt="Most popular price plan"/>
-                    <img src="/images/most-popular-badge.png" width="144" height="145" class="most-popular hidden-xs" alt="Most popular price plan"/>
-                  <? endif; ?>
-                  <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
-                    <li class="plan-name">
-                        <?=$plan['name'];?>
-                    </li>
-                    <li class="plan-price">
-                        <strong>&dollar;<?=$plan['price'];?></strong>
-                    </li>
-                    <li>
-                        <strong><?=$plan['tokens'];?></strong> Messages
-                    </li>
-                  </ul>
-                </div>
-              
-              <? endforeach; ?>
-            </div>
-            -->
-
-            <div class="tab-pane active" id="pricing-uk">
-              <? foreach ($data['plans']['gb'] as $key => $plan): ?>
-              
-                <div class="col-lg-3 col-md-3 col-xs-6 mb20">
-                  <? if ($plan['selected']): ?>
-                    <img src="/images/most-popular-badge.png" width="144" height="145" class="most-popular-sm visible-xs" alt="Most popular price plan"/>
-                    <img src="/images/most-popular-badge.png" width="144" height="145" class="most-popular hidden-xs" alt="Most popular price plan"/>
-                  <? endif; ?>
-                  <ul class="plan plan<?=($key+1);?> <?=($plan['selected']?"featured":"");?>">
-                    <li class="plan-name">
-                        <?=$plan['name'];?>
-                    </li>
-                    <li class="plan-price">
-                        <strong>&pound;<?=$plan['price'];?></strong>
-                    </li>
-                    <li>
-                        <strong><?=$plan['tokens'];?></strong> Messages
-                    </li>
-                  </ul>
-                </div>
-              
-              <? endforeach; ?>
-            </div>
-
-          </div>
-           
         </div>
+      
+      <? endforeach; ?>
+         
+      </div>
 
-        <script>
-
-          $('#price-tabs a').click(function (e) {
-            e.preventDefault()
-            $(this).tab('show')
-          })
-
-        </script>
-
+      <div class="row">
         <div class="col-lg-12">
           
           <h3>How to send your messages</h3>
