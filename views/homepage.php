@@ -193,13 +193,15 @@
 
         <div class="row flat">
           
+          <!--
           <ul class="nav nav-tabs" id="price-tabs">
             <li class="active"><a href="#pricing-uk" data-toggle="tab">UK Pricing</a></li>
             <li><a href="#pricing-us" data-toggle="tab">US Pricing</a></li>     
           </ul>
-          
+          -->
           <div class="tab-content pt20 pb20">
             
+            <!--
             <div class="tab-pane" id="pricing-us">
               <? foreach ($data['plans']['us'] as $key => $plan): ?>
               
@@ -223,6 +225,7 @@
               
               <? endforeach; ?>
             </div>
+            -->
 
             <div class="tab-pane active" id="pricing-uk">
               <? foreach ($data['plans']['gb'] as $key => $plan): ?>

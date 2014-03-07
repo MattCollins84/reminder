@@ -22,7 +22,7 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>http://schedulesms.com/tweets-for-tokens</loc>
+    <loc>http://schedulesms.com/tweets-for-messages</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>

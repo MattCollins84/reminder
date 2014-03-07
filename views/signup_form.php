@@ -1,6 +1,9 @@
 <form role="form" id="form-signup"> 
+  <input type="hidden" name="country" id="country" value="gb" />
+  <!--
   <div class="form-group">
     <label for="name">Country *</label>
+    
     <div class="row">
       <div class="col-lg-6 col-md-6 mb10">
         <select id="country" name="country" class="form-control" >
@@ -18,8 +21,9 @@
           <option value="New_York">Eastern (EST)</option>
         </select>
       </div>
-    </div>   
+    </div>  
   </div>
+  --> 
   <div class="form-group">              
     <div class="row">
       <div class="col-lg-6 col-md-6 mb10">
