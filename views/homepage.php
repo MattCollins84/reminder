@@ -6,7 +6,8 @@
         <div class="col-lg-12">
           <h1 class="hidden-xs mt60">Welcome To <img src="/images/ScheduleSMSWhite-400.png" width="400" height="130" alt="ScheduleSMS" /></h1>
           <h1 class="h1-sm visible-xs"><img src="/images/ScheduleSMSWhite-280.png" width="280" height="91" alt="ScheduleSMS" /></h1>
-          <h3>Unlocking the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more...</h3>
+          <h3 class="hidden-xs">Unlocking the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more. Start your <a href='#signup'>free trial</a> now!</h3>
+          <h3 class="visible-xs">A cheap, no-obligation, pay as you go SMS marketing service for small businesses. Start your <a href='#signup'>free trial</a> now!</h3>
           <br>
         </div>
 
@@ -26,7 +27,7 @@
               <button type="button" id='start-btn2' class="btn btn-lg btn-success">Start Free Trial!</button>
               <br>
               <h3>No monthly fee or hidden costs, pay as you go!</h3>
-              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined key times to help drive repeat business and minimise no-shows.<br /><br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined key dates &amp; times to help drive repeat business and minimise no-shows.<br /><br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
             </form>
           </div>
 
@@ -37,14 +38,22 @@
             <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free messages!</p>
           </div>
         </div>
+
         <div class="hidden-lg">
           
-          <div class="col-sm-12">
-            <h5 class="">Amazing Results</h5>
-            <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
-            <h5>Get <?=$data['tokens']['complimentary'];?> free messages!</h5>
-            <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free messages!</p>
+          <!--
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+              <h5 class="">Amazing Results</h5>
+              <p>Drive repeat business and minimise no-shows with ScheduleSMS.</p>
+            </div>
+
+            <div class="col-sm-6 col-xs-12">
+              <h5>Get <?=$data['tokens']['complimentary'];?> free messages!</h5>
+              <p>Enter your email address to get <?=$data['tokens']['complimentary'];?> free messages!</p>
+            </div>
           </div>
+          -->
 
           <div class="col-sm-12">
             <form role="form" class="home-form"> 
@@ -54,7 +63,7 @@
               <button type="button" id='start-btn' class="btn btn-lg btn-success">Start Free Trial!</button>
               <br>
               <h3>No monthly fee or hidden costs, pay as you go!</h3>
-              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
+              <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined dates &amp; times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
             </form>
           </div>
 

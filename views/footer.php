@@ -20,7 +20,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script>
       $('.carousel').carousel({
-        interval: 3500
+        interval: 5000
       })
     </script>
   </body>
