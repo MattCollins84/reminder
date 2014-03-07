@@ -6,7 +6,7 @@
         <div class="col-lg-12">
           <h1 class="hidden-xs mt60">Welcome To <img src="/images/ScheduleSMSWhite-400.png" width="400" height="130" alt="ScheduleSMS" /></h1>
           <h1 class="h1-sm visible-xs"><img src="/images/ScheduleSMSWhite-280.png" width="280" height="91" alt="ScheduleSMS" /></h1>
-          <h3 class="hidden-xs">Unlocking the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more. Start your <a href='#signup'>free trial</a> now!</h3>
+          <h3 class="hidden-xs">Unlock the potential of your customer base with scheduled &amp; targeted SMS messages, appointment reminders, and more. Start your <a href='#signup'>free trial</a> now!</h3>
           <h3 class="visible-xs">A cheap, no-obligation, pay as you go SMS marketing service for small businesses. Start your <a href='#signup'>free trial</a> now!</h3>
           <br>
         </div>
@@ -52,7 +52,7 @@
               <h4 class="strapline">Schedule appointment reminders or custom messages for your customers at pre-defined dates &amp; times to help drive repeat business and minimise no-shows.<br />We know your time is important, so let us look after some of the little things that make can a big difference.</h4>
             </form>
           </div>
-          
+
         </div>
           <? else: ?>
             <div class="col-lg-12 hidden-xs">
