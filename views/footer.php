@@ -17,7 +17,17 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.min.js" defer></script>
+    <script src="/js/smoothscroll.js" defer></script>
+    <? if ($data['phone_js']): ?>
+    <script src="/js/phone.js" defer></script>
+    <? endif; ?>
+    <? if ($data['date_js']): ?>
+      <script src="/js/zebra_datepicker.js" defer></script>
+    <? endif; ?>
+
+    <script src="/js/schedulesms.js" defer></script>
+    <script src="/js/bootstrap.min.js" defer></script>
     <script>
       $('.carousel').carousel({
         interval: 5000
