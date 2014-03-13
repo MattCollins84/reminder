@@ -40,6 +40,18 @@
       
     <title>ScheduleSMS - SMS marketing for small businesses</title>
 
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+
+    <script src="/js/schedulesms.js"></script>
+
+    <? if ($data['phone_js']): ?>
+    <script src="/js/phone.js"></script>
+    <? endif; ?>
+    <? if ($data['date_js']): ?>
+      <script src="/js/zebra_datepicker.js"></script>
+    <? endif; ?>
+
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     
