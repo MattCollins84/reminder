@@ -10,6 +10,10 @@
 
   $messages = Message::getMessageByCountry("gb");
 
+  //echo "<pre>";var_dump($messages);exit;
+  
+  //echo $hour; exit;
+
   $result = array();
   foreach ($messages as $msg) {
 

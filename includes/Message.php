@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set("Europe/London");
+
 require_once("includes/Cloudant.php");
 require_once("includes/Validation.php");
 require_once("includes/Customer.php");
@@ -145,7 +147,7 @@ class Message  {
       $day = date("j");
     }
 
-    $params = array("startkey" => '["'.$country.'","'.$status.'",'.$year.','.$month.','.$day.',0]', "endkey" => '["'.$country.'","'.$status.'",3014,'.$month.','.$day.','.date('G').'00]', "include_docs" => "true", "limit" => 10);
+    $params = array("startkey" => '["'.$country.'","'.$status.'",'.$year.','.$month.','.$day.',0]', "endkey" => '["'.$country.'","'.$status.'",'.$year.','.$month.','.$day.','.date('G').'00]', "include_docs" => "true", "limit" => 10);
 
     $res = Cloudant::doCurl("GET", "messages/_design/find/_view/byCountry", array(), $params);
 
