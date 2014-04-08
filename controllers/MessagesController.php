@@ -98,6 +98,35 @@
           $_SESSION['message_scheduled'] = true;
         }
 
+        // if we have additional contacts
+        if (isset($vars['additional_contacts']) && is_array($vars['additional_contacts'])) {
+
+          // get these contacts
+          $contacts = Contact::getByIds($vars['additional_contacts']);
+          $successes = 0;
+
+          // loop over them, adding new messages
+          foreach ($contacts as $contact) {
+
+            // create the message
+            $message = Message::createMessage($contact, $vars['message'], $vars['date'], $vars['time'], $tokens, $vars['country'], $vars['type'], $customer['timezone']);
+
+            // if we're successful, remove these tokens
+            if ($message['success']) {
+              $successes++;
+            }
+
+          }
+
+          // deduct multiple tokens
+          if ($successes > 0) {
+            Customer::removeTokens($_SESSION['customer'], $successes);
+            $_SESSION['customer'] = Customer::getById($customer['_id']);
+            $_SESSION['message_scheduled'] = true;
+          }
+
+        }
+
         $optout = "reply STOP to unsubscribe";
 
         // create a template?

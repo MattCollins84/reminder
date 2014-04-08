@@ -99,6 +99,30 @@ class Contact  {
 
   }
 
+  // get customer contact by ids
+  static public function getByIds($ids=array()) {
+
+    $keys = '["'.implode($ids, '","').'"]';
+
+    $params = array("keys" => $keys, "include_docs" => "true");
+
+    $res = Cloudant::doCurl("GET", "contacts/_all_docs", array(), $params);
+
+    $docs = array();
+
+    if (is_array($res['rows'])) {
+
+      foreach ($res['rows'] as $row) {
+
+        $docs[] = $row['doc'];
+
+      }
+
+    }
+    return $docs;
+
+  }
+
   // by number
   static public function getByNumber($number) {
 

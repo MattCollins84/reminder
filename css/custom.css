@@ -252,3 +252,15 @@ h4.strapline {
 .navbar-tour {
   background: #dff0d8!important;
 }
+
+.multiple-user-tile {
+  padding: 10px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5p
+}
+
+.multiple-user-tile h4 {
+  font-weight: 700;
+}

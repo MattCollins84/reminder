@@ -4,6 +4,13 @@ var stripHTML = function(html) {
   return tmp.textContent || tmp.innerText || "";
 }
 
+var arrayUnique = function(a) {
+  return a.reduce(function(p, c) {
+    if (p.indexOf(c) < 0) p.push(c);
+    return p;
+  }, []);
+};
+
 $(document).ready(function() {
 
   $('#country').change(function(e) {
@@ -453,7 +460,8 @@ $(document).ready(function() {
       type: "custom",
       template: ($('#custom-save').val()=="yes"?true:false),
       template_name: $('#custom-template-name').val(),
-      template_date: ($('#custom-template-date').is(":checked")?$("#custom-message-date").val():false)
+      template_date: ($('#custom-template-date').is(":checked")?$("#custom-message-date").val():false),
+      additional_contacts: multiple_contacts
     }
 
     $.ajax({

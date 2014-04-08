@@ -219,12 +219,42 @@
                 </div>
 
                 <div class="form-group">
+                  <label>Send this message to multiple contacts</label>
+                  <p>Send the same message to multiple contacts for your conveinience. Please note that each additional contact will deduct a message token from your account.</p>
+                  <p><button type="button" class="btn btn-success" id="toggle-multiple"><i class="fa fa-users"> </i> Show additional contacts</button></p>
+                  
+                  <div class="row hidden" id="mut-list">
+                    <? foreach ($data['contacts'] as $contact): ?>
 
+                      <? if ($contact['_id'] == $data['contact']['_id']) { continue; } ?>
+
+                      <div class="col-sm-4 mb10">
+                        
+                        <div class="multiple-user-tile" id="mut-<?=$contact['_id'];?>">
+                          <h4><?=$contact['name'];?></h4>
+                          <p><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;<?=$contact['mobile_phone'];?></p>
+                          <? if ($contact['email']): ?>
+                            <p><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;&nbsp;<?=$contact['email'];?></p>
+                          <? endif; ?>
+                          <button type="button" class="btn btn-success btn-mut" id="add-<?=$contact['_id'];?>" data-add-multiple="<?=$contact['_id'];?>"><i class="fa fa-plus"></i> Add Contact</button>
+                          <button type="button" class="btn btn-danger btn-mut hidden" id="remove-<?=$contact['_id'];?>" data-remove-multiple="<?=$contact['_id'];?>"><i class="fa fa-minus"></i> Remove Contact</button>
+                        </div>
+
+                      </div>
+
+                    <? endforeach; ?>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  
                   <div class="alert alert-danger mb10 hidden" id="custom-failure">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <h4>There was a problem when trying to schedule this message.</h4>
                     <p id="custom-error"></p>
                   </div>
+                  
+                  <hr />
 
                   <input type="hidden" name="contact_id" id="contact_id" value="<?=$data['contact']['_id'];?>" />
                   <input type="hidden" name="company_name" id="company_name" value="<?=$data['active_customer']['name'];?>" />
@@ -264,6 +294,45 @@
         </div>
 
         <script>
+
+          var multiple_contacts = [];
+
+          $('.btn-mut').click(function(e) {
+
+            var add = $(this).attr("data-add-multiple");
+            var remove = $(this).attr("data-remove-multiple");
+
+            if (add) {
+
+              multiple_contacts.push(add);
+              multiple_contacts = arrayUnique(multiple_contacts);
+
+              $('#add-'+add).addClass("hidden");
+              $('#remove-'+add).removeClass("hidden");
+
+              $('#mut-'+add).addClass("bg-success");
+
+            }
+
+            else if (remove) {
+
+              var index = multiple_contacts.indexOf(remove);
+              multiple_contacts.splice(index, 1);
+
+              $('#add-'+remove).removeClass("hidden");
+              $('#remove-'+remove).addClass("hidden");
+
+              $('#mut-'+remove).removeClass("bg-success");
+
+            }
+
+          });
+
+          $('#toggle-multiple').click(function(e) {
+
+            $('#mut-list').toggleClass("hidden");
+
+          });
 
           var direction = (<?=date('H');?>>=16?1:true);
 

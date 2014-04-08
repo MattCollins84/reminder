@@ -128,6 +128,11 @@
         
         if ($clean) {
           foreach ($this->request_vars as $k => $v) {
+
+            if (is_array($this->request_vars[$k])) {
+              continue;
+            }
+            
             $this->request_vars[$k] = Validation::clean($v);
           }
         }
