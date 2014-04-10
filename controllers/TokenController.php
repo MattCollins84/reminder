@@ -33,6 +33,7 @@
       switch($data['active_customer']['country']) {
 
         case "gb":
+        case "ie":
           $data['currency'] = "&pound;";
           break;
 
@@ -96,6 +97,7 @@
       switch($data['active_customer']['country']) {
 
         case "gb":
+        case "ie":
           $data['currency'] = "&pound;";
           break;
 
@@ -155,6 +157,7 @@
       switch($data['active_customer']['country']) {
 
         case "gb":
+        case "ie":
           $data['currency'] = "&pound;";
           break;
 

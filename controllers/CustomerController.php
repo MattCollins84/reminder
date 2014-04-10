@@ -76,6 +76,189 @@
         
     }
 
+    // provision a customer
+    static public function provisionCustomer($rest) {
+      
+      global $config;
+
+      $data = array();
+      
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+      
+      $errors = Validation::required(array("country", "name", "email", "package", "key"), $vars);
+
+      // timezone for USA
+      if ($vars['country'] == "us" && !$vars['timezone']) {
+        $errors[] = "timezone";
+      }
+
+      // do we have any errors
+      if (count($errors)) {
+
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Missing the following fields: ".implode($errors, ", ")
+        ));
+        exit;
+
+      }
+
+      else {
+
+        if ($vars['key'] != "cionline") {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "key is invalid"
+          ));
+          exit;
+        }
+
+        switch (strtolower($vars['package'])) {
+
+          default:
+          case "standard":
+            $tokens = 100;
+            break;
+
+          case "premium":
+            $tokens = 250;
+            break;
+
+          case "bumper":
+            $tokens = 500;
+            break;
+
+        }
+
+        // check for existing customer
+        $customer = Customer::getByEmail($vars['email']);
+
+        // if we have an existing customer, just update their token amount
+        if ($customer) {
+
+          $add = Customer::addTokens($customer, $tokens);
+
+          $res = array(
+            "success" => $add['ok']
+          );
+
+          if ($add['ok']) {
+            $res['renewed'] = true;
+            $res['customer'] = $add['customer'];
+          }
+
+          echo json_encode($res);
+          exit;
+
+        }
+
+        // no existing customer? create!
+        $password = Tools::randomString();
+
+        // ref code
+        $_SESSION['ref_code'] = $vars['key'];
+
+        // create the customer
+        $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($password), $vars['country'], $vars['contact_phone'], $vars['contact_name'], $tokens, $vars['timezone']);
+
+        if ($res['success']) {
+          $_SESSION['confirmation_email'] = $vars['email'];
+          $res['email'] = Email::provisionEmail($vars['email'], $res['id']);
+        }
+
+        echo json_encode($res);
+        exit;
+
+      }
+        
+    }
+
+    // set password and activate user
+    static public function setPassword($rest) {
+      
+      global $config;
+
+      $data = array();
+      
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+      
+      $errors = Validation::required(array("setup_password", "confirm_password", "customer_id"), $vars);
+
+      unset($_SESSION['password_set']);
+      
+      // do we have any errors
+      if (count($errors)) {
+
+        echo json_encode(array(
+          "success" => false,
+          "error" => "Please complete both fields"
+        ));
+        exit;
+
+      }
+
+      else {
+
+        // check for existing customer
+        $customer = Customer::getById($vars['customer_id']);
+
+        // no customer, die
+        if (!$customer) {
+
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Customer not found, please click the URL from your email"
+          ));
+          exit;
+
+        }
+
+        // are we changing passwords?
+        if ($vars['setup_password'] != "" && strlen($vars['setup_password']) < 8) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "New password is too short"
+          ));
+          exit;
+        }
+
+        if ($vars['setup_password'] != "" && $vars['setup_password'] != $vars['confirm_password']) {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "New passwords do not match"
+          ));
+          exit;
+        }
+
+        $customer['password'] = sha1($vars['setup_password']);
+        $customer['verified'] = true;
+
+        // update
+        $update = Customer::updateCustomer($customer);
+        
+        if ($update['success']) {
+          // make sure latest revision is in session
+          $_SESSION['password_set'] = true;
+          echo json_encode(array(
+            "success" => true
+          ));
+          exit;
+        }
+        
+        else {
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Unable to set password"
+          ));
+          exit;
+        }
+
+      }
+        
+    }
+
     // update a customer
     static public function updateCustomer($rest) {
       

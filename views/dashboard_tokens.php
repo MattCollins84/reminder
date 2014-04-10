@@ -62,7 +62,7 @@
                   <strong><?=$plan['tokens'];?></strong> Messages
               </li>
               <li>
-                  <a href="/dashboard/tokens/<?=$data['active_customer']['country'];?>/<?=$key;?>"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
+                  <a href="/dashboard/tokens/<?=$data['plans_country'];?>/<?=$key;?>"><img src="/images/buy.gif" alt="Buy now with PayPal" title="Buy now with PayPal" /></a>
               </li>
             </ul>
           </div>

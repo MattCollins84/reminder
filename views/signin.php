@@ -30,9 +30,21 @@
             <h4>There was a problem signing you in</h4>
             <span id="errors-signin"></span>
           </div>
-          <h3>Not a member?</h3>
-          <h4 class="strapline"><a href='/#signup'>Start your free trial now!</a></h4>
-          <h4 class="strapline white">...or <a href='/forgot-password'>retrieve your password</a> if you have forgotten your details...</h4>
+          
+          <? if ($data['password_changed']): ?>
+            <div class="alert alert-success mt20">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h4>Thank you for setting up your password</h4>
+              <h4>Use the form above to sign-in and access your personalised dashboard</h4>
+            </div>
+          <? else: ?>
+            <h3>Not a member?</h3>
+            <h4 class="strapline"><a href='/#signup'>Start your free trial now!</a></h4>
+            <h4 class="strapline white">...or <a href='/forgot-password'>retrieve your password</a> if you have forgotten your details...</h4>
+          <? endif; ?>
+
+          
+
         </form>
       </div>
 

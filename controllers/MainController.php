@@ -57,6 +57,9 @@
       $data = array();
       $data['hide_menu'] = true;
 
+      $data['password_changed'] = ($_SESSION['password_set']?true:false);
+      unset($_SESSION['password_set']);
+
       $h = $rest->getHierarchy();    
       $vars = $rest->getRequestVars();
 
@@ -138,6 +141,23 @@
       $vars = $rest->getRequestVars();
 
       echo View::renderView("privacy", $data);
+          
+    }
+
+    // render password setup
+    static public function renderPasswordSetup($rest) {
+      
+      global $config;
+
+      $data = array();
+      $data['hide_menu'] = true;
+
+      $h = $rest->getHierarchy();    
+      $vars = $rest->getRequestVars();
+
+      $data['customer_id'] = $h[1];
+
+      echo View::renderView("password_setup", $data);
           
     }
 

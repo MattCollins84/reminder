@@ -217,6 +217,24 @@
         "authentication": false 
     },
     {
+        "regex": "^/api/provision$",
+        "controllerClass": "CustomerController",
+        "method": "provisionCustomer",
+        "authentication": false 
+    },
+    {
+        "regex": "^/setup/[a-zA-Z0-9]+$",
+        "controllerClass": "MainController",
+        "method": "renderPasswordSetup",
+        "authentication": false 
+    },
+    {
+        "regex": "^/customer/setPassword$",
+        "controllerClass": "CustomerController",
+        "method": "setPassword",
+        "authentication": false 
+    },
+    {
         "regex": "^/customer/create$",
         "controllerClass": "CustomerController",
         "method": "createCustomer",

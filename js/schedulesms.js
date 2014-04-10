@@ -359,6 +359,7 @@ $(document).ready(function() {
     switch ($('#country').val()) {
 
       case "gb":
+      case "ie":
         date = date[2]+"-"+date[1]+"-"+date[0];
         break;
 
@@ -436,6 +437,7 @@ $(document).ready(function() {
     switch ($('#country').val()) {
 
       case "gb":
+      case "ie":
         date = date[2]+"-"+date[1]+"-"+date[0];
         break;
 
@@ -684,6 +686,36 @@ $(document).ready(function() {
     $.get('/dashboard/twitter/tweet', {msg: msg}, function(data) {
 
       document.location.href="/dashboard";
+
+    });
+
+  })
+
+  $('#setup-form').submit(function(e) {
+
+    e.preventDefault();
+
+    $('#setup-btn').attr("disabled", "disabled").text("Setting password...");
+
+    $('#error-container').addClass('hidden');
+
+    $.post("/customer/setPassword", $('#setup-form').serialize()).done(function(data) {
+
+      try {
+        data = JSON.parse(data);
+      } catch(e) {
+        alert("There was a problem submitting the form, please try again later");
+      }
+
+      if (data.success === false) {
+        $("#errors-setup").html(data.error+"<br />Please correct these errors and try again.");
+        $("#error-container").removeClass("hidden");
+        $('#setup-btn').attr("disabled", false).html('<i class="fa fa-user"> </i>&nbsp;&nbsp;Set Password');
+      }
+
+      else {
+        document.location.href = "/sign-in"
+      }
 
     });
 

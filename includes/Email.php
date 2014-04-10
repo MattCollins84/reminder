@@ -43,6 +43,19 @@ class Email  {
 
   }
 
+  // provision email
+  static public function provisionEmail($to, $id) {
+
+    $link = "http://".$_SERVER['HTTP_HOST']."/setup/".$id;
+
+    $template = file_get_contents("emails/provision.html");
+
+    $message = str_replace("<%SETUP_LINK%>", $link, $template);
+
+    return Email::sendEmail($to, "Welcome to ScheduleSMS", $message);
+
+  }
+
   // support email
   static public function supportEmail($subject, $from, $message, $user) {
 

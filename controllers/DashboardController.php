@@ -179,6 +179,7 @@
       switch($data['active_customer']['country']) {
 
         case "gb":
+        case "ie":
           $data['date_format'] = "d/m/Y";
           break;
 
@@ -269,15 +270,18 @@
       switch($data['active_customer']['country']) {
 
         case "gb":
+        case "ie":
           $data['currency'] = "&pound;";
           $data['tax'] = "VAT";
           $data['plans'] = $config['plans']['gb'];
+          $data['plans_country'] = "gb";
           break;
 
         case "us":
           $data['currency'] = "&dollar;";
           $data['tax'] = "Tax";
           $data['plans'] = $config['plans']['us'];
+          $data['plans_country'] = "us";
           break;
 
       }
