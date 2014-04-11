@@ -10,6 +10,7 @@
   require_once("controllers/Controller.php");
   require_once("includes/Email.php");
   require_once("includes/Tools.php");
+  require_once("includes/Transaction.php");
 
   
   Class CustomerController extends Controller {
@@ -131,6 +132,9 @@
 
         }
 
+        // ref code
+        $_SESSION['ref_code'] = $vars['key'];
+
         // check for existing customer
         $customer = Customer::getByEmail($vars['email']);
 
@@ -138,6 +142,8 @@
         if ($customer) {
 
           $add = Customer::addTokens($customer, $tokens);
+
+          Transaction::createTransaction($customer['_id'], array("price" => "3RD PARTY", "tokens" => $tokens), "", $_SESSION['ref_code']);
 
           $res = array(
             "success" => $add['ok']
@@ -154,10 +160,7 @@
         }
 
         // no existing customer? create!
-        $password = Tools::randomString();
-
-        // ref code
-        $_SESSION['ref_code'] = $vars['key'];
+        $password = Tools::randomString();        
 
         // create the customer
         $res = Customer::createCustomer($vars['name'], $vars['email'], sha1($password), $vars['country'], $vars['contact_phone'], $vars['contact_name'], $tokens, $vars['timezone']);
@@ -165,6 +168,7 @@
         if ($res['success']) {
           $_SESSION['confirmation_email'] = $vars['email'];
           $res['email'] = Email::provisionEmail($vars['email'], $res['id']);
+          Transaction::createTransaction($res['id'], array("price" => "3RD PARTY", "tokens" => $tokens), "", $_SESSION['ref_code']);
         }
 
         echo json_encode($res);
@@ -187,7 +191,7 @@
       $errors = Validation::required(array("setup_password", "confirm_password", "customer_id"), $vars);
 
       unset($_SESSION['password_set']);
-      
+
       // do we have any errors
       if (count($errors)) {
 
