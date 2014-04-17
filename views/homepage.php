@@ -73,6 +73,7 @@
   <!-- INTRO WRAP -->
   <div id="intro">
     <div class="container">
+
       <div class="row centered">
         <h1>How it works</h1>
         <br>
@@ -91,6 +92,30 @@
           <i class="fa fa-8x fa-check-circle icon-green"></i>
           <h3>Getting Results</h3>
           <p>Targetting customers with relevant services at identified key times is proven to drive <strong>repeat business &amp; customer loyalty</strong>, while appointment reminders help you to maximise your productivity &amp; <strong>prevent avoidable no-shows.</strong></p>
+        </div>
+      </div>
+
+      <div class="row centered">
+        <h1>Why it works</h1>
+        <br>
+        <br>
+        <div class="col-lg-4">
+          <i class="fa fa-8x fa-folder-open-o icon-blue"></i>
+          <h3>Crazy open rates</h3>
+          <p>Did you know that <strong>99%</strong> of SMS messages sent are read by the intended recipient? It's true!</p>
+          <p>Additionally, <strong>90%</strong> of these messages are opened <strong>within 3 minutes!</strong> This makes SMS the ideal platform for your targeted marketing campaigns.</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="fa fa-8x fa-bullseye icon-red"></i>
+          <h3>Low spam, high impact</h3>
+          <p>The ammount of spam sent via SMS is exceptionally low (1%), especially when compared to email. This means that recipients are much more likey to open, read and digest your message.</p>
+          <p>Conversions on mobile advertising are 40% higher than desktop based campaigns - are you missing out?</p>
+        </div>
+        <div class="col-lg-4">
+          <i class="fa fa-8x fa-mobile icon-green"></i>
+          <h3>Everyone has a phone!</h3>
+          <p>How many people can you think of that don't have a mobile phone of some kind? Exactly!</p>
+          <p>With mobile phones being so common, SMS is a sure fire way to get your message in front of your customers.</p>
         </div>
         <div class="col-lg-12">
           <div itemscope itemtype="http://schema.org/Product">
