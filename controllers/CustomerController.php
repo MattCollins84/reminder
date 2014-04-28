@@ -123,7 +123,7 @@
             break;
 
           case "premium":
-            $tokens = 250;
+            $tokens = 200;
             break;
 
           case "bumper":
