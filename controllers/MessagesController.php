@@ -63,17 +63,6 @@
           exit;
         }
 
-        // token check
-        if ((int) $customer['available_tokens'] < (int) $data['tokens']['cost']) {
-
-          echo json_encode(array(
-            "success" => false,
-            "error" => "Not enough available credits"
-          ));
-          exit;
-
-        }
-
         switch($vars['type']) {
 
           case "fixed":
@@ -87,6 +76,24 @@
             break;
 
         }
+
+        // add on cost for additional contacts
+        if (isset($vars['additional_contacts']) && is_array($vars['additional_contacts'])) {
+
+          $total_cost = $tokens * (count($vars['additional_contacts']) + 1);
+
+        }
+
+        // token check
+        if ((int) $customer['available_tokens'] < (int) $total_cost) {
+
+          echo json_encode(array(
+            "success" => false,
+            "error" => "Not enough available credits"
+          ));
+          exit;
+
+        }        
 
         // create the message
         $message = Message::createMessage($contact, $vars['message'], $vars['date'], $vars['time'], $tokens, $vars['country'], $vars['type'], $customer['timezone']);

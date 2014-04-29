@@ -304,6 +304,13 @@
 
             if (add) {
 
+              // how many tokens is this equal to. additional contacts, plus original contact, plus proposed new additional contacts
+              var x = multiple_contacts.length + 2;
+              if (x > <? echo (int) $data['active_customer']['available_tokens']; ?> ) {
+                alert("You do not have enough available credits to add this contact");
+                return;
+              }
+
               multiple_contacts.push(add);
               multiple_contacts = arrayUnique(multiple_contacts);
 
